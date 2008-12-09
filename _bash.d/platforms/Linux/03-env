@@ -1,0 +1,8 @@
+# fallback to a new emacs session if we don't have a client running somewhere
+EDITOR=emacsclient
+ALTERNATE_EDITOR=emacs
+
+# Make less use 2 as the tabstop
+LESS=-x2
+
+export EDITOR ALTERNATE_EDITOR LESS

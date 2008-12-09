@@ -1,0 +1,4 @@
+alias howmany='sort | uniq -c | sort -nr'
+
+# an evil holdover my the dark days of my dos use.  could likely omit this now.
+alias cd..='cd ..'

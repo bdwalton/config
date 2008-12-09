@@ -1,0 +1,20 @@
+# Step 2.  What domain are we in?  This may not always be obvious, as
+# for example, my primary cquest workstation is on the chass network
+# and has a chass domain name.  The platform init has already set
+# LOCDOM for us though...or we'll bail out!
+if [ -n "${LOCDOM}" ]; then
+    if [ -d "domains/${LOCDOM}" ]; then
+	[ -n "$BWVERBOSE" ] && echo "Running ${LOCDOM} specific init."
+	{
+	    cd domains/${LOCDOM}
+	    for f in *; do
+		[ -n "$BWVERBOSE" ] && echo "Running domains/${LOCDOM}/$f"
+		source $f
+	    done
+	    cd ${BASHDIR}
+	}
+    fi
+else
+    echo "The platform initialization didn't set \$LOCDOM"
+    echo "This means that no domain specific init will happen..."
+fi
