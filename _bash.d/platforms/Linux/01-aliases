@@ -5,6 +5,7 @@ alias mxdig='dig +short MX'
 alias grep='grep --color=tty'
 alias egrep='egrep --color=tty'
 alias fgrep='fgrep --color=tty'
+alias vi='vim'
 
 # We should build a working alternative for these on solaris, but it would
 # require sniffing grep versions, etc...
