@@ -3,7 +3,7 @@
 
 case "${HOSTNAME}" in
 	ntdws1[23].*|*cquest*) LOCDOM=cquest ;;
-	*chass*) LOCDOM=chass.utoronto.ca ;;
-	pearljam|pinkfloyd|auth) LOCDOM=benandwen.net ;;
+	*chass*) LOCDOM=chass ;;
+	pearljam|pinkfloyd|auth) LOCDOM=benandwen ;;
 	ledzeppelin) LOCDOM=laptop ;;
 esac
