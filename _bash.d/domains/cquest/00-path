@@ -1,0 +1,6 @@
+# Add CQUEST specific path items here.  Unlike the CHASS setup, we actually
+# might prefer /local/bin in some cases.
+#
+# We also have a globally mounted ~/ and would like our scripts dir to be
+# available.
+PATH=/u/bwalton/scripts:/local/bin:$PATH

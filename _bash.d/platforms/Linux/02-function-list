@@ -1,0 +1,15 @@
+# We should build a working alternative for these on solaris, but it would
+# require sniffing grep versions, etc...
+function list {
+    case "$1" in
+	"-A") lsopts=-lA; shift;;
+	*) lsopts=-l ;;
+    esac
+
+    args=`echo $* | sed 's/ /|/g'`
+    if [ -n "$args" ]; then
+	ls $lsopts --color | egrep -i $args | less -E -X -R -M
+    else
+	ls $lsopts --color | less -E -X -R -M
+    fi
+}

@@ -1,0 +1,12 @@
+# These aliases should work on any linux box, as we can count on having
+# both dig and the standard grep be the gnu grep.
+alias sdig='dig +short'
+alias mxdig='dig +short MX'
+alias grep='grep --color=tty'
+alias egrep='egrep --color=tty'
+alias fgrep='fgrep --color=tty'
+
+# We should build a working alternative for these on solaris, but it would
+# require sniffing grep versions, etc...
+alias lc="list $*"
+alias lca="list -A $*"

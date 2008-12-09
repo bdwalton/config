@@ -1,0 +1,8 @@
+# This is the CQUEST ruby environment.  It's shared via a rsynced source
+# in /local.
+
+GEM_HOME=/local/lib/ruby/gems/1.8
+RUBYOPT=rubygems
+RUBYLIB=/local/lib/ruby/site_ruby/1.8/:/local/lib/ruby
+
+export GEM_HOME RUBYOPT RUBYLIB

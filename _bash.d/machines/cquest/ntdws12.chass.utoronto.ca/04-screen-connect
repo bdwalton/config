@@ -1,0 +1,21 @@
+#we exit if screen connect was successful (eg attached), else we finish init
+#determine whether to start a new screen, forcefully assume an old one,
+#or share with others...
+
+if [ ! -f ~/.noscreen ]; then
+    if [ "$TERM" != "screen-bce" ]; then
+	screen -list | grep -q "No Sockets"
+	if [ $? -eq 0 ]; then	#not running
+	    #start new screen session if no active sockets found
+	    exec screen
+	else
+	    screen -list | grep -q Detached
+	    if [ $? -eq 0 ]; then	#shoutld we reconnect?
+		exec screen -DR
+	    else
+		#we already have an attached screen, share that session
+		exec screen -x
+	    fi
+	fi
+    fi
+fi

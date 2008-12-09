@@ -1,0 +1,9 @@
+# For Linux boxes, we're chass if HOSTNAME matches .chass. unless we're
+# ntdws1[0123], which are Ben's non-chass customized linux machines.
+
+case "${HOSTNAME}" in
+	ntdws1[23].*|*cquest*) LOCDOM=cquest ;;
+	*chass*) LOCDOM=chass.utoronto.ca ;;
+	pearljam|pinkfloyd|auth) LOCDOM=benandwen.net ;;
+	ledzeppelin) LOCDOM=laptop ;;
+esac

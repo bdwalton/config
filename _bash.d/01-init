@@ -1,0 +1,63 @@
+# Ok, we're getting a little crazy here.  The goal is to have a single
+# (versioned) shell initialization setup that can be shared globally
+# on all of the systems I care about.  There are a few steps involved here.
+# 1. Detect platform and do anything specific to handle its quirks
+# 2. Detect domain and make any settings relevant only to it.
+# 3. Detect machine and do specific settings for that environment.
+# 4. Global functions.
+# 5. Global aliases.
+# 6. Global settings.
+# 7. Global commands (eg: I like uptime and uname info, etc)
+
+# Let's begin, shall we?
+
+# This is the first stage of the shell initialization.  It is responsible
+# for determining any special environment type things (eg: OS/bash version
+# oddities that need to be handled)
+
+# A base PATH that should be sane anywhere
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+# Assume that uname is in the default path regardless of system.  This
+# should be safe.  We rely on uname values instead of the BASH
+# variables OSTYPE, etc since those might not be what we expect,
+# whereas the uname results should be dependable
+PLATFORM=$(uname -s)
+OSVER=$(uname -r)
+BASHDIR=${HOME}/.bash.d
+
+ORIGDIR=$PWD
+cd ${BASHDIR}
+
+source ./02-platform
+
+source ./03-domain
+
+source ./04-machine
+
+if [ -f "./05-global-functions" ]; then
+    [ -n "$BWVERBOSE" ] && echo Loading Global Functions
+    source ./05-global-functions
+fi
+
+# aliases that should work on any platform (or use the available platform
+# info if you want to make it conditional)
+if [ -f "06-global-aliases" ]; then
+    [ -n "$BWVERBOSE" ] && echo Loading Global Aliases
+    source ./06-global-aliases
+fi
+
+# for things like umask, etc
+if [ -f "./07-global-settings" ]; then
+    [ -n "$BWVERBOSE" ] && echo Loading Global Settings
+    source ./07-global-settings
+fi
+
+# and finally, any last minute global commands
+if [ -f "./08-global-commands" ]; then
+    [ -n "$BWVERBOSE" ] && echo Loading Global Commands
+    source ./08-global-commands
+fi
+
+# If we're initialized in some non-$HOME location, we should honour that.
+cd ${ORIGDIR}

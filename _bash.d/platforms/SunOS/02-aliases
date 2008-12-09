@@ -1,0 +1,4 @@
+# We have better versions of these on Linux, but for now we'll suffer
+# in solaris (what else is new?)
+alias lca='ls -lA | more'
+alias lc='ls -l | more'
