@@ -3,6 +3,6 @@ EDITOR=emacsclient
 ALTERNATE_EDITOR=emacs
 
 # Make less use 2 as the tabstop
-LESS=-x2
+LESS="-x2 -E -X -R -M"
 
 export EDITOR ALTERNATE_EDITOR LESS
