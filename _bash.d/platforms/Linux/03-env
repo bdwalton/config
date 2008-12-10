@@ -1,8 +1,8 @@
-# fallback to a new emacs session if we don't have a client running somewhere
-EDITOR=emacsclient
-ALTERNATE_EDITOR=emacs
+# use emacs by default.  in this platform specific setting, we don't attempt
+# to try emacsclient
+EDITOR=emacs
 
 # Make less use 2 as the tabstop
 LESS="-x2 -E -X -R -M"
 
-export EDITOR ALTERNATE_EDITOR LESS
+export EDITOR LESS
