@@ -17,6 +17,9 @@ HISTTIMEFORMAT="%Y-%m-%d %H:%m:%s -> "
 shopt -s checkwinsize
 
 PAGER=less
-LESSOPT=-x2
 
-export PAGER LESSOPT
+if [ -z "$LESS" -a -z "$LESSOPT" ]; then
+	export LESSOPT=-x2
+fi
+
+export PAGER
