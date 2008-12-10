@@ -1,0 +1,2 @@
+# We know that on rhel, we can alias emacs to emacs-nox
+alias emacs=emacs-nox
