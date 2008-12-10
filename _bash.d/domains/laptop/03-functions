@@ -1,0 +1,4 @@
+function work () {
+	echo "Knocking secret port on $1"
+	nmap -P0 -p30101 $1 --host-timeout 5000 >/dev/null 2>&1 && ssh $1 $2
+}
