@@ -6,3 +6,17 @@ umask 027
 
 # My funky prompt!
 PS1="\n\[\e[32;01m\]\u\[\e[0m\] @ \[\e[34;01m\]\h\[\e[0m\] : \[\e[31m\]\w\[\e[0m\]\n\\$ "
+
+# don't put duplicate lines in the history. See bash(1) for more options
+HISTCONTROL=ignoredups
+HISTFILE=~/.bash_history-${HOSTNAME}
+HISTTIMEFORMAT="%Y-%m-%d %H:%m:%s -> "
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+PAGER=less
+LESSOPT=-x2
+
+export PAGER LESSOPT

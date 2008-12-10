@@ -1,0 +1,2 @@
+EDITOR=emacsclient
+ALTERNATE_EDITOR=emacs22-nox
