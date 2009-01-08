@@ -1,0 +1,15 @@
+# if su hasn't set $HOME appropriately on a Sun box, fix that and bail
+
+if [ $UID -eq 0 ]; then
+   #handle sol8 vs sol10 home directory differences (cfengine on sol10)
+ #  export HOME=`awk -F: '$1 == "root" {print $6}'`
+  # echo set HOME to $HOME
+  if [ -d /root ]; then
+      export HOME=/root
+  else
+      export HOME=/
+  fi
+
+  # force any local root prefs to be run...bad?
+  exec $SHELL --login
+fi
