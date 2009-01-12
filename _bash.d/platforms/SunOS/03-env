@@ -2,3 +2,7 @@
 if [ -n "$SSH_CONNECTION" ]; then
    export TERM=xterm
 fi
+
+if [ -d /opt/csw/share/man ]; then
+   export MANPATH=/opt/csw/share/man:/usr/share/man
+fi
