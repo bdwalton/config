@@ -6,3 +6,7 @@ fi
 if [ -d /opt/csw/share/man ]; then
    export MANPATH=/opt/csw/share/man:/usr/share/man
 fi
+
+if [ -f /opt/csw/bin/less ]; then
+	export LESS="-x2 -e -F -X -R -M"
+fi
