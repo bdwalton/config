@@ -1,6 +1,6 @@
 
 # on any of the cswbo build boxes, we need to setup the proxy
 case "${HOSTNAME}" in
-	build*) export http_proxy=http://192.168.1.6:3218;;
+	build*) export http_proxy=http://192.168.1.6:3128;;
 	*);;
 esac
