@@ -1,7 +1,7 @@
 # general environment settings for CSW build boxes
 
 if [ -f /opt/csw/bin/emacs ]; then
-	EDITOR=emacsclient
+	EDITOR=emacs
 else
 	EDITOR=vim
 fi
