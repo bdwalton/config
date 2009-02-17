@@ -33,6 +33,7 @@
   )
  ((true)
   (message "Encountered an unknown distro")
+  )
 )
 
 ;; load things we need only in the specific version (eg: set keybindings
