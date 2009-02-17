@@ -3,22 +3,32 @@
 (add-to-list 'load-path user-init-dir)
 
 ;; make adding other paths easier
-(defun my-path (p)
+(defun extra-user-path (p)
   "Add p to load-path (relative to ~/.emacs.d/)"
   (add-to-list 'load-path (concat user-init-dir p)))
 
+(extra-user-path "distro") ;; put distro specific (path?) things here.
+(extra-user-path "modes") ;; put mode specific settings in here.
+
 ;; which platform are we on...?
 ;; do other distro specific things in the distro/$localos 
+;; ...things like setting additional distro specific load paths are smart
+;; here
 (cond
  ((string-match "redhat" (emacs-version))
-  (setq distro "redhat")
-
+  (load-library "redhat")
   )
  ((string-match "Ubuntu" (emacs-version))
-  (setq distro "ubuntu")
+  (load-library "ubuntu")
   )
  ((string-match "solaris" (emacs-version))
-  (setq distro "solaris")
+  (load-library "solaris")
   )
+ ((true)
+  (message "Encountered an unknown distro")
 )
 
+;; some generic settings that should work everywhere.
+(load-library "general")
+
+(load-libray "ruby")
