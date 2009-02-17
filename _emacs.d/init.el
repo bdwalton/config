@@ -7,6 +7,11 @@
   "Add p to load-path (relative to ~/.emacs.d/)"
   (add-to-list 'load-path (concat user-init-dir p)))
 
+(defun cond-load-file (f)
+  "Conditionally load a file based on whether or not it exists"
+  (if (file-exists-p f)
+      (load f)))
+
 ;; a library from
 ;; http://www.splode.com/~friedman/software/emacs-lisp/src/emacs-variants.el
 ;; that allows us to grab components from the version string to load various
@@ -23,22 +28,26 @@
 ;; here
 (cond
  ((string-match "redhat" (emacs-version))
-  (load-library "redhat")
+  (setq distro "redhat")
   )
  ((string-match "Ubuntu" (emacs-version))
-  (load-library "ubuntu")
+  (setq distro "ubuntu")
   )
  ((string-match "solaris" (emacs-version))
-  (load-library "solaris")
+  (setq distro "solaris")
   )
  ((true)
   (message "Encountered an unknown distro")
+  (setq distro "unknown")
   )
 )
 
+(cond-load-file (concat user-init-dir "distro/" distro ".el"))
+
 ;; load things we need only in the specific version (eg: set keybindings
 ;; that are defaults in new versions, etc)
-(load-library (int-to-string (emacs-version-major)))
+(cond-load-file
+ (concat user-init-dir "emacsvers/" (int-to-string (emacs-version-major)) ".el"))
 
 ;; some generic settings that should work everywhere.
 (load-library "general")
