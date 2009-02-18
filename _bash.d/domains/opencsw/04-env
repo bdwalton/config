@@ -7,6 +7,3 @@ else
 fi
 
 export EDITOR
-
-# until xterm-color is added or something.
-export TERM=dtterm
