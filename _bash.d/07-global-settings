@@ -1,8 +1,8 @@
 # This can be annoying sometimes, but I've been careless in the past!
 set -o noclobber
 
-# This is likely too restrictive, but we're definitely paranoid.
-umask 027
+# Ensure we run a sane umask
+umask 022
 
 # My funky prompt!
 PS1="\n\[\e[32;01m\]\u\[\e[0m\] @ \[\e[34;01m\]\h\[\e[0m\] : \[\e[31m\]\w\[\e[0m\]\n\\$ "
@@ -17,9 +17,4 @@ HISTTIMEFORMAT="%Y-%m-%d %H:%m:%s -> "
 shopt -s checkwinsize
 
 PAGER=less
-
-if [ -z "$LESS" -a -z "$LESSOPT" ]; then
-	export LESSOPT=-x2
-fi
-
 export PAGER

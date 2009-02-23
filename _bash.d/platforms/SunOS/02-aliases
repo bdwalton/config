@@ -7,6 +7,3 @@ if [ -f /opt/csw/bin/ggrep -a ! -d /opt/csw/gnu ]; then
    alias egrep=gegrep
    alias fgrep=gfgrep
 fi
-
-alias lca='ls -lA | more'
-alias lc='ls -l | more'

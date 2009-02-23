@@ -1,2 +1,6 @@
-# The only place I've got Solaris boxes is on the CHASS network
-LOCDOM=chass
+#account for the CHASS boxes and the OpenCSW boxes.
+
+case "${HOSTNAME}" in
+	build*|pandora|login|bender) LOCDOM=opencsw;;
+	*) LOCDOM=chass;;
+esac
