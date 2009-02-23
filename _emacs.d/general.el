@@ -17,6 +17,9 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+;; stop the little ~ turd files
+(setq make-backup-files nil)
+
 ;; allow sgml/xml files to set indentation variables, etc.
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
