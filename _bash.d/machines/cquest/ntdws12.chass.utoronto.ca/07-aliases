@@ -1,0 +1,4 @@
+# on ntdws12, we want to use emacsclient, but on other cquest boxes that may
+# not be using my screen session, i'll let regular emacs go.
+
+alias emacs=emacsclient
