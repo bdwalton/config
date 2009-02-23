@@ -1,6 +1,12 @@
 # if we're connected via ssh, ensure we get better TERM stuff setup.
 if [ -n "$SSH_CONNECTION" ]; then
-   export TERM=xterm
+    cswterm=/opt/csw/share/terminfo
+    if [ -d $cswterm ]; then
+	export TERM=xterm-color
+	export TERMINFO=$cswterm
+    else
+	export TERM=xterm
+    fi
 fi
 
 if [ -d /opt/csw/share/man ]; then
