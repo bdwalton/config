@@ -16,7 +16,7 @@ fi
 for ver in 4 3; do
 	MD=/opt/csw/gcc${ver}/man
 	if [ -d ${MD} ]; then
-		MANPATH=$MANPATH:$MD
+		export MANPATH=$MANPATH:$MD
 		break
 	fi
 end
