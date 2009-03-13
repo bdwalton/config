@@ -10,6 +10,9 @@
 ;; better buffer switching
 (iswitchb-mode t)
 
+;; don't make me spell out yes/no all the time
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; always have font colouring
 (global-font-lock-mode t)
 
