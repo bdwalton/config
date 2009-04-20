@@ -9,6 +9,16 @@
 # 6. Global settings.
 # 7. Global commands (eg: I like uptime and uname info, etc)
 
+# Stupid solaris.
+if [ "$UID" == "0" ]; then
+    if test -d /root; then
+	export HOME=/root
+    else
+	export HOME=/
+    fi
+    exec $0
+fi
+
 # Let's begin, shall we?
 
 # This is the first stage of the shell initialization.  It is responsible
