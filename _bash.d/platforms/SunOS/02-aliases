@@ -2,7 +2,7 @@
 # in solaris (what else is new?)
 
 if [ -f /opt/csw/bin/ggrep -a ! -d /opt/csw/gnu ]; then
-   echo "Considering running: pkg-get -i gnulinks"
+   echo -e "\e[32;01mConsidering running: pkg-get -i gnulinks\e[0m"
    alias grep=ggrep
    alias egrep=gegrep
    alias fgrep=gfgrep
