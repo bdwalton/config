@@ -63,3 +63,6 @@
 
 ;; xml editting
 (load-library "xml")
+
+;; text editting
+(load-library "text")
