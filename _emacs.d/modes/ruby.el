@@ -14,3 +14,4 @@
             (require 'ruby-electric)
             (ruby-electric-mode t)
   	    ))
+
