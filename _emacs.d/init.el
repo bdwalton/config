@@ -1,5 +1,11 @@
 ;; So that we know to look up included files in our local directory too.
-(defconst user-init-dir (expand-file-name "~/.emacs.d/") "User init dir")
+
+(defconst user-init-dir
+  (expand-file-name
+   (concat "~" (getenv "LOGNAME") "/.emacs.d/")
+   )
+  "User init dir")
+
 (add-to-list 'load-path user-init-dir)
 
 ;; make adding other paths easier
