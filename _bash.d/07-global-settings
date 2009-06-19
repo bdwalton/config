@@ -17,5 +17,17 @@ HISTTIMEFORMAT="%Y-%m-%d %H:%m:%s -> "
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-PAGER=less
-export PAGER
+export PAGER=less
+
+if [ -z "$EDITOR" ]; then
+    for try_ed in emacs vim vi; do
+	case "$(type -P $try_ed)" in
+	    "") ;;
+	    *) ed=$try_ed; break;;
+	esac
+    done
+
+    [ "$ed" = "emacs" ] && ed="emacs -nw"
+    export EDITOR="$ed"
+    export VISUAL="$EDITOR"
+fi

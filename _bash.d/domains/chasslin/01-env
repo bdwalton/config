@@ -4,6 +4,4 @@ GEM_HOME=/chass/lib/ruby/gems/1.8
 RUBYLIB=/chass/lib/ruby/:/chass/lib/site_ruby/1.8
 RUBYOPT=rubygems
 
-EDITOR=emacs-nox
-
 export GEM_HOME RUBYLIB RUBYOPT EDITOR
