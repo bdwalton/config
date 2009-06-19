@@ -1,7 +1,4 @@
 # -*- shell-script -*-
-# use emacs by default.  in this platform specific setting, we don't attempt
-# to try emacsclient
-EDITOR=emacs
 
 # Make less use 2 as the tabstop
 LESS="-x2 -e -F -X -R -M"
