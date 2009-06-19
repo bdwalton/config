@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 #account for the CHASS boxes and the OpenCSW boxes.
 
 case "${HOSTNAME}" in

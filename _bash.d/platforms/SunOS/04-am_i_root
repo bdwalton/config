@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # if su hasn't set $HOME appropriately on a Sun box, fix that and bail
 
 if [ $UID -eq 0 ]; then

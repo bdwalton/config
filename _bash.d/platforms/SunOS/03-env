@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # if we're connected via ssh, ensure we get better TERM stuff setup.
 if [ -n "$SSH_CONNECTION" ]; then
     cswterm=/opt/csw/share/terminfo

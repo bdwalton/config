@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # $#@#$#@$ solaris and it's horrible frickin' path requirements...
 
 # These are paths that we might find on solaris machines where various things

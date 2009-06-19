@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # pandora has direct internet access.
 unset GIT_PROXY_COMMAND
 

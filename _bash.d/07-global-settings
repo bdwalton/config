@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # This can be annoying sometimes, but I've been careless in the past!
 set -o noclobber
 

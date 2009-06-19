@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # Currently, the only Windows/Cygwin boxes where I'll be running bash are the
 # CQUEST workstations.  That makes this easy.
 

@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # The RHEL4 machines only have monotone v0.35 binaries.  They're identifiable
 # with a 2.6.9 kernel.
 

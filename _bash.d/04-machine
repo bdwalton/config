@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # Step 3.  Machine specific localizations.  It relies on LOCDOM being set
 # since depending on the value of bash's HOSTNAME variable, we could work
 # on more than one machine named www or mail or something...

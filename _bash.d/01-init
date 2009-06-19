@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # Ok, we're getting a little crazy here.  The goal is to have a single
 # (versioned) shell initialization setup that can be shared globally
 # on all of the systems I care about.  There are a few steps involved here.
