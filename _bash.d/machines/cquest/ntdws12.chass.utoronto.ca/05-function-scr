@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 function scr {
     if [ -n "$2" ]; then
 	sshargs="-l $2"

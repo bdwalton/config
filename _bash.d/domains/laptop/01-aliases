@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # maybe we need a distro detection thing too so that distro specific aliases
 # can happen...?
 alias emacs='emacs22-nox'

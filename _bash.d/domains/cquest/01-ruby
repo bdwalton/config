@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # This is the CQUEST ruby environment.  It's shared via a rsynced source
 # in /local.
 

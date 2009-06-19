@@ -1,1 +1,2 @@
+# -*- shell-script -*-
 export GPG_TTY=$(tty)

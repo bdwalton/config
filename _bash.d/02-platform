@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # Execute any files in the platform specific directory.  These should
 # be run based on lexical sort order.  At a minimum, LOCDOM (local
 # domain) should be set by one of the snippets.  Hopefully, any

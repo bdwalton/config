@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # We should build a working alternative for these on solaris, but it would
 # require sniffing grep versions, etc...
 

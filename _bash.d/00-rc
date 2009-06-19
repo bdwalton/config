@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # Point ~/.bashrc and ~/.bash_profile here.
 
 # Determine whether or not we want to do anything...

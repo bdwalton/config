@@ -1,1 +1,2 @@
+# -*- shell-script -*-
 export GIT_PROXY_COMMAND=gitproxy

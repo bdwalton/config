@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 
 # on any of the cswbo build boxes, we need to setup the proxy
 case "${HOSTNAME}" in

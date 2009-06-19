@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # general environment settings for CSW build boxes
 
 if [ -f /opt/csw/bin/emacs ]; then

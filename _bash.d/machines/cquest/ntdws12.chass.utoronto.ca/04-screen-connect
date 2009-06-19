@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 #we exit if screen connect was successful (eg attached), else we finish init
 #determine whether to start a new screen, forcefully assume an old one,
 #or share with others...

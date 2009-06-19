@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # use emacs by default.  in this platform specific setting, we don't attempt
 # to try emacsclient
 EDITOR=emacs

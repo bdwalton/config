@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # Step 2.  What domain are we in?  This may not always be obvious, as
 # for example, my primary cquest workstation is on the chass network
 # and has a chass domain name.  The platform init has already set

@@ -1,3 +1,4 @@
+# -*- shell-script -*-
 # These aliases should work on any linux box, as we can count on having
 # both dig and the standard grep be the gnu grep.
 alias sdig='dig +short'
