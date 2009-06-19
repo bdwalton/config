@@ -11,7 +11,7 @@ LASTRESORTS="/local/bin /chass/bin"
 # (eg: decent gnu stuff).  List these in reverse order of preference
 PREFERRED="/usr/pkg/bin /usr/sfw/bin /local/studio11/SUNWspro/bin /opt/csw/gcc4/bin /opt/csw/sbin /opt/csw/bin /opt/csw/gnu"
 # Other: We want these, but only because we have to.
-UGH="/usr/ccs/bin /usr/ucb"
+UGH="/usr/openwin/bin /usr/ccs/bin /usr/ucb"
 
 for p in ${UGH} ${LASTRESORTS}; do
     if [ -d $p ]; then

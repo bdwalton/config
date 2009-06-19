@@ -11,7 +11,7 @@ if [ -n "$SSH_CONNECTION" ]; then
 fi
 
 if [ -d /opt/csw/share/man ]; then
-   export MANPATH=/opt/csw/share/man:/usr/share/man
+   export MANPATH=/opt/csw/share/man:/usr/share/man:/usr/openwin/man
 fi
 
 for ver in 4 3; do
