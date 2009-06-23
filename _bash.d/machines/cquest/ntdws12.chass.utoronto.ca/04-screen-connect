@@ -8,6 +8,7 @@ if [ ! -f ~/.noscreen ]; then
 	screen -list | grep -q "No Sockets"
 	if [ $? -eq 0 ]; then	#not running
 	    #start new screen session if no active sockets found
+	    cd ~
 	    exec screen
 	else
 	    screen -list | grep -q Detached
