@@ -5,14 +5,12 @@
 if [ -n "${LOCDOM}" ]; then
     if [ -d "machines/${LOCDOM}/${HOSTNAME}" ]; then
 	[ -n "$BWVERBOSE" ] && echo Running ${HOSTNAME} specific init.
-	{
-	    cd machines/${LOCDOM}/${HOSTNAME}
-	    for f in *; do
-		[ -n "$BWVERBOSE" ] && echo "Running machines/${LOCDOM}/${HOSTNAME}/$f"
-		source $f
-	    done
-	    cd ${BASHDIR}
-	}
+	cd machines/${LOCDOM}/${HOSTNAME}
+	for f in *; do
+	    [ -n "$BWVERBOSE" ] && echo "Running machines/${LOCDOM}/${HOSTNAME}/$f"
+	    source $f
+	done
+	cd ${BASHDIR}
     fi
 else
     echo "The platform initialization didn't set \$LOCDOM"
