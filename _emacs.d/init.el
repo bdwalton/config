@@ -72,3 +72,6 @@
 
 ;; text editting
 (load-library "text")
+
+;; finally, always start with ~/ as the current directory
+(cd (getenv "HOME"))
