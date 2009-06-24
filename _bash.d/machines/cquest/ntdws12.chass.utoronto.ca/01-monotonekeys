@@ -1,4 +1,0 @@
-# -*- shell-script -*-
-# until we transition completely to git, ensure our monotone key is on the
-# keyring.
-( ssh-add -L | grep -q artsci ) || mtn ssh_agent_add
