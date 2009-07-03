@@ -7,5 +7,4 @@
 (add-hook 'text-mode-hook (function (lambda ()
 				      (auto-fill-mode 1)
 				      (flyspell-mode 1)
-				      (setq show-trailing-whitespace t)
 				      )))
