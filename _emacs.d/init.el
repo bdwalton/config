@@ -26,7 +26,6 @@
 
 (extra-user-path "distro") ;; put distro specific (path?) things here.
 (extra-user-path "emacsvers") ;; version specific things.
-(extra-user-path "modes") ;; put mode specific settings in here.
 
 ;; which platform are we on...?
 ;; do other distro specific things in the distro/$localos 
@@ -55,23 +54,17 @@
 (cond-load-file
  (concat user-init-dir "emacsvers/" (int-to-string (emacs-version-major)) ".el"))
 
+
+
 ;; some generic settings that should work everywhere.
 (load-library "general")
 
 ;; keybindings that we want everywhere.
 (load-library "keybindings")
 
-;; our preferred ruby settings.
-(load-library "ruby")
-
-;; sup calls emacs for mail editting.
-(load-library "mail")
-
-;; xml editting
-(load-library "xml")
-
-;; text editting
-(load-library "text")
+;; automatically load all of the .el files in our modes/ directory
+(mapc 'load-library
+      (directory-files (concat user-init-dir "modes") t "\\.el\\'"))
 
 ;; finally, always start with ~/ as the current directory
 (cd (getenv "HOME"))
