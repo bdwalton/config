@@ -1,6 +1,9 @@
 ;; always run the server
 (server-start)
 
+;; prune old windows at midnight
+(setq midnight-mode t)
+
 ;; stupid startup message...
 (setq inhibit-startup-message t)
 
