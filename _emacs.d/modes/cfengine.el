@@ -5,5 +5,6 @@
 	 ("cfagent.conf" . cfengine-mode)
 	 ("update.conf" . cfengine-mode)
 	 ("cfrun.hosts" . cfengine-mode)
+	 ("cfservd.conf" . cfengine-mode)
 	 )
        auto-mode-alist))
