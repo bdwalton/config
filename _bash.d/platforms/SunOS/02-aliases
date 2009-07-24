@@ -3,12 +3,13 @@
 # if we have /opt/csw/gnu, it'll already be in our PATH.  otherwise,
 # try to alias some gnu utilities instead of using the solaris ones
 # (that really suck)
+
 if [ ! -d /opt/csw/gnu ]; then
+    echo -e "\e[32;01mConsider running: pkgutil -i gnulinks\e[0m"
+
     for gnutil in grep egrep fgrep find; do
 	if [ -n "$(type -t ${gnutil})" ]; then
 	    alias ${gnutil}=g${gnutil}
 	fi
     done
-else
-    echo -e "\e[32;01mConsidering running: pkg-get -i gnulinks\e[0m"
 fi
