@@ -5,7 +5,7 @@
 # (that really suck)
 if [ ! -d /opt/csw/gnu ]; then
     for gnutil in grep egrep fgrep find; do
-	if [ -n "$(type -t ${gnutil}" ]; then
+	if [ -n "$(type -t ${gnutil})" ]; then
 	    alias ${gnutil}=g${gnutil}
 	fi
     done
