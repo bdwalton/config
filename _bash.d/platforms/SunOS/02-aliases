@@ -1,10 +1,14 @@
 # -*- shell-script -*-
-# We have better versions of these on Linux, but for now we'll suffer
-# in solaris (what else is new?)
 
-if [ -f /opt/csw/bin/ggrep -a ! -d /opt/csw/gnu ]; then
-   echo -e "\e[32;01mConsidering running: pkg-get -i gnulinks\e[0m"
-   alias grep=ggrep
-   alias egrep=gegrep
-   alias fgrep=gfgrep
+# if we have /opt/csw/gnu, it'll already be in our PATH.  otherwise,
+# try to alias some gnu utilities instead of using the solaris ones
+# (that really suck)
+if [ ! -d /opt/csw/gnu ]; then
+    for gnutil in grep egrep fgrep find; do
+	if [ -n "$(type -t ${gnutil}" ]; then
+	    alias ${gnutil}=g${gnutil}
+	fi
+    done
+else
+    echo -e "\e[32;01mConsidering running: pkg-get -i gnulinks\e[0m"
 fi
