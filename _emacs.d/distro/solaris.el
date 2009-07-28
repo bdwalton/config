@@ -13,3 +13,9 @@ e")
 (add-hook 'ruby-mode-hook
     '(lambda ()
        (inf-ruby-keys)))
+
+;; setup php mode autoloading on solaris
+(autoload 'php-mode "php-mode" "Major mode for editing PHP code." t)
+
+(add-to-list 'auto-mode-alist
+	          '("\\.php[34]\\'\\|\\.php\\'\\|\\.phtml\\'" . php-mode))
