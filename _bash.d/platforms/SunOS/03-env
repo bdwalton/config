@@ -23,5 +23,5 @@ for ver in 4 3; do
 done
 
 if [ -f /opt/csw/bin/less ]; then
-	export LESS="-x2 -e -F -X -R -M"
+	export LESS="-e -F -X -R -M"
 fi
