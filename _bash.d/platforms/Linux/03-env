@@ -1,6 +1,5 @@
 # -*- shell-script -*-
 
-# Make less use 2 as the tabstop
-LESS="-x2 -e -F -X -R -M"
+LESS="-e -F -X -R -M"
 
 export EDITOR LESS
