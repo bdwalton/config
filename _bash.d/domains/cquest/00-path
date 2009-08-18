@@ -4,4 +4,4 @@
 #
 # We also have a globally mounted ~/ and would like our scripts dir to be
 # available.
-PATH=/u/bwalton/scripts:/local/bin:$PATH
+PATH=/u/bwalton/scripts:$PATH:/local/bin
