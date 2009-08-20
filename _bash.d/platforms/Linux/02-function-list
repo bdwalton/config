@@ -3,8 +3,8 @@
 # require sniffing grep versions, etc...
 function list {
     case "$1" in
-	"-A") lsopts=-lA; shift;;
-	*) lsopts=-l ;;
+	"-A") lsopts=-lhA; shift;;
+	*) lsopts=-lh ;;
     esac
 
     args=`echo $* | sed 's/ /|/g'`
