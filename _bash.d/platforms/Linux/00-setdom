@@ -6,7 +6,7 @@ case "${HOSTNAME}" in
 	ntdws1[23].*|*cquest*) LOCDOM=cquest ;;
 	*chass*) LOCDOM=chass ;;
 	neilyoung*) LOCDOM=benandwen ;;
-	ledzeppelin) LOCDOM=laptop ;;
+	ledzeppelin|salix) LOCDOM=laptop ;;
 esac
 
 if [ "${LOCDOM}" == "chass" ]; then
