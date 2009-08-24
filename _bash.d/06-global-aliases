@@ -10,6 +10,12 @@ case "$(type -t emacs)" in
     *) alias emacs="emacs -nw";;
 esac
 
+# conditionally use vim instead of vi if we have it.
+case "$(type -t vim)" in
+    file) alias vi=vim;;
+    *) ;;
+esac
+
 if [ "$GNULS" == "true" -a "$GNUGREP" == "true" ]; then
     alias lc="list $*"
     alias lca="list -A $*"
