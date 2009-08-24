@@ -6,5 +6,5 @@ alias mxdig='dig +short MX'
 alias grep='grep --color=tty'
 alias egrep='egrep --color=tty'
 alias fgrep='fgrep --color=tty'
-alias vi='vim'
+
 
