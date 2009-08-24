@@ -1,32 +1,15 @@
 # -*- shell-script -*-
-# We should build a working alternative for these on solaris, but it would
-# require sniffing grep versions, etc...
 
-LS=
-GREP=
-
-[ -f /opt/csw/bin/gls ] && LS=/opt/csw/bin/gls
-[ -f /opt/csw/bin/gegrep ] && GREP=/opt/csw/bin/gegrep
-
-if [ -n "$LS" -a -n "$GREP" ]; then
-
-    function list {
-	case "$1" in
-	    "-A") lsopts=-lA; shift;;
-	    *) lsopts=-l ;;
-	esac
-
-	args=`echo $* | sed 's/ /|/g'`
-	if [ -n "$args" ]; then
-	    $LS $lsopts --color | $GREP -i $args | less -E -X -R -M
-	else
-	    $LS $lsopts --color | less -E -X -R -M
-	fi
-    }
-    
-    alias lc="list $*"
-    alias lca="list -A $*"
+# if we have gnu versions of these utilities, we'll enable a nicer
+# pair of aliases for lc/lca.
+if [ -f /opt/csw/bin/gls ]; then
+    GNULS=true
 else
-    alias lca='ls -lA | more'
-    alias lc='ls -l | more'
+    GNULS=
+fi
+
+if [ -f /opt/csw/bin/gegrep ]; then
+    GNUGREP=true
+else
+    GNUGREP=
 fi
