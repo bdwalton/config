@@ -3,3 +3,7 @@
 LESS="-e -F -X -R -M"
 
 export EDITOR LESS
+
+# On linux, we always have GNU tools...
+GNULS=true
+GNUGREP=true
