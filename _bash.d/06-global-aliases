@@ -9,3 +9,11 @@ case "$(type -t emacs)" in
     alias) ;;
     *) alias emacs="emacs -nw";;
 esac
+
+if [ "$GNULS" == "true" -a "$GNUGREP" == "true" ]; then
+    alias lc="list $*"
+    alias lca="list -A $*"
+else
+    alias lc='ls -l | more'
+    alias lca='ls -lA | more'
+fi
