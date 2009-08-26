@@ -11,3 +11,6 @@
 (global-set-key [f4]  'start-kbd-macro)
 (global-set-key [f5]  'end-kbd-macro)
 (global-set-key [f6]  'call-last-kbd-macro)
+
+;; we do this fairly often, bind it to something easy.
+(global-set-key [f9] 'indent-region)
