@@ -4,18 +4,20 @@
 #or share with others...
 
 if [ ! -f ~/.noscreen ]; then
-    cd ~
     if [ "$TERM" != "screen-bce" ]; then
 	screen -list | grep -q "No Sockets"
 	if [ $? -eq 0 ]; then	#not running
 	    #start new screen session if no active sockets found
+	    cd ~
 	    exec screen
 	else
 	    screen -list | grep -q Detached
 	    if [ $? -eq 0 ]; then	#shoutld we reconnect?
+		cd ~
 		exec screen -DR
 	    else
 		#we already have an attached screen, share that session
+		cd ~
 		exec screen -x
 	    fi
 	fi
