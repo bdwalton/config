@@ -11,6 +11,8 @@
             (set (make-local-variable 'tab-width) 2)
             (imenu-add-to-menubar "IMENU")
             (define-key ruby-mode-map "\C-m" 'newline-and-indent)
+	    (define-key ruby-mode-map "\C-c\C-c" 'comment-region)
+	    (define-key ruby-mode-map "\C-u\C-c\C-c" 'uncomment-region)
             (require 'ruby-electric)
             (ruby-electric-mode t)
 	    ))
