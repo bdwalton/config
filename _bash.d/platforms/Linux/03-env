@@ -2,7 +2,7 @@
 
 LESS="-e -F -X -R -M"
 
-export EDITOR LESS
+export LESS
 
 # On linux, we always have GNU tools...
 GNULS=true
