@@ -24,9 +24,9 @@ function bounce-file {
 
     localfile=/tmp/$(basename $1)
 
-    echo "Pulling $1"
+    echo "Pulling from $1..."
     scp ${1} ${localfile}
-    echo "Pushing $2"
+    echo "Pushing to $2..."
     scp ${localfile} ${2}
 
     rm -f ${localfile}
