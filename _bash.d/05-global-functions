@@ -18,7 +18,7 @@ function list {
 function bounce-file {
     if [ $# -lt 2 ]; then
 	echo "Error: Need two args; <source file> <destination file>"
-	echo "       eg: $0 host1:/file1 host2:/file1"
+	echo "       eg: bounce-file host1:/file1 host2:/file1"
 	return
     fi
 
