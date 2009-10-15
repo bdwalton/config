@@ -22,13 +22,14 @@ function bounce-file {
 	return
     fi
 
-    localfile=/tmp/$(basename $1)
+    tdname=/tmp/$$.$RANDOM
+    mkdir -p ${tdname} || exit 1
 
     echo "Pulling from $1..."
-    scp ${1} ${localfile}
+    scp -r ${1} ${tdname}
     echo "Pushing to $2..."
-    scp ${localfile} ${2}
+    scp -r ${tdname}/$(basename ${1}) ${2}
 
-    rm -f ${localfile}
+    rm -f ${tdname}
 }
 
