@@ -30,6 +30,6 @@ function bounce-file {
     echo "Pushing to $2..."
     scp -r ${tdname}/$(basename ${1}) ${2}
 
-    rm -f ${tdname}
+    rm -rf ${tdname}
 }
 
