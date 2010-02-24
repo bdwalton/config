@@ -7,3 +7,5 @@ export LESS
 # On linux, we always have GNU tools...
 GNULS=true
 GNUGREP=true
+
+BASHCDIR=/etc/

@@ -25,3 +25,5 @@ done
 if [ -f /opt/csw/bin/less ]; then
 	export LESS="-e -F -X -R -M"
 fi
+
+BASHCDIR=/opt/csw/etc/

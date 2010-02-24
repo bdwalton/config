@@ -31,3 +31,9 @@ if [ -z "$EDITOR" ]; then
     export EDITOR="$ed"
     export VISUAL="$EDITOR"
 fi
+
+if [ -n "$BASHCDIR" ]; then
+    if [ -f "$BASHCDIR/bash_completion" ]; then
+	source "$BASHCDIR/bash_completion"
+    fi
+fi
