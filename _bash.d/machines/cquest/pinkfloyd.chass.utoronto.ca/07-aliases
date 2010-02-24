@@ -1,6 +1,6 @@
 # -*- shell-script -*-
-# on ntdws12, we want to use emacsclient, but on other cquest boxes that may
-# not be using my screen session, i'll let regular emacs go.
+# on pinkfloyd, we want to use emacsclient, but on other cquest boxes
+# that may not be using my screen session, i'll let regular emacs go.
 
 # NOTE: screenmacs is a wrapper around emacsclient that auto-switches to
 # my emacs screen id and then back when we signal emacsclient.
