@@ -18,3 +18,6 @@
 
 (add-to-list 'auto-mode-alist
 	          '("\\.php[34]\\'\\|\\.php\\'\\|\\.phtml\\'" . php-mode))
+
+;; don't whine if we don't have CSWmagit installed
+(require 'magit nil t)
