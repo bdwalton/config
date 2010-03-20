@@ -36,3 +36,18 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(safe-local-variable-values (quote ((sgml-indent-step . 1) (sgml-indent-data . 1)))))
+
+;; --- some stuff from djcb's dotemacs at:
+;; --- http://www.djcbsoftware.nl/dot-emacs.html
+;; highlight the current line
+(when (fboundp 'global-hl-line-mode)
+  (global-hl-line-mode t)) ;; turn it on for all modes by default
+
+;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
+;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
+(when (fboundp 'show-paren-mode)
+  (show-paren-mode t)
+  (setq show-paren-style 'parenthesis))
+
+(column-number-mode t)                   ;; show column numbers
+;; --- end of djcb's tips
