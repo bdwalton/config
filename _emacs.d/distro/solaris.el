@@ -7,8 +7,7 @@
       (cons '("ruby" . ruby-mode) interpreter-mode-alist))
 
 (autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
-(autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mod
-e")
+(autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
 
 (add-hook 'ruby-mode-hook
     '(lambda ()
