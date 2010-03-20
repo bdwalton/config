@@ -62,6 +62,9 @@
 ;; keybindings that we want everywhere.
 (load-library "keybindings")
 
+;; settings that make coding nicer
+(load-library "programming")
+
 ;; automatically load all of the .el files in our modes/ directory
 (mapc 'load-library
       (directory-files (concat user-init-dir "modes") t "\\.el\\'"))
