@@ -33,3 +33,7 @@ function bounce-file {
     rm -rf ${tdname}
 }
 
+function mcd {
+    mkdir "$1" && \
+	cd "$1"
+}
