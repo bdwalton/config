@@ -5,3 +5,5 @@
 # NOTE: screenmacs is a wrapper around emacsclient that auto-switches to
 # my emacs screen id and then back when we signal emacsclient.
 alias emacs=screenmacs
+
+alias vpw='cd ~/working_source/disaster; vi passwords.asc'
