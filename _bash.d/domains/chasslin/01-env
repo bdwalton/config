@@ -1,8 +1,9 @@
 # -*- shell-script -*-
-# setup our custom ruby environment for the mx pair.
-if [ -d /chass/lib/ruby/ ]; then
-    GEM_HOME=/chass/lib/ruby/gems/1.8
-    RUBYLIB=/chass/lib/ruby/:/chass/lib/site_ruby/1.8
-    RUBYOPT=rubygems
-    export GEM_HOME RUBYLIB RUBYOPT
-fi
+# Now that we're adding ruby 1.9 to the mix, this doesn't make sense.
+# use /chass/lib/chass_ruby.rb when required...
+# if [ -d /chass/lib/ruby/ ]; then
+#     GEM_HOME=/chass/lib/ruby/gems/1.8
+#     RUBYLIB=/chass/lib/ruby/:/chass/lib/site_ruby/1.8
+#     RUBYOPT=rubygems
+#     export GEM_HOME RUBYLIB RUBYOPT
+# fi
