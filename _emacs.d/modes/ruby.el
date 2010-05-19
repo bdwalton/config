@@ -1,4 +1,8 @@
 ;; ruby stuff
+
+(setq interpreter-mode-alist
+      (cons '("ruby19" . ruby-mode) interpreter-mode-alist))
+
 (add-hook 'ruby-mode-hook
           (lambda()
             (add-hook 'local-write-file-hooks
