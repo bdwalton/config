@@ -1,0 +1,9 @@
+# -*- shell-script -*-
+# functions that are typically only useful on the opencsw buildfarm
+
+function findws() {
+    WS=$( (cat Makefile;
+	    echo -e '\nfind-ws:\n\t@echo $(WORKSRC_FIRSTMOD)\n') | \
+		gmake -f - find-ws )
+    cd ${WS}
+}
