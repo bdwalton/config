@@ -7,3 +7,7 @@ function findws() {
 		gmake -f - find-ws )
     cd ${WS}
 }
+
+function findgar() {
+    cd $(echo ${PWD} | sed 's#/trunk.*##')
+}
