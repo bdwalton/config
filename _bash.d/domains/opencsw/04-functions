@@ -9,5 +9,5 @@ function findws() {
 }
 
 function findgar() {
-    cd $(echo ${PWD} | sed 's#/trunk.*#trunk#')
+    cd $(echo ${PWD} | sed 's#(/trunk).*#/trunk#')
 }
