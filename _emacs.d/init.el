@@ -41,7 +41,7 @@
  ((string-match "solaris" (emacs-version))
   (setq distro "solaris")
   )
- ((true)
+ (t
   (message "Encountered an unknown distro")
   (setq distro "unknown")
   )
