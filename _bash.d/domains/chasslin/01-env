@@ -7,3 +7,9 @@
 #     RUBYOPT=rubygems
 #     export GEM_HOME RUBYLIB RUBYOPT
 # fi
+
+# we do however want to prefer the new ruby enterprise 1.8.7 if it's
+# available
+if [ -d /usr/ruby-enterprise ]; then
+    PATH=/usr/ruby-enterprise/bin:$PATH
+fi
