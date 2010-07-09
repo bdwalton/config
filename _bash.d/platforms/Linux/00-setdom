@@ -3,10 +3,11 @@
 # ntdws1[0123], which are Ben's non-chass customized linux machines.
 
 case "${HOSTNAME}" in
-	pinkfloyd*|ntdws1[23].*|*cquest*) LOCDOM=cquest ;;
-	*chass*) LOCDOM=chass ;;
-	neilyoung*) LOCDOM=benandwen ;;
-	ledzeppelin|salix) LOCDOM=laptop ;;
+    pinkfloyd*|ntdws1[23].*|*cquest*) LOCDOM=cquest ;;
+    *chass*) LOCDOM=chass ;;
+    neilyoung*) LOCDOM=benandwen ;;
+    ledzeppelin|salix) LOCDOM=laptop ;;
+    *music*) LOCDOM=music ;;
 esac
 
 if [ "${LOCDOM}" == "chass" ]; then
