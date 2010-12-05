@@ -11,3 +11,9 @@ function findws() {
 function findgar() {
     cd $(echo ${PWD} | sed 's/trunk.*/trunk/')
 }
+
+function cexp () {
+    e="/home/experimental/$1"
+    [ -d "$e" ] || mkdir "$e"
+    cd "$e"
+}
