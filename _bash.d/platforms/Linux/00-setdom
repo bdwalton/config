@@ -6,7 +6,7 @@ case "${HOSTNAME}" in
     pinkfloyd*|ntdws1[23].*|*cquest*) LOCDOM=cquest ;;
     *chass*) LOCDOM=chass ;;
     neilyoung*) LOCDOM=benandwen ;;
-    ledzeppelin|salix) LOCDOM=laptop ;;
+    ledzeppelin|salix|gilmour) LOCDOM=laptop ;;
     *music*) LOCDOM=music ;;
 esac
 
