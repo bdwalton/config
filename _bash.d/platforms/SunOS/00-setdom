@@ -2,6 +2,6 @@
 #account for the CHASS boxes and the OpenCSW boxes.
 
 case "${HOSTNAME}" in
-	current*|testing*|pandora|login|bender) LOCDOM=opencsw;;
+	current*|testing*|unstable*|pandora|login|bender) LOCDOM=opencsw;;
 	*) LOCDOM=chass;;
 esac
