@@ -1,6 +1,9 @@
 # -*- shell-script -*-
 # This can be annoying sometimes, but I've been careless in the past!
 set -o noclobber
+# This is mostly for the csw buildfarm where bash has this on by default.
+# I like my ^D.
+set +o ignoreeof
 
 # Ensure we run a sane umask
 umask 022
