@@ -1,0 +1,11 @@
+# -*- shell-script -*-
+function scr {
+    if [ -n "$2" ]; then
+	sshargs="-l $2"
+	u=" ($2)"
+    else
+	sshargs=
+	u=
+    fi
+    (cd ~; screen -t "${1}${u}" /home/bwalton/bin/scr.sh $sshargs $1; )
+}
