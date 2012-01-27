@@ -11,8 +11,14 @@ case "$(hostname --fqdn)" in
     *music*) LOCDOM=music ;;
 esac
 
-if [ "${LOCDOM}" == "chass" ]; then
-	if [ -f /etc/redhat-release ]; then
-		LOCDOM=chasslin
-	fi
+if [ -z "${LOCDOM}" ]; then
+    gw=$(route -n | awk '$4 == "UG" {print $2}')
+    case "${gw}" in
+	128.100.177*) LOCDOM=economics
+	;;
+    esac
+elif [ "${LOCDOM}" == "chass" ]; then
+    if [ -f /etc/redhat-release ]; then
+	LOCDOM=chasslin
+    fi
 fi
