@@ -7,4 +7,5 @@ alias grep='grep --color=tty'
 alias egrep='egrep --color=tty'
 alias fgrep='fgrep --color=tty'
 
-
+#rhel6 provides an alias that forces our global setting to be ignore
+alias emacs='emacs -nw'
