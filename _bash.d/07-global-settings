@@ -16,6 +16,10 @@ HISTCONTROL=ignoredups
 HISTFILE=~/.bash_history-${HOSTNAME}
 HISTTIMEFORMAT="%Y-%m-%d %H:%m:%s -> "
 
+DEBEMAIL=bwalton@artsci.utoronto.ca
+DEBFULLNAME="Ben Walton"
+export DEBEMAIL DEBFULLNAME
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
