@@ -1,0 +1,6 @@
+# for debian packaging
+
+DEBEMAIL=bwalton@artsci.utoronto.ca
+DEBFULLNAME="Ben Walton"
+export DEBEMAIL DEBFULLNAME
+
