@@ -7,5 +7,5 @@ function scr {
 	sshargs=
 	u=
     fi
-    (cd ~; screen -t "${1}${u}" /u/bwalton/scripts/scr.sh $sshargs $1; )
+    (cd ~; screen -t "${1}${u}" /home/bwalton/scripts/scr.sh $sshargs $1; )
 }
