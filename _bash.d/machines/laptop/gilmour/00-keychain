@@ -1,6 +1,6 @@
 # -*- shell-script -*-
 ##fire up keychain for ssh keys
-[ -f /usr/bin/keychain ] && keychain id_dsa
+[ -f /usr/bin/keychain ] && keychain id_rsa
 [[ -f $HOME/.keychain/$HOSTNAME-sh ]] && \
     source $HOME/.keychain/$HOSTNAME-sh
 [[ -f $HOME/.keychain/$HOSTNAME-sh-gpg ]] && \
