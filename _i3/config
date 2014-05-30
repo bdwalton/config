@@ -32,6 +32,9 @@ bindsym $mod+c exec google-chrome
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# lock the screen
+bindsym Control+Mod1+l exec i3lock
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
