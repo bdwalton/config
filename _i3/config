@@ -155,3 +155,6 @@ bar {
 	position top
         status_command i3status
 }
+
+# Startup items
+exec --no-startup-id gnome-sound-applet
