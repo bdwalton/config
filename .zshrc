@@ -35,3 +35,6 @@ setopt pushdignoredups
 
 ## This reverts the +/- operators.
 setopt pushdminus
+
+setopt inc_append_history
+setopt share_history
