@@ -13,5 +13,5 @@ compinit
 
 autoload -U colors && colors
 
-PROMPT="%B%{$fg[green]%}%n%{$reset_color%}%b @ %B%{$fg[blue]%}%m%b %{$fg_no_bold[yellow]%}: %{$fg[red]%}%~
-%{$reset_color%}%# "
+PROMPT="%B%{$fg[green]%}%n%{$reset_color%}%b @ %B%{$fg[blue]%}%m%b %{$reset_color%}: %{$fg[red]%}%3~
+%{$reset_color%}(%?) %# "
