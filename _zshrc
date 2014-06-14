@@ -1,3 +1,6 @@
+# Umask
+umask 027
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -38,3 +41,36 @@ setopt pushdminus
 
 setopt inc_append_history
 setopt share_history
+
+# Define aliases.
+alias cd/='cd /'
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cp='nocorrect cp -i'
+alias d='dirs -v'
+alias dlbf='rm -f (.*~|*~)'
+alias dlb='rm  -i (.*~|*~)'
+alias grep=egrep
+alias h=history
+alias j=jobs
+alias la='ls -A'
+alias lla='ll -A'
+alias lld='ls -ld *(-/DN)'
+alias ll='ls -lh'
+alias mkdir='nocorrect mkdir'
+alias mmv='noglob zmv -W'
+alias mv='nocorrect mv -i'
+alias po=popd
+alias pu=pushd
+alias pwg='pwgen -c -n -y -s -B 12 1'
+alias rdlbf='find . -iname \*~ | xargs rm -f'
+alias rezsh='nocorrect exec $SHELL'
+alias rm='rm -i'
+alias sudosh='nocorrect sudo $SHELL'
+alias vew='source $(which virtualenvwrapper.sh)'
+alias zmv='noglob zmv'
+
+alias -g G="egrep"
+alias -g H='|head'
+alias -g L='|less'
+alias -g T='|tail'
