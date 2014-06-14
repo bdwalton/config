@@ -1,0 +1,23 @@
+# Special arrangement for certain variables.
+typeset -U path manpath
+
+# locales
+export LANG=en_IE.UTF-8
+export LC_MESSAGES=C
+export LC_MESSAGES=C
+export TZ='Europe/Dublin'
+
+# misc
+export EDITOR="emacs -nw"
+export EMAIL="bdwalton@gmail.com"
+export TMPDIR=/tmp
+export VISUAL="emacs -nw"
+
+# grep settings
+export GREP_OPTIONS="--color=auto"
+
+# less settings
+export LESS="-eFXRM"
+export LESSCHARSET="utf-8"
+
+path=(~/bin /usr/local/bin ${path})
