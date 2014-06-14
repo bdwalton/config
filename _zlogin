@@ -1,0 +1,3 @@
+if [[ -z "${TMUX}" && ! -f ~/.notmux ]]; then
+  exec tmux new-session -A -t main
+fi
