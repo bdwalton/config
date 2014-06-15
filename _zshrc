@@ -38,13 +38,21 @@ chpwd() {
 
 DIRSTACKSIZE=20
 
-setopt autopushd pushdsilent pushdtohome
+# Navigation options
+setopt \
+  auto_cd \
+  auto_name_dirs \
+  autopushd \
+  cdable_vars \
+  pushdignoredups \
+  pushdminus \
+  pushdsilent \
+  pushdtohome \
 
-## Remove duplicate entries
-setopt pushdignoredups
-
-## This reverts the +/- operators.
-setopt pushdminus
+# CLI options
+setopt \
+  correct \
+  correct_all
 
 # History options
 setopt \
