@@ -3,8 +3,9 @@ umask 027
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=20000
+SAVEHIST=20000
+
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -39,8 +40,17 @@ setopt pushdignoredups
 ## This reverts the +/- operators.
 setopt pushdminus
 
-setopt inc_append_history
-setopt share_history
+# History options
+setopt \
+  append_history \
+  hist_allow_clobber \
+  hist_find_no_dups \
+  hist_ignore_all_dups \
+  hist_ignore_dups \
+  hist_ignore_space \
+  hist_save_no_dups \
+  inc_append_history \
+  share_history \
 
 # Define aliases.
 alias cd/='cd /'
