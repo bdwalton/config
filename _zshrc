@@ -6,7 +6,13 @@ HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=20000
 
+# Just in case, force emacs mode
 bindkey -e
+
+# Strip out /, so that we can kill path components with delete back
+# word.
+WORDCHARS=${WORDCHARS//[\/]}
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/bwalton/.zshrc'
