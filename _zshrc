@@ -53,8 +53,8 @@ alias dlb='rm  -i (.*~|*~)'
 alias grep=egrep
 alias h=history
 alias j=jobs
-alias lc='ls -h -l --color=auto'
-alias lca='lc -A'
+alias lc='ls -h -l --color=yes | less'
+alias lca='ls -h -l -A --color=yes | less'
 alias lld='ls -ld *(-/DN)'
 alias ll='ls -lh'
 alias mkdir='nocorrect mkdir'
