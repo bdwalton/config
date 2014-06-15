@@ -8,7 +8,7 @@
 (setq inhibit-startup-message t)
 
 ;; turn off menu...what's its purpose?
-(menu-bar-mode nil)
+(menu-bar-mode -1)
 
 ;; better buffer switching
 (iswitchb-mode t)
