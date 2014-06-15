@@ -1,6 +1,8 @@
 CONFIGDIR := "$(CURDIR)"
 TARGETS = $(patsubst _%,.%,$(wildcard _*))
-all: install
+
+all:
+	@echo "Run make (install|...)"
 
 install: $(TARGETS)
 
