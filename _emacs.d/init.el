@@ -27,22 +27,6 @@
 (extra-user-path "distro") ;; put distro specific (path?) things here.
 (extra-user-path "emacsvers") ;; version specific things.
 
-;; which platform are we on...?
-;; do other distro specific things in the distro/$localos 
-;; ...things like setting additional distro specific load paths are smart
-;; here
-(cond
- ((string-match "Ubuntu" (emacs-version))
-  (setq distro "ubuntu")
-  )
- (t
-  (message "Encountered an unknown distro")
-  (setq distro "unknown")
-  )
-)
-
-(cond-load-file (concat user-init-dir "distro/" distro ".el"))
-
 ;; load things we need only in the specific version (eg: set keybindings
 ;; that are defaults in new versions, etc)
 (cond-load-file
