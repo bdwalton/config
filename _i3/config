@@ -29,11 +29,16 @@ bindsym $mod+Return exec konsole
 # start Chrome
 bindsym $mod+c exec google-chrome
 
+# lock the screen (ctrl+alt+l)
+bindsym Control+Mod1+l exec gnome-screensaver-command --lock
+
+# volume up/down/mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 -- '+5%'
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -- '-5%'
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+
 # kill focused window
 bindsym $mod+Shift+q kill
-
-# lock the screen
-bindsym Control+Mod1+l exec i3lock
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -155,6 +160,3 @@ bar {
 	position top
         status_command i3status
 }
-
-# Startup items
-exec --no-startup-id gnome-sound-applet
