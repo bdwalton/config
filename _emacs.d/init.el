@@ -16,7 +16,9 @@
 (defun cond-load-file (f)
   "Conditionally load a file based on whether or not it exists"
   (if (file-exists-p f)
-      (load f)))
+      (load f)
+      (print (concat "File " f " skipped because it wasn't found."))
+      ))
 
 ;; a library from
 ;; http://www.splode.com/~friedman/software/emacs-lisp/src/emacs-variants.el
