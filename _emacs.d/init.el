@@ -24,23 +24,35 @@
 ;; things in different versions
 (load-library "emacs-variants")
 
+(extra-user-path "distro") ;; put distro specific (path?) things here.
 (extra-user-path "emacsvers") ;; version specific things.
+
+;; which platform are we on...?
+;; do other distro specific things in the distro/$localos 
+;; ...things like setting additional distro specific load paths are smart
+;; here
+(cond
+ ((string-match "Ubuntu" (emacs-version))
+  (setq distro "ubuntu")
+  )
+ (t
+  (message "Encountered an unknown distro")
+  (setq distro "unknown")
+  )
+)
+
+(cond-load-file (concat user-init-dir "distro/" distro ".el"))
 
 ;; load things we need only in the specific version (eg: set keybindings
 ;; that are defaults in new versions, etc)
 (cond-load-file
  (concat user-init-dir "emacsvers/" (int-to-string (emacs-version-major)) ".el"))
 
-
-
 ;; some generic settings that should work everywhere.
 (load-library "general")
 
 ;; keybindings that we want everywhere.
 (load-library "keybindings")
-
-;; settings that make coding nicer
-(load-library "programming")
 
 ;; automatically load all of the .el files in our modes/ directory
 (mapc 'load-library
