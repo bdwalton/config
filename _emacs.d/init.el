@@ -58,3 +58,9 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+;; now pull in the optional site-local config
+(if (getenv "BDW_CONFIG_TYPE")
+    (cond-load-file
+     (concat "emacs-" (getenv "BDW_CONFIG_TYPE") ".el"))
+    (print "Skipping BDW_CONFIG_TYPE library."))
