@@ -13,4 +13,4 @@
 (global-set-key [f6]  'call-last-kbd-macro)
 
 ;; we do this fairly often, bind it to something easy.
-(global-set-key [f9] 'indent-region)
+(global-set-key [f9] 'my-indent-all)
