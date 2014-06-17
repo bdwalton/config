@@ -61,6 +61,6 @@
 
 ;; now pull in the optional site-local config
 (if (getenv "BDW_CONFIG_TYPE")
-    (cond-load-file
+    (load-library
      (concat "emacs-" (getenv "BDW_CONFIG_TYPE") ".el"))
-    (print "Skipping BDW_CONFIG_TYPE library."))
+    (print "BDW_CONFIG_TYPE not set. Not loading local settings."))
