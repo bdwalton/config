@@ -72,6 +72,6 @@ fi
 
 source ~/.bash_completion
 
-if [ -f "~/.bashrc-${BDW_CONFIG_TYPE}" ]; then
-   source "~/.bashrc-${BDW_CONFIG_TYPE}"
+if [ -f ~/.bashrc-${BDW_CONFIG_TYPE} ]; then
+   source ~/.bashrc-${BDW_CONFIG_TYPE}
 fi
