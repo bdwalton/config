@@ -16,6 +16,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-if [ -f "~/.bash_aliases-${BDW_CONFIG_TYPE}" ]; then
-   source "~/.bash_aliases-${BDW_CONFIG_TYPE}"
+if [ -f ~/.bash_aliases-${BDW_CONFIG_TYPE} ]; then
+   source ~/.bash_aliases-${BDW_CONFIG_TYPE}
 fi
