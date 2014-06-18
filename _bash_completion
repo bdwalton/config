@@ -1,0 +1,6 @@
+# Place shared completions here.
+
+# Source site-specific completion here.
+if [ -f "~/.bash_completion-${BDW_CONFIG_TYPE}" ]; then
+   source "~/.bash_completion-${BDW_CONFIG_TYPE}"
+fi
