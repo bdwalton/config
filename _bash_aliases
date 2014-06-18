@@ -1,0 +1,7 @@
+alias emacs="tmuxmacs"
+alias lc="ls -l --color | less"
+alias lca="ls -lA --color | less"
+
+if [ -f "~/.bash_aliases-${BDW_CONFIG_TYPE}" ]; then
+   source "~/.bash_aliases-${BDW_CONFIG_TYPE}"
+fi
