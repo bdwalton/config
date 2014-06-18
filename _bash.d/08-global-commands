@@ -1,6 +1,0 @@
-# -*- shell-script -*-
-# This is the final step before the prompt is returned.  Put any commands
-# you'd like to have run in here, so that their output is right before the
-# prompt display.
-echo -e "\e[31;01m${HOSTNAME}\e[0m \e[33;01m${OSVER}\e[0m"
-uptime

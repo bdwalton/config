@@ -1,5 +1,0 @@
-# -*- shell-script -*-
-# Mostly, we don't care to alter path.  The only thing we'll do is make sure
-# we can find ruby.
-
-PATH=$PATH:/C/ruby/bin

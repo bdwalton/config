@@ -1,5 +1,0 @@
-# -*- shell-script -*-
-# for some reason, bash is set to ignore eof (making me type logout) on many
-# of the CSW build boxes.  annoying!
-
-set +o ignoreeof

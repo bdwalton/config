@@ -1,3 +1,0 @@
-# for debian packaging
-# http://www.debian.org/doc/manuals/maint-guide/modify.en.html
-alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
