@@ -1,8 +1,0 @@
-# -*- shell-script -*-
-# Point ~/.bashrc and ~/.bash_profile here.
-# This is likely over-engineered, but hey.
-
-# Determine whether or not we want to do anything...
-if [ -n "$PS1" ]; then	#are we interactive?
-    . ~/.bash.d/01-init
-fi

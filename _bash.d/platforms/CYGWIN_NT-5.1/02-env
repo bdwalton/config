@@ -1,5 +1,0 @@
-# -*- shell-script -*-
-
-# cygwin always uses the gnu tools.
-GNUGREP=true
-GNULS=true

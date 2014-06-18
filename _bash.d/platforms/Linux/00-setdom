@@ -1,8 +1,0 @@
-# -*- shell-script -*-
-# For Linux boxes, we're chass if HOSTNAME matches .chass. unless we're
-# ntdws1[0123], which are Ben's non-chass customized linux machines.
-
-case "$(uname -n)" in
-    neilyoung*) LOCDOM=benandwen ;;
-    ledzeppelin|gilmour) LOCDOM=laptop ;;
-esac

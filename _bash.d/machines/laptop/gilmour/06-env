@@ -1,4 +1,0 @@
-# -*- shell-script -*-
-# on the primary box, we always have emacs server running in a screen somewhere
-export EDITOR=screenmacs
-export ALTERNATE_EDITOR=vim
