@@ -1,0 +1,17 @@
+source ~/.bdwconfig
+
+# Disable audible bell
+xset -b
+
+# Background color
+xsetroot -solid "#333333"
+
+if [ -f ~/.xmodmap ]; then
+   xmodmap ~/.xmodmap
+fi
+
+if [ -f ~/.xsession-${BDW_CONFIG_TYPE} ]; then
+   . ~/.xesssion-${BDW_CONFIG_TYPE}
+fi
+
+exec i3
