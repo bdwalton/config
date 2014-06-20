@@ -100,6 +100,7 @@ alias cp='nocorrect cp -i'
 alias d='dirs -v'
 alias dlbf='rm -f (.*~|*~)'
 alias dlb='rm  -i (.*~|*~)'
+alias emacs=tmuxmacs
 alias grep=egrep
 alias h=history
 alias j=jobs
