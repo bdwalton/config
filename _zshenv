@@ -12,6 +12,7 @@ export EDITOR="emacs -nw"
 export EMAIL="bdwalton@gmail.com"
 export TMPDIR=/tmp
 export VISUAL="emacs -nw"
+export ALTERNATE_EDITOR="vim"
 
 # grep settings
 export GREP_OPTIONS="--color=auto"
