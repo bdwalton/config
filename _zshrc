@@ -7,8 +7,8 @@ source ~/.bdwconfig
 umask 027
 
 # Load user functions.
-# fpath=(~/.zsh/functions* $fpath)
-# autoload -U ~/.zsh/functions*/*(:t)
+fpath=(~/.zsh/functions* $fpath)
+autoload -U ~/.zsh/functions*/*(:t)
 
 autoload -U zmv
 autoload run-help
