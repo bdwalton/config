@@ -1,42 +1,67 @@
+#!/usr/bin/zsh
+
+# This should set BDW_CONFIG_TYPE at minimum.
+source ~/.bdwconfig
+
 # Umask
 umask 027
 
-# Lines configured by zsh-newuser-install
+# Load user functions.
+# fpath=(~/.zsh/functions* $fpath)
+# autoload -U ~/.zsh/functions*/*(:t)
+
+autoload -U zmv
+autoload run-help
+autoload -U url-quote-magic
+autoload -Uz vcs_info
+autoload -U colors
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' stagedstr '%F{yellow}●'
+zstyle ':vcs_info:*' unstagedstr '%F{red}●'
+zstyle ':vcs_info:*' formats '%u%c %F{green}%b %F{default}'
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' get-revision  true
+
+# Enable auto-execution of functions.
+PERIOD=300
+typeset -ga preexec_functions
+typeset -ga precmd_functions
+typeset -ga periodic_functions
+precmd_functions+='vcs_info'
+precmd_functions+='precmd_term_title'
+preexec_functions+='preexec_term_title'
+periodic_functions+='conf-prompt-helper'
+
+# History settings
 HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=20000
 
+# Setup ZSH variables.
+cdpath=(. ~ ~/working_code)
+fignore=(\~)
+watch=(all)
+DIRSTACKSIZE=20
+HISTFILE=~/.zsh_history
+HISTSIZE=20000
+LISTMAX=0
+LOGCHECK=60
+MAILCHECK=1
+READNULLCMD=less
+REPORTTIME=15
+SAVEHIST=20000
+TIMEFMT='%J  %*U user %*S system %P cpu (%*E wasted time).'
+WATCHFMT='%n %a %l from %m at %t.'
+WORDCHARS=${WORDCHARS//[\/]}
+
 # Just in case, force emacs mode
 bindkey -e
 
-# Strip out /, so that we can kill path components with delete back
-# word.
-WORDCHARS=${WORDCHARS//[\/]}
-
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/bwalton/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-autoload -U colors && colors
-
-PROMPT="%B%{$fg[green]%}%n%{$reset_color%}%b @ %B%{$fg[blue]%}%m%b %{$reset_color%}: %{$fg[red]%}%3~
-%{$reset_color%}(%?) %# "
-
-
-DIRSTACKFILE="$HOME/.cache/zsh/dirs"
-if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
-  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-  [[ -d $dirstack[1] ]] && cd $dirstack[1]
-fi
-chpwd() {
-  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
-}
-
-DIRSTACKSIZE=20
+# zle settings
+# fake-enter = save to history without executing.
+zle -N fake-enter; bindkey "^X^H" fake-enter
+zle -N self-insert url-quote-magic
 
 # Navigation options
 setopt \
@@ -52,7 +77,8 @@ setopt \
 # CLI options
 setopt \
   correct \
-  correct_all
+  correct_all \
+  prompt_subst
 
 # History options
 setopt \
@@ -90,10 +116,16 @@ alias rdlbf='find . -iname \*~ | xargs rm -f'
 alias rezsh='nocorrect exec $SHELL'
 alias rm='rm -i'
 alias sudosh='nocorrect sudo $SHELL'
-alias vew='source $(which virtualenvwrapper.sh)'
 alias zmv='noglob zmv'
 
 alias -g G="egrep"
-alias -g H='|head'
-alias -g L='|less'
-alias -g T='|tail'
+alias -g H=' | head'
+alias -g L=' | less'
+alias -g T=' | tail'
+
+# Set up $fg[red], etc
+colors
+PROMPT="%B%{$fg[green]%}%n%{$reset_color%}%b @ %B%{$fg[blue]%}%m%b %{$reset_color%}: %{$fg[red]%}%3~
+%{$reset_color%}(%?) %# "
+RPROMPT=$'${vcs_info_msg_0_}'
+
