@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+tmuxmacs() {
+    if [[ -z "${TMUX}" ]]; then
+	emacsclient $*
+    else
+	local _current_window=$(tmux display-message -p '#I')
+	tmux select-window -t emacs
+	emacsclient $* || read "continue?Press enter to continue..."
+	tmux select-window -t ${_current_window}
+    fi
+}
