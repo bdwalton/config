@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+# -*- shell-script -*-
 
 # This should set BDW_CONFIG_TYPE at minimum.
 source ~/.bdwconfig
