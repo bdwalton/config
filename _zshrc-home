@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+# -*- shell-script -*-
 
 ##fire up keychain for ssh keys
 [ -f /usr/bin/keychain ] && keychain id_dsa
