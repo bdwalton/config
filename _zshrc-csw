@@ -1,0 +1,3 @@
+# -*- shell-script -*-
+
+path=(/opt/csw/gnu /opt/csw/bin /opt/csw/sbin $path)
