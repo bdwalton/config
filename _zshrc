@@ -130,3 +130,6 @@ PROMPT="%B%{$fg[green]%}%n%{$reset_color%}%b @ %B%{$fg[blue]%}%m%b %{$reset_colo
 %{$reset_color%}(%?) %# "
 RPROMPT=$'${vcs_info_msg_0_}'
 
+if [[ -f ~/.zshrc-${BDW_CONFIG_TYPE} ]]; then
+  source ~/.zshrc-${BDW_CONFIG_TYPE}
+fi
