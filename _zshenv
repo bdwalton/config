@@ -10,10 +10,10 @@ export LC_MESSAGES=C
 export TZ='Europe/Dublin'
 
 # misc
-export EDITOR="emacs -nw"
+export EDITOR="tmuxmacs"
 export EMAIL="bdwalton@gmail.com"
 export TMPDIR=/tmp
-export VISUAL="emacs -nw"
+export VISUAL="tmuxmacs"
 export ALTERNATE_EDITOR="vim"
 
 # grep settings
