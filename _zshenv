@@ -15,7 +15,7 @@ export EMAIL="bdwalton@gmail.com"
 export TMPDIR=/tmp
 export VISUAL="tmuxmacs"
 export ALTERNATE_EDITOR="vim"
-export HOSTNAME="$(hostname -s)"
+export HOSTNAME="$(hostname)"
 
 # grep settings
 export GREP_OPTIONS="--color=auto"
