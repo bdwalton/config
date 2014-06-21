@@ -4,3 +4,4 @@ set -g prefix `
 set -g status-bg white
 set -g status-fg red
 
+rename-window -t 0 login
