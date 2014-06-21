@@ -16,7 +16,7 @@ autoload -U url-quote-magic
 autoload -Uz vcs_info
 autoload -U colors
 
-zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' stagedstr '%F{yellow}●'
 zstyle ':vcs_info:*' unstagedstr '%F{red}●'
 zstyle ':vcs_info:*' formats '%u%c %F{green}%b %F{default}'
