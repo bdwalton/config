@@ -1,0 +1,20 @@
+[user]
+  name = Ben Walton
+
+[color]
+	ui = auto
+	pager = true
+
+[alias]
+	ci = commit -s
+	st = status
+	co = checkout
+	br = branch
+
+[push]
+	default = simple
+
+[include]
+	path = ~/.gitconfig-work
+	path = ~/.gitconfig-home
+	path = ~/.gitconfig-csw
