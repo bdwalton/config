@@ -24,9 +24,9 @@ def get_config_type():
     try:
         with open(CONFIG_FILE) as conf:
             for line in conf.readlines():
-                matchdata = re.match(r"^BDW_CONFIG_TYPE=(.*)\s*$", line)
+                matchdata = re.match(r"^(export\s+)*BDW_CONFIG_TYPE=(.*)\s*$", line)
                 if matchdata:
-                    config_type = matchdata.group(1)
+                    config_type = matchdata.group(2)
                     break
 
     except IOError as ex:
