@@ -1,6 +1,3 @@
-;; always run the server
-(server-start)
-
 ;; prune old windows at midnight
 (setq midnight-mode t)
 
