@@ -50,8 +50,7 @@ fi
 unset color_prompt
 
 # Global environment
-export EDITOR="tmuxmacs"
-export ALTERNATE_EDITOR=vim
+export EDITOR="emacsclient -nw --alternate-editor="
 export LESS=FXRS
 
 # Alias definitions.
