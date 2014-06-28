@@ -28,6 +28,7 @@
 
 (extra-user-path "distro") ;; put distro specific (path?) things here.
 (extra-user-path "emacsvers") ;; version specific things.
+(extra-user-path "downloads") ;; libraries we download.
 
 ;; load things we need only in the specific version (eg: set keybindings
 ;; that are defaults in new versions, etc)
@@ -58,6 +59,9 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+;; Setup the go module autoloads
+(require 'go-mode-load)
 
 ;; now pull in the optional site-local config
 (if (getenv "BDW_CONFIG_TYPE")
