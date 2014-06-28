@@ -64,7 +64,7 @@
 (require 'go-mode-load)
 
 ;; now pull in the optional site-local config
-(if (getenv "BDW_CONFIG_TYPE")
-    (load-library
-     (concat "emacs-" (getenv "BDW_CONFIG_TYPE") ".el"))
-    (print "BDW_CONFIG_TYPE not set. Not loading local settings."))
+(setq site-local-lib (concat "emacs-" (getenv "BDW_CONFIG_TYPE") ".el"))
+(if (locate-library site-local-lib)
+    (load-library site-local-lib)
+  (print "Not loading site local library."))
