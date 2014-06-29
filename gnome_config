@@ -1,0 +1,11 @@
+# Setup any key/value settings that we want stuffing into gconf. The format is
+# "gconf key name" "key type" "...rest of the line is value"
+# The key name and key type must not have spaces. The value is made up
+# of everything else on the line, which allows for strings with spaces
+# when using type=string.
+/apps/gnome-terminal/profiles/Default/scrollbar_position string hidden
+/apps/gnome-terminal/profiles/Default/login_shell bool true
+/apps/gnome-terminal/profiles/Default/default_show_menubar bool false
+/apps/gnome-terminal/profiles/Default/use_system_font bool false
+/apps/gnome-terminal/profiles/Default/font string Source Code Pro Medium 10
+/apps/gnome-terminal/profiles/Default/palette string #000000000000:#AAAA00000000:#0000AAAA0000:#AAAA55550000:#00000000AAAA:#AAAA0000AAAA:#0000AAAAAAAA:#AAAAAAAAAAAA:#555555555555:#FFFF55555555:#5555FFFF5555:#FFFFFFFF5555:#55555555FFFF:#FFFF5555FFFF:#5555FFFFFFFF:#FFFFFFFFFFFF
