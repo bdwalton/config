@@ -53,7 +53,7 @@ REPORTTIME=15
 SAVEHIST=20000
 TIMEFMT='%J  %*U user %*S system %P cpu (%*E wasted time).'
 WATCHFMT='%n %a %l from %m at %t.'
-WORDCHARS=${WORDCHARS//[\/]}
+WORDCHARS=${WORDCHARS//[\/.-]}
 
 # Just in case, force emacs mode
 bindkey -e
