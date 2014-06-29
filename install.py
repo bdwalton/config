@@ -38,23 +38,24 @@ def get_dest_path(config_file):
     basename = os.path.basename(config_file).replace('_', '.', 1)
     return os.path.join(HOME, basename)
 
-def get_config_items(config_dir, config_type):
-    # We ignore anything that doesn't begin with underscore.
-    all_items = [os.path.realpath(p) for p in
-                 glob.glob(os.path.join(config_dir, "_*"))]
+def get_config_items(dotfiles, config_type):
+    all_items = os.listdir(dotfiles)
     items = []
     for item in all_items:
+        # Skip over environment specific configs that do not belong to
+        # this environment.
         if re.match(".+-.+", item) and not re.match(".+-%s$" %
                                                     config_type, item):
-            # Skip over environment specific configs that do not
-            # belong to this environment.
             continue
 
-        data = {'src': item,
-                'dest': get_dest_path(item),
-                'type': 'dir' if stat.S_ISDIR(os.stat(item).st_mode) else 'file'}
+        # We ignore anything that doesn't begin with underscore.
+        if item[0] == "_":
+            src = os.path.realpath(os.path.join(dotfiles, item))
+            data = {'src': src,
+                    'dest': get_dest_path(item),
+                    'type': 'dir' if stat.S_ISDIR(os.stat(src).st_mode) else 'file'}
 
-        items.append(data)
+            items.append(data)
 
     return items
 
@@ -128,10 +129,13 @@ def main(argv):
 
     config_type = get_config_type()
     repo_dir = os.path.dirname(argv[0])
+    dotfiles = os.path.join(repo_dir, "dotfiles")
+
     if config_type:
         print "Config Repo: %s" % repo_dir
+        print "Dotfiles: %s" % dotfiles
         print "Config type: %s" % config_type
-        config_items = get_config_items(repo_dir, config_type)
+        config_items = get_config_items(dotfiles, config_type)
         commands = get_config_install_commands(config_items)
 
         run_commands(commands)
