@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+SCRIPT_DIR="$(realpath $(dirname $0))"
+GNOME_CONF="$(realpath -s "${SCRIPT_DIR}/../gnome_config")"
+
+if [ -f "${GNOME_CONF}" ]; then
+    while read key type value; do
+	echo "Setting ${key} to '${value}'"
+	gconftool-2 --set "${key}" --type ${type} "${value}"
+    done < <(grep -v '^#' "${SCRIPT_DIR}/../gnome_config")
+else
+    echo "${GNOME_CONF} not found..."
+fi
