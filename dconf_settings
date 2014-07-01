@@ -1,0 +1,5 @@
+# By default, ibus captures Ctrl+Space which is emacs'
+# set-mark-command keybinding. We can't have that. Also, we don't need
+# the icon shown as we don't make use of this service anyway.
+/desktop/ibus/panel/show-icon-on-systray false
+/desktop/ibus/general/hotkey/triggers @as []
