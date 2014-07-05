@@ -17,6 +17,9 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
+;; Prefer 2 spaces instead of 8 for tabbed indentation
+(setq default-tab-width 2)
+
 ;; stop the little ~ turd files
 (setq make-backup-files nil)
 
