@@ -13,17 +13,20 @@ TMPDIR="/tmp/${FONT_FILE}"
 
 HOME_FONTS="${HOME}/.fonts"
 
-wget -O "${ZIPFILE}" "${URL}"
+echo "Fetching Source Code Pro fonts..."
+wget -q -O "${ZIPFILE}" "${URL}"
 
 if [ ! -d "${HOME_FONTS}" ]; then
     mkdir "${HOME_FONTS}"
 fi
 
 cd "$(dirname ${ZIPFILE})"
-unzip -o "${ZIPFILE}"
+echo "Unzipping fonts..."
+unzip -q -o "${ZIPFILE}"
 
 cd "${FONT_DIR}"
 
+echo "Installing fonts..."
 for f in TTF/* OTF/*; do
     cp "${f}" "${HOME_FONTS}"
 done
