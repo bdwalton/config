@@ -1,5 +1,8 @@
 # -*- shell-script -*-
 
+# This should set BDW_CONFIG_TYPE at minimum.
+source ~/.bdwconfig
+
 # Special arrangement for certain variables.
 typeset -U path manpath
 
