@@ -9,7 +9,6 @@ typeset -U path manpath
 # locales
 export LANG=en_IE.UTF-8
 export LC_MESSAGES=C
-export LC_MESSAGES=C
 export TZ='Europe/Dublin'
 
 # misc
