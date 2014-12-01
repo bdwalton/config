@@ -3,3 +3,4 @@
 # the icon shown as we don't make use of this service anyway.
 /desktop/ibus/panel/show-icon-on-systray false
 /desktop/ibus/general/hotkey/triggers @as []
+/org/gnome/desktop/input-sources/xkb-options @as ['ctrl:nocaps']
