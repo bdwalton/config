@@ -25,6 +25,7 @@
 
 ;; enable midnight mode buffer purging
 (setq midnight-mode t)
+(midnight-delay-set 'midnight-delay "4:30am")
 
 ;; allow sgml/xml files to set indentation variables, etc.
 (custom-set-variables
@@ -60,4 +61,3 @@
   (interactive)
   (progn
     (indent-region (point-min) (point-max))))
-
