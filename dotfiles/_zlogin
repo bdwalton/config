@@ -4,6 +4,6 @@ if [ -f "${HOME}/.zlogin-${BDW_CONFIG_TYPE}" ]; then
   source "${HOME}/.zlogin-${BDW_CONFIG_TYPE}"
 fi
 
-if [[ -z "${TMUX}" && -z "${NOTMUX}" && ! -f ~/.notmux ]]; then
+if [[ -z "${TMUX}" && ! -f ~/.notmux && ! -f ~/.notmux-$(hostname) ]]; then
   exec tmux new-session -t main
 fi
