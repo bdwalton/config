@@ -1,0 +1,3 @@
+# -*- shell-script -*-
+
+path=($HOME/homebrew/bin $path)
