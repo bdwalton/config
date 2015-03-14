@@ -4,3 +4,4 @@
 /desktop/ibus/panel/show-icon-on-systray false
 /desktop/ibus/general/hotkey/triggers @as []
 /org/gnome/desktop/input-sources/xkb-options @as ['ctrl:nocaps']
+/org/gnome/libgnomekbd/keyboard/options @as ['ctrl\tctrl:nocaps']
