@@ -2,37 +2,10 @@
 
 # Download and install Adobe's Source Code Pro fonts
 
-SF_NET="http://sourceforge.net"
-FONT_VERSION="1.017"
-FONT_FILE="SourceCodePro_FontsOnly-${FONT_VERSION}.zip"
-FONT_DIR="$(basename ${FONT_FILE} .zip)"
-URL="${SF_NET}/projects/sourcecodepro.adobe/files/${FONT_FILE}/download"
-
-ZIPFILE="/tmp/scp_fonts.zip"
-TMPDIR="/tmp/${FONT_FILE}"
-
 HOME_FONTS="${HOME}/.fonts"
+HOME_SCP="${HOME_FONTS}/scp"
 
-echo "Fetching Source Code Pro fonts..."
-wget -q -O "${ZIPFILE}" "${URL}"
+[ -d "${HOME_SCP}" ] || mkdir -p "${HOME_SCP}"
 
-if [ ! -d "${HOME_FONTS}" ]; then
-    mkdir "${HOME_FONTS}"
-fi
-
-cd "$(dirname ${ZIPFILE})"
-echo "Unzipping fonts..."
-unzip -q -o "${ZIPFILE}"
-
-cd "${FONT_DIR}"
-
-echo "Installing fonts..."
-for f in TTF/* OTF/*; do
-    cp "${f}" "${HOME_FONTS}"
-done
-
-cd ..
-rm -rf "${FONT_DIR}"
-rm "${ZIPFILE}"
-
-fc-cache "${HOME_FONTS}"
+git clone https://github.com/adobe-fonts/source-code-pro.git "${HOME_SCP}"
+fc-cache -f -v "${HOME_FONTS}"
