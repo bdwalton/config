@@ -5,3 +5,6 @@
 /desktop/ibus/general/hotkey/triggers @as []
 /org/gnome/desktop/input-sources/xkb-options @as ['ctrl:nocaps']
 /org/gnome/libgnomekbd/keyboard/options @as ['ctrl\tctrl:nocaps']
+/org/gnome/settings-daemon/peripherals/touchpad/disable-while-typing true
+/org/gnome/settings-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
+/org/gnome/settings-daemon/peripherals/touchpad/tap-to-click true
