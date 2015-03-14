@@ -12,7 +12,7 @@
 	br = branch
 
 [push]
-	default = simple
+	default = matching
 
 [include]
 	path = ~/.gitconfig-work
