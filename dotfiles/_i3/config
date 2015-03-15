@@ -125,6 +125,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 
 # Startup stuff
+exec --no-startup-id gnome-screensaver
 exec_always --no-startup-id xmodmap $HOME/.xmodmap
 
 # resize window (you can also use the mouse for that)
