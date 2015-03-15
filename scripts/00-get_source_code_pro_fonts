@@ -5,7 +5,12 @@
 HOME_FONTS="${HOME}/.fonts"
 HOME_SCP="${HOME_FONTS}/scp"
 
-[ -d "${HOME_SCP}" ] || mkdir -p "${HOME_SCP}"
+if [ -d "${HOME_SCP}" ]; then
+		cd "${HOME_SCP}"
+		git pull
+else
+		mkdir -p "${HOME_SCP}"
+		git clone https://github.com/adobe-fonts/source-code-pro.git "${HOME_SCP}"
+fi
 
-git clone https://github.com/adobe-fonts/source-code-pro.git "${HOME_SCP}"
 fc-cache -f -v "${HOME_FONTS}"
