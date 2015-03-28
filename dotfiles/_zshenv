@@ -26,7 +26,7 @@ export GREP_OPTIONS="--color=auto"
 export LESS="-eFXRM"
 export LESSCHARSET="utf-8"
 
-path=(~/bin /usr/local/bin ${path})
+path=(~/bin $GOPATH/bin /usr/local/bin ${path})
 
 if [[ -f ~/.zshenv-${BDW_CONFIG_TYPE} ]]; then
   source ~/.zshenv-${BDW_CONFIG_TYPE}
