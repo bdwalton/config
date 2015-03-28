@@ -36,7 +36,7 @@ HISTSIZE=20000
 SAVEHIST=20000
 
 # Setup ZSH variables.
-cdpath=(. ~ ~/working_code)
+cdpath=(. ~ ~/working_code ${GOPATH}/src/github.com/${USER})
 fignore=(\~)
 watch=(all)
 DIRSTACKSIZE=20
