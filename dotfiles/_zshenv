@@ -18,6 +18,7 @@ export TMPDIR=/tmp
 export VISUAL="emacsclient -nw -alternate-editor="
 export HOSTNAME="$(hostname)"
 export GOPATH=~/working_code/go
+export MYGOPATH=~/working_code/go/src/github.com/bdwalton
 
 # grep settings
 export GREP_OPTIONS="--color=auto"
