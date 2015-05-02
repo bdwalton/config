@@ -5,6 +5,12 @@
 /desktop/ibus/general/hotkey/triggers @as []
 /org/gnome/setting-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
 /org/gnome/settings-daemon/peripherals/touchpad/tap-to-click true
+/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "<Super>Return"
+/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "gnome-terminal"
+/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "Launch Terminal"
+/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "<Primary><Alt>t"
+/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "gnome-terminal"
+/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "Launch Terminal"
 /org/gnome/terminal/legacy/default-show-menubar false
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/font "Source Code Pro Medium 10"
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color "rgb(0,0,0)"
