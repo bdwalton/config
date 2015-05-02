@@ -3,6 +3,8 @@
 # the icon shown as we don't make use of this service anyway.
 /desktop/ibus/panel/show-icon-on-systray false
 /desktop/ibus/general/hotkey/triggers @as []
+/org/gnome/setting-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
+/org/gnome/settings-daemon/peripherals/touchpad/tap-to-click true
 /org/gnome/terminal/legacy/default-show-menubar false
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/font "Source Code Pro Medium 10"
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color "rgb(0,0,0)"
