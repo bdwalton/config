@@ -22,7 +22,7 @@ floating_modifier $mod
 bindsym $mod+Return exec gnome-terminal
 
 # start Chrome
-bindsym $mod+c exec google-chrome
+bindsym $mod+c exec google-chrome --user-data-dir=~/.config/google-chrome-$HOSTNAME
 
 # lock the screen (ctrl+alt+l)
 bindsym Control+Mod1+l exec gnome-screensaver-command --lock
