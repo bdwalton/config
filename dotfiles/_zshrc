@@ -128,3 +128,6 @@ RPROMPT=$'${vcs_info_msg_0_}'
 if [[ -f ~/.zshrc-${BDW_CONFIG_TYPE} ]]; then
   source ~/.zshrc-${BDW_CONFIG_TYPE}
 fi
+
+# Now, pull in externally developed plugins, etc.
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
