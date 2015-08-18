@@ -70,7 +70,9 @@ func makeCommand(format string, args ...interface{}) (cmd string) {
 	return
 }
 
-func getInstallCommands(dotfiles []os.FileInfo, srcdir, destdir string) (cmds []string) {
+func getInstallCommands(dotfiles []os.FileInfo, srcdir, destdir string) []string {
+	var cmds []string
+
 	if *debug {
 		// Make the shell spit out the commands it executes.  (Don't wrap
 		// this in debug mode though, since that would prevent it from
@@ -91,9 +93,10 @@ func getInstallCommands(dotfiles []os.FileInfo, srcdir, destdir string) (cmds []
 		}
 
 		stat, err := os.Lstat(dst)
-		if os.IsNotExist(err) {
+		switch os.IsNotExist(err) {
+		case true:
 			cmds = append(cmds, makeCommand("ln -snf '%s' '%s'", src, dst))
-		} else {
+		default:
 			if stat.Mode().IsRegular() || stat.IsDir() {
 				if *do_backups {
 					cmds = append(cmds, makeCommand("cp -pR '%s' '%s.bak'", dst, dst))
@@ -106,21 +109,21 @@ func getInstallCommands(dotfiles []os.FileInfo, srcdir, destdir string) (cmds []
 			cmds = append(cmds, makeCommand("ln -snf '%s' '%s'", src, dst))
 		}
 	}
-	return
+	return cmds
 }
 
-func runCommands(cmds []string) (err error) {
+func runCommands(cmds []string) error {
 	var output []byte
 
 	cmd := exec.Command("/bin/bash")
 	cmd.Stdin = strings.NewReader(strings.Join(cmds, "\n"))
-	output, err = cmd.CombinedOutput()
+	output, err := cmd.CombinedOutput()
 	if err != nil {
-		return
-	} else {
-		fmt.Println(string(output))
-		return
+		return err
 	}
+
+	fmt.Println(string(output))
+	return nil
 }
 
 func main() {
@@ -135,6 +138,7 @@ func main() {
 	repodir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
 		fmt.Println("Error determining repo:", err)
+		os.Exit(1)
 	}
 
 	dotfiledir, err := filepath.Abs(filepath.Join(repodir, "dotfiles"))
@@ -147,14 +151,12 @@ func main() {
 	if err != nil {
 		fmt.Println("Error listing dotfiles:", err)
 		os.Exit(1)
-	} else {
-		// TODO(bdwalton): Validate that HOME is set.
-		cmds := getInstallCommands(entries, dotfiledir, os.Getenv("HOME"))
+	}
 
-		err := runCommands(cmds)
-		if err != nil {
-			fmt.Println("Error running commands:", err)
-			os.Exit(1)
-		}
+	cmds := getInstallCommands(entries, dotfiledir, os.Getenv("HOME"))
+
+	if err = runCommands(cmds); err != nil {
+		fmt.Println("Error running commands:", err)
+		os.Exit(1)
 	}
 }
