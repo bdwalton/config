@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -33,30 +32,32 @@ func getConfigType() (string, error) {
 	return md[1], nil
 }
 
-func getDotFiles(dotfile_path, config_type string) (dotfiles []os.FileInfo, err error) {
+func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
 	var entries []os.FileInfo
 
-	entries, err = ioutil.ReadDir(dotfile_path)
+	entries, err := ioutil.ReadDir(dotfile_path)
 	if err != nil {
-		msg := fmt.Sprintf("Error scanning dotfiles in %s: %s", dotfile_path, err)
-		err = errors.New(msg)
-	} else {
-		env_config := regexp.MustCompile("^_.+-.+")
-		env_specific_re := fmt.Sprintf("^_.+-%s", config_type)
-		env_specific_config := regexp.MustCompile(env_specific_re)
+		return nil, fmt.Errorf("Error scanning dotfiles in %s: %s", dotfile_path, err)
+	}
 
-		for _, entry := range entries {
-			// Skip over env specific configs that aren't for this environment.
-			if env_config.MatchString(entry.Name()) &&
-				!env_specific_config.MatchString(entry.Name()) {
-				continue
-			} else if strings.HasPrefix(entry.Name(), "_") {
-				dotfiles = append(dotfiles, entry)
-			}
+	env_config := regexp.MustCompile("^_.+-.+")
+	env_specific_re := fmt.Sprintf("^_.+-%s", config_type)
+	env_specific_config := regexp.MustCompile(env_specific_re)
+
+	var dotfiles []os.FileInfo
+	for _, entry := range entries {
+		// Skip over env specific configs that aren't for this environment.
+		if env_config.MatchString(entry.Name()) &&
+			!env_specific_config.MatchString(entry.Name()) {
+			continue
+		}
+
+		if strings.HasPrefix(entry.Name(), "_") {
+			dotfiles = append(dotfiles, entry)
 		}
 	}
 
-	return
+	return dotfiles, nil
 }
 
 func makeCommand(format string, args ...interface{}) (cmd string) {
