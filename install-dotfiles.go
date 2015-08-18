@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"errors"
 	"flag"
 	"fmt"
@@ -18,32 +17,20 @@ var do_dryrun = flag.Bool("dryrun", false, "No-op mode.")
 var be_verbose = flag.Bool("verbose", false, "Be verbose about installation.")
 var debug = flag.Bool("debug", false, "Dispaly debugging info.")
 
-func getConfigType() (configtype string, err error) {
-	var f *os.File
-
-	if f, err = os.Open("/home/bdwalton/.bdwconfig"); err != nil {
-		fmt.Errorf("Error reading config: %s", err)
-		msg := fmt.Sprintf("Error reading config: %s", err)
-		return configtype, errors.New(msg)
-	} else {
-		defer f.Close()
+func getConfigType() (string, error) {
+	ct, err := ioutil.ReadFile("/home/bdwalton/.bdwconfig")
+	if err != nil {
+		return "", fmt.Errorf("Error reading config: %s", err)
 	}
 
 	re := regexp.MustCompile(".*BDW_CONFIG_TYPE\\s*=\\s*(\\w+)")
-	scanner := bufio.NewScanner(f)
-	for scanner.Scan() {
-		matchdata := re.FindStringSubmatch(scanner.Text())
-		if len(matchdata) == 2 {
-			configtype = matchdata[1]
-		}
+	md := re.FindStringSubmatch(string(ct))
+	if len(md) != 2 {
+		return "", fmt.Errorf("Text %q didn't match BDW_CONFIG_TYPE=\\w+.", ct)
+
 	}
 
-	if err = scanner.Err(); err != nil {
-		msg := fmt.Sprintf("Error scanning config: %s", err)
-		return configtype, errors.New(msg)
-	}
-
-	return
+	return md[1], nil
 }
 
 func getDotFiles(dotfile_path, config_type string) (dotfiles []os.FileInfo, err error) {
