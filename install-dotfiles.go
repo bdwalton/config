@@ -40,8 +40,8 @@ func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
 		return nil, fmt.Errorf("Error scanning dotfiles in %s: %s", dotfile_path, err)
 	}
 
-	env_config := regexp.MustCompile("^_.+-.+")
-	env_specific_re := fmt.Sprintf("^_.+-%s", config_type)
+	env_config := regexp.MustCompile("^_.+-\\w+$")
+	env_specific_re := fmt.Sprintf("^_.+-%s$", config_type)
 	env_specific_config := regexp.MustCompile(env_specific_re)
 
 	var dotfiles []os.FileInfo
@@ -49,6 +49,9 @@ func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
 		// Skip over env specific configs that aren't for this environment.
 		if env_config.MatchString(entry.Name()) &&
 			!env_specific_config.MatchString(entry.Name()) {
+			if *debug {
+				fmt.Printf("Skipping env-specific dotfile %q\n", entry.Name())
+			}
 			continue
 		}
 
