@@ -118,8 +118,6 @@ func getInstallCommands(dotfiles []os.FileInfo, srcdir, destdir string) []string
 }
 
 func runCommands(cmds []string) error {
-	var output []byte
-
 	cmd := exec.Command("/bin/bash")
 	cmd.Stdin = strings.NewReader(strings.Join(cmds, "\n"))
 	output, err := cmd.CombinedOutput()
