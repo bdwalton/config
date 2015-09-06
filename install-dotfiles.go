@@ -50,8 +50,7 @@ func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
 	var dotfiles []os.FileInfo
 	for _, entry := range entries {
 		// Skip over env specific configs that aren't for this environment.
-		if env_config.MatchString(entry.Name()) &&
-			!env_specific_config.MatchString(entry.Name()) {
+		if env_config.MatchString(entry.Name()) && !env_specific_config.MatchString(entry.Name()) {
 			if *debug {
 				log.Printf("Skipping env-specific dotfile %q\n", entry.Name())
 			}
