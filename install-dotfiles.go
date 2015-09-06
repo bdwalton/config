@@ -154,9 +154,7 @@ func main() {
 		log.Fatalf("Error listing dotfiles: %v", err)
 	}
 
-	cmds := getInstallCommands(entries, dotfiledir, os.Getenv("HOME"))
-
-	if err = runCommands(cmds); err != nil {
+	if err = runCommands(getInstallCommands(entries, dotfiledir, os.Getenv("HOME"))); err != nil {
 		log.Fatalf("Error running commands: %v", err)
 	}
 }
