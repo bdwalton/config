@@ -12,10 +12,12 @@ import (
 	"strings"
 )
 
-var do_backups = flag.Bool("backup", true, "Backup existing dotfiles.")
-var do_dryrun = flag.Bool("dryrun", false, "No-op mode.")
-var be_verbose = flag.Bool("verbose", false, "Be verbose about installation.")
-var debug = flag.Bool("debug", false, "Dispaly debugging info.")
+var (
+	do_backups = flag.Bool("backup", true, "Backup existing dotfiles.")
+	do_dryrun  = flag.Bool("dryrun", false, "No-op mode.")
+	be_verbose = flag.Bool("verbose", false, "Be verbose about installation.")
+	debug      = flag.Bool("debug", false, "Dispaly debugging info.")
+)
 
 func getConfigType() (string, error) {
 	ct, err := ioutil.ReadFile("/home/bdwalton/.bdwconfig")
