@@ -104,7 +104,7 @@ func getInstallCommands(dotfiles []os.FileInfo, srcdir, destdir string) []string
 		default:
 			if stat.Mode().IsRegular() || stat.IsDir() {
 				if *do_backups {
-					cmds = append(cmds, makeCommand("cp -pR %q '%q", dst, dst+".bak"))
+					cmds = append(cmds, makeCommand("cp -pR %q %q", dst, dst+".bak"))
 					// Do backup here.
 					if stat.IsDir() {
 						cmds = append(cmds, makeCommand("rm -rf %q", dst))
