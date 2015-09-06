@@ -19,14 +19,14 @@ var (
 	debug      = flag.Bool("debug", false, "Dispaly debugging info.")
 )
 
-func getConfigType() (string, error) {
-	ct, err := ioutil.ReadFile("/home/bdwalton/.bdwconfig")
+func getConfigType(cf string) (string, error) {
+	ct, err := ioutil.ReadFile(cf)
 	if err != nil {
 		return "", fmt.Errorf("Error reading config: %s", err)
 	}
 
 	re := regexp.MustCompile(".*BDW_CONFIG_TYPE\\s*=\\s*(\\w+)")
-	md := re.FindStringSubmatch(string(ct))
+	md := re.FindStringSubmatch(string(cf))
 	if len(md) != 2 {
 		return "", fmt.Errorf("Text %q didn't match BDW_CONFIG_TYPE=\\w+.", ct)
 
@@ -134,7 +134,7 @@ func runCommands(cmds []string) error {
 func main() {
 	flag.Parse()
 
-	configtype, err := getConfigType()
+	configtype, err := getConfigType("/home/bdwalton/.bdwconfig")
 	if err != nil {
 		log.Fatalf("Error determining config type: %v", err)
 	}
