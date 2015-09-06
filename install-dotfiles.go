@@ -63,14 +63,14 @@ func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
 	return dotfiles, nil
 }
 
-func makeCommand(format string, args ...interface{}) (cmd string) {
-	cmd = fmt.Sprintf(format, args...)
+func makeCommand(format string, args ...interface{}) string {
+	cmd := fmt.Sprintf(format, args...)
 	if *do_dryrun {
 		// If we're in dryrun mode, every command is prefixed with echo.
-		cmd = "echo " + cmd
+		return "echo " + cmd
 	}
 
-	return
+	return cmd
 }
 
 func getInstallCommands(dotfiles []os.FileInfo, srcdir, destdir string) []string {
