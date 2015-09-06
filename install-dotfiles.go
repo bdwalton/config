@@ -38,7 +38,7 @@ func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
 
 	entries, err := ioutil.ReadDir(dotfile_path)
 	if err != nil {
-		return nil, fmt.Errorf("Error scanning dotfiles in %s: %s", dotfile_path, err)
+		return nil, fmt.Errorf("Error scanning dotfiles in %q: %v", dotfile_path, err)
 	}
 
 	env_config := regexp.MustCompile("^_.+-\\w+$")
@@ -92,25 +92,24 @@ func getInstallCommands(dotfiles []os.FileInfo, srcdir, destdir string) []string
 		dst := filepath.Join(destdir, "."+fileinf.Name()[1:])
 
 		if *be_verbose {
-			cmds = append(cmds,
-				makeCommand("echo Installing '%s' as '%s'", src, dst))
+			cmds = append(cmds, makeCommand("echo Installing %q as %q", src, dst))
 		}
 
 		stat, err := os.Lstat(dst)
 		switch os.IsNotExist(err) {
 		case true:
-			cmds = append(cmds, makeCommand("ln -snf '%s' '%s'", src, dst))
+			cmds = append(cmds, makeCommand("ln -snf %q %q", src, dst))
 		default:
 			if stat.Mode().IsRegular() || stat.IsDir() {
 				if *do_backups {
-					cmds = append(cmds, makeCommand("cp -pR '%s' '%s.bak'", dst, dst))
+					cmds = append(cmds, makeCommand("cp -pR %q '%q", dst, dst+".bak"))
 					// Do backup here.
 					if stat.IsDir() {
-						cmds = append(cmds, makeCommand("rm -rf '%s'", dst))
+						cmds = append(cmds, makeCommand("rm -rf %q", dst))
 					}
 				}
 			}
-			cmds = append(cmds, makeCommand("ln -snf '%s' '%s'", src, dst))
+			cmds = append(cmds, makeCommand("ln -snf %q %q", src, dst))
 		}
 	}
 	return cmds
