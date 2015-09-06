@@ -25,7 +25,7 @@ func getConfigType(cf string) (string, error) {
 		return "", fmt.Errorf("Error reading config: %s", err)
 	}
 
-	re := regexp.MustCompile(".*BDW_CONFIG_TYPE\\s*=\\s*(\\w+)$")
+	re := regexp.MustCompile(".*BDW_CONFIG_TYPE\\s*=\\s*(\\w+)")
 	md := re.FindStringSubmatch(string(ct))
 	if len(md) != 2 {
 		return "", fmt.Errorf("Text %q didn't match BDW_CONFIG_TYPE=\\w+.", ct)
