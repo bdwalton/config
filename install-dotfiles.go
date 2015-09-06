@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -50,7 +51,7 @@ func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
 		if env_config.MatchString(entry.Name()) &&
 			!env_specific_config.MatchString(entry.Name()) {
 			if *debug {
-				fmt.Printf("Skipping env-specific dotfile %q\n", entry.Name())
+				log.Printf("Skipping env-specific dotfile %q\n", entry.Name())
 			}
 			continue
 		}
@@ -134,32 +135,27 @@ func main() {
 
 	configtype, err := getConfigType()
 	if err != nil {
-		fmt.Println("Error:", err)
-		os.Exit(1)
+		log.Fatalf("Error determining config type: %v", err)
 	}
 
 	repodir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
-		fmt.Println("Error determining repo:", err)
-		os.Exit(1)
+		log.Fatalf("Error determining repo: %v", err)
 	}
 
 	dotfiledir, err := filepath.Abs(filepath.Join(repodir, "dotfiles"))
 	if err != nil {
-		fmt.Println("Error determining dotfile dir:", err)
-		os.Exit(1)
+		log.Fatalf("Error determining dotfile dir: %v", err)
 	}
 
 	entries, err := getDotFiles(dotfiledir, configtype)
 	if err != nil {
-		fmt.Println("Error listing dotfiles:", err)
-		os.Exit(1)
+		log.Fatalf("Error listing dotfiles: %v", err)
 	}
 
 	cmds := getInstallCommands(entries, dotfiledir, os.Getenv("HOME"))
 
 	if err = runCommands(cmds); err != nil {
-		fmt.Println("Error running commands:", err)
-		os.Exit(1)
+		log.Fatalf("Error running commands: %v", err)
 	}
 }
