@@ -3,6 +3,9 @@ source ~/.bdwconfig
 # Disable audible bell
 xset -b
 
+# Turn the screen off at 5m of inactivity
+xset dpms 300 300 300
+
 # Background color
 xsetroot -solid "#333333"
 
