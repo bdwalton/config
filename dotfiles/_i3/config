@@ -28,7 +28,7 @@ bindsym $mod+c exec google-chrome --user-data-dir=~/.config/google-chrome-$HOSTN
 bindsym $mod+t exec thunar
 
 # lock the screen (ctrl+alt+l)
-bindsym Control+Mod1+l exec gnome-screensaver-command --lock
+bindsym Control+Mod1+l exec xautolock -locknow
 
 # volume up/down/mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 -- '+5%'
@@ -129,6 +129,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Startup stuff
 exec --no-startup-id gnome-screensaver
+exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command --lock"
+
 exec_always --no-startup-id xmodmap $HOME/.xmodmap
 
 # resize window (you can also use the mouse for that)
