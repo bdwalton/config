@@ -1,0 +1,115 @@
+2015-06-30  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'e9530990914c1d81889269b4a8365b8003625557' from swiper
+
+2015-05-23  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'e084b5d9feab3dd1246e51ce1fddde3db6024f7d' from swiper
+
+	Conflicts:
+	packages/swiper/ivy.el
+
+2015-05-20  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	* swiper/ivy.el: Clean up regexps and pseudo-closures
+
+	Don't require cl-lib twice.
+	(ivy-read, ivy--filter): Use closures instead of `(lambda ...).
+	(ivy--format, ivy--filter, ivy--exhibit, ivy--insert-prompt)
+	(ivy--regex-ignore-order, ivy--regex, ivy--sorted-files)
+	(ivy-partial-or-done, ivy-alt-done): Don't use ^/$ to match string
+	bounds.
+
+2015-05-19  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'bc335af4d94d80d3605b66ed51a15d2476ad2179' from swiper
+
+2015-05-03  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '829bdb6dcb08e2b1a8d8c329e697156e5fa2dbcc' from swiper
+
+2015-05-01  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '5a2e0fd355fea83e3c172402b965a1aa826fcc0c' from swiper
+
+2015-04-23  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '725e12a51e837ed75361f9f2258a887cacb120cd' from swiper
+
+2015-04-22  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'e2452a3e77ef6ea6b193292d2c0bbbe93dd4b078' from swiper
+
+2015-04-21  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '675bd5ff97f75fb7d838e6056442ce71adf85e56' from swiper
+
+2015-04-20  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '294ec7f480908268055b273da96674382b84e198' from swiper
+
+2015-04-20  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'ac0fc8962eaa15625b127c32f75d2b3daa1ca6ef' from swiper
+
+2015-04-20  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'efa18eca10e5a0e05043f872cf9945842bb3a034' from swiper
+
+2015-04-19  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	* swiper.el: Fix compilation warnings
+
+2015-04-18  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '05b6fc7acf98d44bd71d625bc6056a4125981a70' from swiper
+
+2015-04-18  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'fb1801ff24b09adc816ef763c9db9cd4b1b5d9dd' from swiper
+
+2015-04-17  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '2b7a97d44dfa0630928fdc107c784d8f352caf3c' from swiper
+
+2015-04-17  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'b128272d475ecb392f32fbc3e5832d76af33446b' from swiper
+
+2015-04-16  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	* swiper/ivy.el: Make sure cl-position-if exists at run-time.
+
+2015-04-16  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'cb5ae17997a9ec239cf9d486feceb80acb433754' from swiper
+
+2015-04-16  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '0cffcacdb0e0a035aa75f5276ca0c4cba688fc6f' from swiper
+
+2015-04-16  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '2fd99e13ca15b6356c149deb74d6a2e78d0b264a' from swiper
+
+2015-04-16  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit '3b78e0e503f4763f8a2d77eeacfc91213ec5532e' from swiper
+
+2015-03-28  Stefan Monnier  <monnier@iro.umontreal.ca>
+
+	* packages/swiper/swiper.el: Don't require non-existing ivy-0.1.0
+
+2015-03-26  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Merge commit 'ce516073e5e4359b88f98610bae9b157945eb8e8' from swiper
+
+2015-03-22  Oleh Krehel	 <ohwoeowho@gmail.com>
+
+	Add 'packages/swiper/' from commit
+	'55414c321ca07bd86f0f1efaf8f6130617e6fad6'
+
+	git-subtree-dir: packages/swiper git-subtree-mainline:
+	5aa78963734dc6975cad8df1c8853b65a4f1b826 git-subtree-split:
+	55414c321ca07bd86f0f1efaf8f6130617e6fad6
+
