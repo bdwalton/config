@@ -40,6 +40,8 @@
 ;; highlight the current line
 (when (fboundp 'global-hl-line-mode)
   (global-hl-line-mode t)) ;; turn it on for all modes by default
+;; This works nicely with the zenburn theme
+(set-face-background 'hl-line "#3e4446")
 
 ;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
 ;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
