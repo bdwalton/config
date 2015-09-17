@@ -4,9 +4,6 @@
 ;; turn off menu...what's its purpose?
 (menu-bar-mode -1)
 
-;; better buffer switching
-(iswitchb-mode t)
-
 ;; don't make me spell out yes/no all the time
 (fset 'yes-or-no-p 'y-or-n-p)
 
