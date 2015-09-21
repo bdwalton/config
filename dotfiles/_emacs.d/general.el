@@ -28,7 +28,7 @@
 (electric-pair-mode t)
 
 ;; enable midnight mode buffer purging
-(setq midnight-mode t)
+(require 'midnight)
 (midnight-delay-set 'midnight-delay "4:30am")
 
 ;; allow sgml/xml files to set indentation variables, etc.
