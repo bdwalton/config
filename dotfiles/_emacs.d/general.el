@@ -23,6 +23,10 @@
 ;; stop the little ~ turd files
 (setq make-backup-files nil)
 
+;; auto-inster the matching bracket/brace when the opening one is
+;; typed
+(electric-pair-mode t)
+
 ;; enable midnight mode buffer purging
 (setq midnight-mode t)
 (midnight-delay-set 'midnight-delay "4:30am")
