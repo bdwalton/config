@@ -18,6 +18,17 @@ font  pango:Source Code Pro Black 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Quick access to workspaces
+bindsym KP_1 workspace 1
+bindsym KP_2 workspace 2
+bindsym KP_3 workspace 3
+bindsym KP_4 workspace 4
+bindsym KP_5 workspace 5
+bindsym KP_6 workspace 6
+bindsym KP_7 workspace 7
+bindsym KP_8 workspace 8
+bindsym KP_9 workspace 9
+
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 
