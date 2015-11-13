@@ -63,7 +63,8 @@
 ;; http://www.djcbsoftware.nl/dot-emacs.html
 
 (autoload 'linum-mode "linum" "mode for line numbers" t)
-(global-set-key (kbd "C-<f5>") 'linum-mode) ;; toggle line numbers
+(global-linum-mode 1)
+(setq linum-format "%4d \u2502 ")
 
 (defun my-indent-all ()
   "Mark the whole buffer and then indent it according to the mode rules."
