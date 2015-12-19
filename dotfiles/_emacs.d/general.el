@@ -1,9 +1,6 @@
 ;; stupid startup message...
 (setq inhibit-startup-message t)
 
-;; org-mode ftw
-(setq-default major-mode 'org-mode)
-
 ;; turn off menu...what's its purpose?
 (menu-bar-mode -1)
 
