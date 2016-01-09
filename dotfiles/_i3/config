@@ -33,7 +33,7 @@ bindsym KP_9 workspace 9
 bindsym $mod+Return exec gnome-terminal
 
 # start Chrome
-bindsym $mod+c exec google-chrome --user-data-dir=~/.config/google-chrome-$HOSTNAME
+bindsym $mod+c exec google-chrome --user-data-dir=.config/google-chrome-$HOSTNAME
 
 # start Thunar file manager
 bindsym $mod+t exec thunar
