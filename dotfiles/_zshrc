@@ -75,6 +75,7 @@ setopt \
 setopt \
   correct \
   correct_all \
+  extendedglob \
   prompt_subst
 
 # History options
