@@ -14,3 +14,7 @@
 
 ;; we do this fairly often, bind it to something easy.
 (global-set-key [f9] 'my-indent-all)
+
+;; always kill the current buffer, prompting if unsaved, rather than
+;; asking for the buffer name.
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
