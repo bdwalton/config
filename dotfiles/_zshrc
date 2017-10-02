@@ -99,7 +99,7 @@ alias d='dirs -v'
 alias dlbf='rm -f (.*~|*~)'
 alias dlb='rm  -i (.*~|*~)'
 alias emacs='emacsclient -nw --alternate-editor='
-alias grep=egrep
+alias grep='egrep --color=auto'
 alias h=history
 alias j=jobs
 alias lld='ls -ld *(-/DN)'
@@ -115,7 +115,7 @@ alias rm='rm -i'
 alias sudosh='nocorrect sudo $SHELL'
 alias zmv='noglob zmv'
 
-alias -g G='egrep'
+alias -g G='egrep --color=auto'
 alias -g H=' | head'
 alias -g L=' | less'
 alias -g T=' | tail'

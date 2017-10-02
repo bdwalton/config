@@ -21,9 +21,6 @@ export GOPATH=~/working_code/go
 export MYGOPATH=~/working_code/go/src/github.com/bdwalton
 export TERM=xterm-256color
 
-# grep settings
-export GREP_OPTIONS="--color=auto"
-
 # less settings
 export LESS="-eFXRM"
 export LESSCHARSET="utf-8"
