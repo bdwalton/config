@@ -13,6 +13,9 @@ if [ -f ~/.xmodmap ]; then
    xmodmap ~/.xmodmap
 fi
 
+export GTK_IM_MODULE=xim
+export DESKTOP_SESSION=gnome
+
 if [ -f ~/.xsession-${BDW_CONFIG_TYPE} ]; then
    . ~/.xesssion-${BDW_CONFIG_TYPE}
 fi
