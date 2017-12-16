@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# .emacs supercedes .emacs.d that we deliver, so ensure it gets cleaned up.
+if [ -f ~/.emacs ]; then
+	 rm ~/.emacs
+fi
