@@ -42,9 +42,9 @@ bindsym $mod+t exec thunar
 bindsym Control+Mod1+l exec xautolock -locknow
 
 # volume up/down/mute
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 -- '+5%'
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -- '-5%'
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 '+5%'
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 '-5%'
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # kill focused window
 bindsym $mod+Shift+q kill
