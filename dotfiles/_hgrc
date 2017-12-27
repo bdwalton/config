@@ -1,0 +1,10 @@
+[ui]
+username=bdwalton
+
+[extensions]
+histedit=
+shelve=
+
+[trainingwheels]
+prevent-revert--all=false
+
