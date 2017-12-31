@@ -8,3 +8,5 @@ shelve=
 [trainingwheels]
 prevent-revert--all=false
 
+[alias]
+show = diff --change
