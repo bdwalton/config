@@ -44,8 +44,7 @@ func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
 	}
 
 	env_config := regexp.MustCompile("^_.+-\\w+$")
-	env_specific_re := fmt.Sprintf("^_.+-%s$", config_type)
-	env_specific_config := regexp.MustCompile(env_specific_re)
+	env_specific_config := regexp.MustCompile(fmt.Sprintf("^_.+-%s$", config_type))
 
 	var dotfiles []os.FileInfo
 	for _, entry := range entries {
