@@ -131,7 +131,7 @@ func runCommands(cmds []string) error {
 func main() {
 	flag.Parse()
 
-	configtype, err := getConfigType("/home/bdwalton/.bdwconfig")
+	configtype, err := getConfigType(filepath.Join(os.Getenv("HOME"), ".bdwconfig"))
 	if err != nil {
 		log.Fatalf("Error determining config type: %v", err)
 	}
