@@ -92,9 +92,9 @@ Examples:
     (unwind-protect
 	(and (string-match regexp emacs-version)
 	     (setq version
-		   (string-to-int (substring emacs-version
-					     (match-beginning 1)
-					     (match-end 1)))))
+		   (string-to-number (substring emacs-version
+						(match-beginning 1)
+					        (match-end 1)))))
       (store-match-data old-match-data))
     version))
 
