@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # A list of debian packages we expect in our environment.
-PACKAGES="i3 tmux gnome-screensaver xautolock dex wicd"
+PACKAGES="i3 tmux gnome-screensaver xautolock dex"
 
 sudo apt install ${PACKAGES}
