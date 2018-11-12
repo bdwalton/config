@@ -2,6 +2,7 @@
 # set-mark-command keybinding. We can't have that. Also, we don't need
 # the icon shown as we don't make use of this service anyway.
 /desktop/ibus/panel/show-icon-on-systray false
+/desktop/ibus/general/hotkey/trigger @as []
 /desktop/ibus/general/hotkey/triggers @as []
 /org/gnome/setting-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
 /org/gnome/settings-daemon/peripherals/touchpad/tap-to-click true
