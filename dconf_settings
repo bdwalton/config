@@ -4,7 +4,7 @@
 /desktop/ibus/panel/show-icon-on-systray false
 /desktop/ibus/general/hotkey/trigger @as []
 /desktop/ibus/general/hotkey/triggers @as []
-/org/gnome/setting-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
+/org/gnome/settings-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
 /org/gnome/settings-daemon/peripherals/touchpad/tap-to-click true
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "<Super>Return"
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "gnome-terminal"
