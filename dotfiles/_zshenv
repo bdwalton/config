@@ -25,9 +25,11 @@ export TERM=xterm-256color
 export LESS="-eFXRM"
 export LESSCHARSET="utf-8"
 
+# HiDPI settings
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export XCURSOR_SIZE=48
 
 path=(~/bin ~/.cargo/bin $GOPATH/bin /usr/local/bin ${path} /sbin /usr/sbin)
 
