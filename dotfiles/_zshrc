@@ -1,7 +1,7 @@
 # -*- shell-script -*-
 
 # Umask
-umask 027
+umask 022
 
 # Load user functions.
 fpath=(~/.zsh/functions* $fpath)
