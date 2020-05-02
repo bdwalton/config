@@ -1,9 +1,14 @@
 # By default, ibus captures Ctrl+Space which is emacs'
 # set-mark-command keybinding. We can't have that. Also, we don't need
 # the icon shown as we don't make use of this service anyway.
-/desktop/ibus/panel/show-icon-on-systray false
+/desktop/ibus/general/hotkey/trigger @as []
 /desktop/ibus/general/hotkey/triggers @as []
-/org/gnome/setting-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
+/desktop/ibus/panel/show-icon-on-systray false
+/org/gnome/desktop/input-sources/xkb-options @as ['ctrl:nocaps']
+/org/gnome/desktop/interface/cursor-size 48
+/org/gnome/libgnomekbd/keyboard/options @as ['ctrl\tctrl:nocaps']
+/org/gnome/settings-daemon/peripherals/touchpad/disable-while-typing true
+/org/gnome/settings-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
 /org/gnome/settings-daemon/peripherals/touchpad/tap-to-click true
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "<Super>Return"
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "gnome-terminal"
@@ -11,20 +16,16 @@
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "<Primary><Alt>t"
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "gnome-terminal"
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "Launch Terminal"
+/org/gnome/settings-daemon/plugins/xsettings/overrides [{'Gdk/WindowScalingFactor', <2>}]
 /org/gnome/terminal/legacy/default-show-menubar false
-/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/font "Liberation Mono Regular 10"
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color "#3F3F3F3F3F3F"
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/bold-color "#E3E3CECEABAB"
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/bold-color-same-as-fg false
+/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/font "Liberation Mono Regular 10"
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/foreground-color "#DCDCDCDCCCCC"
+/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/login-shell true
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/palette ['#3F3F3F3F3F3F', '#CCCC93939393', '#7F7F9F9F7F7F', '#E3E3CECEABAB', '#DFDFAFAF8F8F', '#CCCC93939393', '#8C8CD0D0D3D3', '#DCDCDCDCCCCC', '#3F3F3F3F3F3F', '#CCCC93939393', '#7F7F9F9F7F7F', '#E3E3CECEABAB', '#DFDFAFAF8F8F', '#CCCC93939393', '#8C8CD0D0D3D3', '#DCDCDCDCCCCC']
+/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollbar-policy "never"
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-system-font false
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors false
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/visible-name "default"
-/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollbar-policy "never"
-/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/login-shell true
-/org/gnome/desktop/input-sources/xkb-options @as ['ctrl:nocaps']
-/org/gnome/libgnomekbd/keyboard/options @as ['ctrl\tctrl:nocaps']
-/org/gnome/settings-daemon/peripherals/touchpad/disable-while-typing true
-/org/gnome/settings-daemon/peripherals/touchpad/scroll-method "two-finger-scrolling"
-/org/gnome/settings-daemon/peripherals/touchpad/tap-to-click true
