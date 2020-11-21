@@ -1,0 +1,4 @@
+check_hash = yes
+directory = ~/Torrents
+session = ~/.rtorrent.session
+encryption = allow_incoming,try_outgoing,enable_retry
