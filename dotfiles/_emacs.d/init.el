@@ -17,12 +17,15 @@
    )
   "User init dir")
 
-(add-to-list 'load-path user-init-dir)
 
 ;; make adding other paths easier
 (defun extra-user-path (p)
   "Add p to load-path (relative to ~/.emacs.d/)"
   (add-to-list 'load-path (concat user-init-dir p)))
+
+;; Our library directory
+(extra-user-path "lisp")
+
 
 ;; some generic settings that should work everywhere.
 (load-library "general")
