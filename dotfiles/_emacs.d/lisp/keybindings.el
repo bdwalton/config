@@ -18,3 +18,6 @@
 ;; always kill the current buffer, prompting if unsaved, rather than
 ;; asking for the buffer name.
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
+
+;; Mostly for coding modes, but make it global.
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
