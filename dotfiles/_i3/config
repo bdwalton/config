@@ -11,9 +11,11 @@
 
 set $mod Mod4
 
+set $i3font pango:Liberation Mono Regular 25
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font  pango:Liberation Mono Regular 25
+font $i3font
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -135,7 +137,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -f 'pango:Liberation Mono Regular 25' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3? This will end your X session.' -f '$i3font' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # New window decoration
 new_window normal 3
