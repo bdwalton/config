@@ -142,20 +142,13 @@ new_window normal 3
 
 # Startup stuff
 exec xrandr --dpi 220
+# This wraps our xkb settings and because we pass -0, it handles the
+# initial "force" run of our setting install too.
+exec --no-startup-id inputplug -0 -c ~/.bdwscripts/fix_keyboard
 exec dex -ae i3
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command --lock" -corners 0+0- -cornerdelay 1 -cornerredelay 5
-
-exec_always --no-startup-id setxkbmap \
-	    -layout us \
-	    -variant altgr-intl \
-	    -option nodeadkeys \
-	    -option "" \
-	    -option "ctrl:nocaps" \
-	    -option "caps:ctrl_modifier" \
-	    -option "eurosign:4" \
-	    -option "lv3:menu_switch"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
