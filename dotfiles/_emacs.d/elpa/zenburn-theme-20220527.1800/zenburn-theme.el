@@ -4,8 +4,8 @@
 
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: http://github.com/bbatsov/zenburn-emacs
-;; Package-Version: 20220130.1555
-;; Package-Commit: 50e9bb9bcd62edf29d29a29b2b9b6b845db68174
+;; Package-Version: 20220527.1800
+;; Package-Commit: b600814c8ddfe8812582f4ba4b62db817d665860
 ;; Version: 2.8.0-snapshot
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -269,7 +269,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 
    `(c-annotation-face ((t (:inherit font-lock-constant-face))))
 ;;;;; line numbers (Emacs 26.1 and above)
-   `(line-number ((t (:foreground ,zenburn-bg+3 :background ,zenburn-bg-05))))
+   `(line-number ((t (:inherit default :foreground ,zenburn-bg+3 :background ,zenburn-bg-05))))
    `(line-number-current-line ((t (:inherit line-number :foreground ,zenburn-yellow-2))))
 ;;;;; man
    '(Man-overstrike ((t (:inherit font-lock-keyword-face))))
@@ -645,6 +645,21 @@ Also bind `class' to ((class color) (min-colors 89))."
                    :inherit unspecified :foreground unspecified :background unspecified))
       (t (:foreground ,zenburn-orange :weight bold :underline t))))
    `(flymake-infoline
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-green)
+                   :inherit unspecified :foreground unspecified :background unspecified))
+      (t (:foreground ,zenburn-green-2 :weight bold :underline t))))
+   `(flymake-error
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-red)
+                   :inherit unspecified :foreground unspecified :background unspecified))
+      (t (:foreground ,zenburn-red-1 :weight bold :underline t))))
+   `(flymake-warning
+     ((((supports :underline (:style wave)))
+       (:underline (:style wave :color ,zenburn-orange)
+                   :inherit unspecified :foreground unspecified :background unspecified))
+      (t (:foreground ,zenburn-orange :weight bold :underline t))))
+   `(flymake-note
      ((((supports :underline (:style wave)))
        (:underline (:style wave :color ,zenburn-green)
                    :inherit unspecified :foreground unspecified :background unspecified))
@@ -1297,7 +1312,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(p4-diff-ins-face ((t :inherit diff-added)))
 ;;;;; c/perl
    `(cperl-nonoverridable-face ((t (:foreground ,zenburn-magenta))))
-   `(cperl-array-face ((t (:foreground ,zenburn-yellow, :backgorund ,zenburn-bg))))
+   `(cperl-array-face ((t (:foreground ,zenburn-yellow, :background ,zenburn-bg))))
    `(cperl-hash-face ((t (:foreground ,zenburn-yellow-1, :background ,zenburn-bg))))
 ;;;;; paren-face
    `(parenthesis ((t (:foreground ,zenburn-fg-1))))
