@@ -143,7 +143,7 @@ new_window normal 3
 # Startup stuff
 exec xrandr --dpi 220
 exec dex -ae i3
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command --lock" -corners 0+0- -cornerdelay 1 -cornerredelay 5
 
