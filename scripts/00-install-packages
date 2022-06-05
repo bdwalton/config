@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # A list of debian packages we expect in our environment.
-PACKAGES="i3 tmux gnome-screensaver xautolock dex pulseaudio-utils gconf"
+PACKAGES="i3 tmux gnome-screensaver xautolock dex autorandr pulseaudio-utils gconf"
 
 sudo apt install ${PACKAGES}
