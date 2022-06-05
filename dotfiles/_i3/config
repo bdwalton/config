@@ -147,7 +147,7 @@ exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command --lock" -corners 0+0- -cornerdelay 1 -cornerredelay 5
 
-exec_always --no-startup-id xmodmap $HOME/.xmodmap
+exec_always --no-startup-id setxkbmap -option "ctrl:nocaps"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
