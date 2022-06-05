@@ -11,6 +11,7 @@ xsetroot -solid "#333333"
 
 export GTK_IM_MODULE=xim
 export DESKTOP_SESSION=gnome
+export XDG_CURRENT_DESKTOP=Gnome
 
 if [ -f ~/.xsession-${BDW_CONFIG_TYPE} ]; then
    . ~/.xesssion-${BDW_CONFIG_TYPE}
