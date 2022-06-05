@@ -1,4 +1,3 @@
 xset s on
-xmodmap ~/.xmodmap
 [[ -f ~/.Xresources ]] && xrdb -merg -I${HOME} ~/.Xresources
 
