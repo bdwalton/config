@@ -1,6 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
 # A list of debian packages we expect in our environment.
-PACKAGES="i3 tmux gnome-screensaver xautolock dex autorandr pulseaudio-utils gconf2 rofi inputplug thunar keychain"
+PACKAGES=(
+    autorandr
+    dex
+    gconf2
+    gnome-screensaver
+    i3
+    inputplug
+    keychain
+    pulseaudio-utils
+    rofi
+    thunar
+    tmux
+    xautolock
+)
 
-sudo apt install ${PACKAGES}
+sudo apt install ${PACKAGES[@]}
