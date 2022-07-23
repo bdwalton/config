@@ -78,26 +78,69 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# Umask
+umask 022
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# Enable auto-execution of functions.
+PERIOD=300
+typeset -ga preexec_functions
+typeset -ga precmd_functions
+typeset -ga periodic_functions
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# History settings
+HISTFILE=~/.zsh_history
+HISTSIZE=20000
+SAVEHIST=20000
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# Setup ZSH variables.
+cdpath=(. ~ ~/working_code ${MYGOPATH})
+fignore=(\~)
+watch=(all)
+DIRSTACKSIZE=20
+HISTFILE=~/.zsh_history
+HISTSIZE=20000
+LISTMAX=0
+LOGCHECK=60
+READNULLCMD=less
+REPORTTIME=15
+SAVEHIST=20000
+TIMEFMT='%J  %*U user %*S system %P cpu (%*E wasted time).'
+WATCHFMT='%n %a %l from %m at %t.'
+WORDCHARS=${WORDCHARS//[\/.-]}
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Just in case, force emacs mode
+bindkey -e
+
+# zle settings
+# fake-enter = save to history without executing.
+zle -N fake-enter; bindkey "^X^H" fake-enter
+zle -N self-insert url-quote-magic
+
+# Define aliases.
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cp='nocorrect cp -i'
+alias d='dirs -v'
+alias dlbf='rm -f (.*~|*~)'
+alias dlb='rm  -i (.*~|*~)'
+alias emacs='emacsclient -nw --alternate-editor='
+alias grep='egrep --color=auto'
+alias h=history
+alias j=jobs
+alias lld='ls -ld *(-/DN)'
+alias ll='ls -lh'
+alias mkdir='nocorrect mkdir'
+alias mmv='noglob zmv -W'
+alias mv='nocorrect mv -i'
+alias po=popd
+alias pu=pushd
+alias rdlbf='find . -iname \*~ | xargs rm -f'
+alias rezsh='nocorrect exec $SHELL'
+alias rm='rm -i'
+alias sudosh='nocorrect sudo $SHELL'
+alias zmv='noglob zmv'
+
+alias -g G='egrep --color=auto'
+alias -g H=' | head'
+alias -g L=' | less'
+alias -g T=' | tail'
