@@ -148,6 +148,7 @@ alias rdlbf='find . -iname \*~ | xargs rm -f'
 alias rezsh='nocorrect exec $SHELL'
 alias rm='rm -i'
 alias sudosh='nocorrect sudo $SHELL'
+alias zc='emacs ~/.zshrc'
 alias zmv='noglob zmv'
 
 alias -g G='egrep --color=auto'
