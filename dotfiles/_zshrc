@@ -33,6 +33,10 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Uncomment the following line to change how often to auto-update (in days).
 zstyle ':omz:update' frequency 30
 
+# Setup keychain plugin options
+zstyle :omz:plugins:keychain agents ssh
+zstyle :omz:plugins:keychain identities id_rsa
+
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
 
@@ -72,7 +76,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fake-enter lc lca mcd tmw tmux zsh-syntax-highlighting)
+plugins=(git fake-enter keychain lc lca mcd tmw tmux zsh-syntax-highlighting)
 
 # Plugin Vars
 if [[ ! -f ~/.notmux && ! -f ~/.notmux-$(hostname) ]]; then
