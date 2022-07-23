@@ -1,11 +1,11 @@
 ;;; zenburn-theme.el --- A low contrast color theme for Emacs.
 
-;; Copyright (C) 2011-2020 Bozhidar Batsov
+;; Copyright (C) 2011-2022 Bozhidar Batsov
 
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: http://github.com/bbatsov/zenburn-emacs
-;; Package-Version: 20220527.1800
-;; Package-Commit: b600814c8ddfe8812582f4ba4b62db817d665860
+;; Package-Version: 20220710.623
+;; Package-Commit: cff73bfea8deef2c97cc1ceac4b03702702c4a83
 ;; Version: 2.8.0-snapshot
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -166,7 +166,9 @@ Also bind `class' to ((class color) (min-colors 89))."
 (zenburn-with-color-variables
   (custom-theme-set-faces
    'zenburn
-;;;; Built-in
+
+;;;; Built-in packages
+
 ;;;;; basic coloring
    '(button ((t (:underline t))))
    `(link ((t (:foreground ,zenburn-yellow :underline t :weight bold))))
@@ -184,6 +186,23 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(success ((t (:foreground ,zenburn-green :weight bold))))
    `(warning ((t (:foreground ,zenburn-orange :weight bold))))
    `(tooltip ((t (:foreground ,zenburn-fg :background ,zenburn-bg+1))))
+;;;;; ansi-colors
+   `(ansi-color-black ((t (:foreground ,zenburn-bg
+                                       :background ,zenburn-bg-1))))
+   `(ansi-color-red ((t (:foreground ,zenburn-red-2
+                                     :background ,zenburn-red-4))))
+   `(ansi-color-green ((t (:foreground ,zenburn-green
+                                       :background ,zenburn-green+2))))
+   `(ansi-color-yellow ((t (:foreground ,zenburn-orange
+                                        :background ,zenburn-yellow))))
+   `(ansi-color-blue ((t (:foreground ,zenburn-blue-1
+                                      :background ,zenburn-blue-4))))
+   `(ansi-color-magenta ((t (:foreground ,zenburn-magenta
+                                         :background ,zenburn-red))))
+   `(ansi-color-cyan ((t (:foreground ,zenburn-cyan
+                                      :background ,zenburn-blue))))
+   `(ansi-color-white ((t (:foreground ,zenburn-fg
+                                       :background ,zenburn-fg-1))))
 ;;;;; compilation
    `(compilation-column-face ((t (:foreground ,zenburn-yellow))))
    `(compilation-enter-directory-face ((t (:foreground ,zenburn-green))))
@@ -295,7 +314,9 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; woman
    '(woman-bold   ((t (:inherit font-lock-keyword-face))))
    '(woman-italic ((t (:inherit (font-lock-string-face italic)))))
-;;;; Third-party
+
+;;;; Third-party packages
+
 ;;;;; ace-jump
    `(ace-jump-face-background
      ((t (:foreground ,zenburn-fg-1 :background ,zenburn-bg :inverse-video nil))))
@@ -1243,8 +1264,8 @@ Also bind `class' to ((class color) (min-colors 89))."
                                    (list :height zenburn-height-plus-1))))))
    `(org-level-5 ((t (:inherit ,z-variable-pitch :foreground ,zenburn-cyan))))
    `(org-level-6 ((t (:inherit ,z-variable-pitch :foreground ,zenburn-green+2))))
-   `(org-level-7 ((t (:inherit ,z-variable-pitch :foreground ,zenburn-red-4))))
-   `(org-level-8 ((t (:inherit ,z-variable-pitch :foreground ,zenburn-blue-4))))
+   `(org-level-7 ((t (:inherit ,z-variable-pitch :foreground ,zenburn-red+2))))
+   `(org-level-8 ((t (:inherit ,z-variable-pitch :foreground ,zenburn-magenta))))
    `(org-link ((t (:foreground ,zenburn-yellow-2 :underline t))))
    `(org-quote ((t (:background ,zenburn-bg+05 :extend t))))
    `(org-scheduled ((t (:foreground ,zenburn-green+4))))
