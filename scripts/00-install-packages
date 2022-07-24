@@ -3,6 +3,7 @@
 # A list of debian packages we expect in our environment.
 PACKAGES=(
     autorandr
+    colordiff
     dex
     gconf2
     gnome-screensaver
