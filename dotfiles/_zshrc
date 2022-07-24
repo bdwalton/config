@@ -106,7 +106,7 @@ HISTSIZE=20000
 SAVEHIST=20000
 
 # Setup ZSH variables.
-cdpath=(. ~ ~/working_code ${MYGOPATH})
+cdpath=($cdpath . ~ ~/working_code ${MYGOPATH})
 fignore=(\~)
 watch=(all)
 DIRSTACKSIZE=20
