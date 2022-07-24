@@ -1,7 +1,0 @@
-# This tmux will _always_ be nested, so use a different prefix key
-set -g prefix `
-
-set -g status-bg white
-set -g status-fg red
-
-rename-window -t 0 login
