@@ -8,7 +8,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"regexp"
 	"strings"
 )
 
@@ -19,23 +18,7 @@ var (
 	debug      = flag.Bool("debug", false, "Dispaly debugging info.")
 )
 
-func getConfigType(cf string) (string, error) {
-	ct, err := ioutil.ReadFile(cf)
-	if err != nil {
-		return "", fmt.Errorf("Error reading config: %s", err)
-	}
-
-	re := regexp.MustCompile(".*BDW_CONFIG_TYPE\\s*=\\s*(\\w+)")
-	md := re.FindStringSubmatch(string(ct))
-	if len(md) != 2 {
-		return "", fmt.Errorf("Text %q didn't match BDW_CONFIG_TYPE=\\w+.", ct)
-
-	}
-
-	return md[1], nil
-}
-
-func getDotFiles(dotfile_path, config_type string) ([]os.FileInfo, error) {
+func getDotFiles(dotfile_path string) ([]os.FileInfo, error) {
 	var entries []os.FileInfo
 
 	entries, err := ioutil.ReadDir(dotfile_path)
@@ -119,11 +102,6 @@ func runCommands(cmds []string) error {
 func main() {
 	flag.Parse()
 
-	configtype, err := getConfigType(filepath.Join(os.Getenv("HOME"), ".bdwconfig"))
-	if err != nil {
-		log.Fatalf("Error determining config type: %v", err)
-	}
-
 	repodir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
 		log.Fatalf("Error determining repo: %v", err)
@@ -134,7 +112,7 @@ func main() {
 		log.Fatalf("Error determining dotfile dir: %v", err)
 	}
 
-	entries, err := getDotFiles(dotfiledir, configtype)
+	entries, err := getDotFiles(dotfiledir)
 	if err != nil {
 		log.Fatalf("Error listing dotfiles: %v", err)
 	}
