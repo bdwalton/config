@@ -76,7 +76,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fake-enter keychain lc lca mcd tmw tmux zsh-syntax-highlighting)
+plugins=(bdwconfig git fake-enter keychain lc lca mcd tmw tmux zsh-syntax-highlighting)
 
 # Plugin Vars
 if [[ ! -f ~/.notmux && ! -f ~/.notmux-$(hostname) ]]; then
