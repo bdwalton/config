@@ -2,8 +2,15 @@
 
 set -e
 
-if [ ! -f ~/.bdwconfig ]; then
-	echo "Please create ~/.bdwconfig"
+BDWCONFIG=~/.bdwconfig
+
+if [[ -n "$1" ]]; then
+    echo "BDW_CONFIG_TYPE=$1" >> "${BDWCONFIG}"
+    echo >> "${BDWCONFIG}"
+fi
+
+if [[ ! -f "${BDWCONFIG}" ]]; then
+	echo "Please create ${BDWCONFIG}"
 	exit 1
 fi
 
