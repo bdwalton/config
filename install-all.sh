@@ -18,4 +18,5 @@ for setup_script in ./scripts/*; do
     $setup_script
 done
 
-./install-dotfiles --verbose
+cd dotfiles
+./install --verbose
