@@ -51,10 +51,8 @@
  '(safe-local-variable-values '((sgml-indent-step . 1) (sgml-indent-data . 1))))
 
 ;; now pull in the optional site-local config
-(setq site-local-lib (concat "emacs-" (getenv "BDW_CONFIG_TYPE") ".el"))
-(if (locate-library site-local-lib)
-    (load-library site-local-lib)
-  (print "Not loading site local library."))
+(setq site-local-lib (concat user-init-dir "emacs-" (getenv "BDW_CONFIG_TYPE") ".el"))
+(load-library site-local-lib)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
