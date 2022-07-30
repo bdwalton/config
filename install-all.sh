@@ -5,7 +5,7 @@ set -e
 BDWCONFIG=~/.bdwconfig
 
 if [[ -n "$1" ]]; then
-    echo "BDW_CONFIG_TYPE=$1" >> "${BDWCONFIG}"
+    echo "export BDW_CONFIG_TYPE=$1" >> "${BDWCONFIG}"
     echo >> "${BDWCONFIG}"
 fi
 
