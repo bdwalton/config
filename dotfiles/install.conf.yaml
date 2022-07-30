@@ -7,6 +7,7 @@
 
 - link:
     ~/.bdwscripts: _bdwscripts
+    ~/.config/rofi/config.rasi: _rofi.config.rasi
     ~/.emacs.d: _emacs.d
     ~/.gitconfig: _gitconfig
     ~/.gtkrc-2.0: _gtkrc-2.0
