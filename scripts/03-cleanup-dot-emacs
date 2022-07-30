@@ -2,5 +2,8 @@
 
 # .emacs supercedes .emacs.d that we deliver, so ensure it gets cleaned up.
 if [ -f ~/.emacs ]; then
-	 rm ~/.emacs
+    echo "Cleaning up ~/.emacs."
+    rm ~/.emacs
+else
+    echo "Nothing to do."
 fi

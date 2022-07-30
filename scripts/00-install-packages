@@ -17,4 +17,5 @@ PACKAGES=(
     xautolock
 )
 
-sudo apt install ${PACKAGES[@]}
+echo "Installing packages: ${PACKAGES[@]}"
+sudo apt-get -qq install ${PACKAGES[@]}
