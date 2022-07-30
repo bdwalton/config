@@ -27,3 +27,4 @@
 
 - shell:
   - [git submodule --quiet update --init --recursive, Installing submodules]
+  - [rm -f ~/.emacs]
