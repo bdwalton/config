@@ -15,7 +15,7 @@ case "${BDW_CONFIG_TYPE}" in
     fi
 
     cd "${ENV_DIR}"
-    git pull gerrit main
+    git pull origin main
     ./install-all.sh
     ;;
   *)
