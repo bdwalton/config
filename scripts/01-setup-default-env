@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+SCRIPT_DIR="$(realpath $(dirname $0))"
+BASE_DIR="$(realpath -s "${SCRIPT_DIR}/../")"
+DOTFILE_DIR="${BASE_DIR}/dotfiles"
+
+cd "${DOTFILE_DIR}"
+./install -v

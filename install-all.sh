@@ -18,6 +18,3 @@ fi
 for setup_script in ./scripts/*; do
     $setup_script
 done
-
-cd dotfiles
-./install --verbose
