@@ -1,21 +1,10 @@
 #!/bin/bash
 
+BASE_PATH="$(dirname $0)/../"
+PACKAGES_FILE="${BASE_PATH}/debian_packages"
 # A list of debian packages we expect in our environment.
-PACKAGES=(
-    autorandr
-    colordiff
-    dex
-    gconf2
-    gnome-screensaver
-    i3
-    inputplug
-    keychain
-    pulseaudio-utils
-    rofi
-    thunar
-    tmux
-    xautolock
-)
+readarray -t PACKAGES < "${PACKAGES_FILE}"
 
-echo "Installing packages: ${PACKAGES[@]}"
+echo "Installing packages:"
+echo "${PACKAGES[@]}"
 sudo apt-get -qq install ${PACKAGES[@]}
