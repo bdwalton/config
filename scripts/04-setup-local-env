@@ -16,7 +16,7 @@ case "${BDW_CONFIG_TYPE}" in
 
     cd "${ENV_DIR}"
     git pull origin main
-    ./install-all.sh
+    ./setup-env
     ;;
   *)
     echo "Nothing special to do."
