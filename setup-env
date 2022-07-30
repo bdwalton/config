@@ -16,5 +16,8 @@ if [[ ! -f "${BDWCONFIG}" ]]; then
 fi
 
 for setup_script in ./scripts/*; do
+    echo "-------- ${setup_script} --------"
     $setup_script
+    echo
+    echo
 done

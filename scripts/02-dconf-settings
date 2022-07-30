@@ -6,8 +6,8 @@ SCRIPT_DIR="$(realpath $(dirname $0))"
 DCONF_SETTINGS="$(realpath -s "${SCRIPT_DIR}/../dconf_settings")"
 
 if [ -f "${DCONF_SETTINGS}" ]; then
+    echo "Setting up dconf defaults from ${DCONF_SETTINGS}..."
     while read key value; do
-	echo "Setting ${key} to '${value}'"
 	dconf write "${key}" "${value}"
     done < <(grep -v '^#' "${DCONF_SETTINGS}")
 else
