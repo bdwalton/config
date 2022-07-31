@@ -1,0 +1,10 @@
+#!/bin/bash
+
+BASE_PATH="$(dirname $0)/../"
+PACKAGES_FILE="${BASE_PATH}/pip_packages"
+# A list of pip packages we expect in our environment.
+readarray -t PACKAGES < "${PACKAGES_FILE}"
+
+echo "Installing PIP packages:"
+echo "${PACKAGES[@]}"
+pip install ${PACKAGES[@]}
