@@ -156,7 +156,6 @@ alias mv='nocorrect mv -i'
 alias po=popd
 alias pu=pushd
 alias rdlbf='find . -iname \*~ | xargs rm -f'
-alias rezsh='nocorrect exec $SHELL'
 alias rm='rm -i'
 alias sudosh='nocorrect sudo $SHELL'
 alias zc='emacs ~/.zshrc'
