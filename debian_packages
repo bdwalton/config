@@ -8,6 +8,7 @@ inputplug
 keychain
 pulseaudio-utils
 python3-pip
+python3-pygments
 rofi
 thunar
 tmux
