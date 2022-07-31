@@ -7,7 +7,6 @@ BDWCONFIG=~/.bdwconfig
 if [[ -n "$1" ]]; then
     echo "export BDW_CONFIG_TYPE=$1" > "${BDWCONFIG}"
     echo >> "${BDWCONFIG}"
-    source "${BDWCONFIG}"
 fi
 
 if [[ ! -f "${BDWCONFIG}" ]]; then
@@ -15,8 +14,10 @@ if [[ ! -f "${BDWCONFIG}" ]]; then
 	exit 1
 fi
 
+source "${BDWCONFIG}"
+
 for setup_script in ./scripts/*; do
-    echo "-------- ${setup_script} --------"
+    echo "-------- $(basename ${setup_script}) --------"
     $setup_script
     echo
     echo
