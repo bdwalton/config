@@ -1,3 +1,6 @@
 [submodule "dotfiles/dotbot"]
 	path = dotfiles/dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "dotfiles/_oh_my_zsh"]
+	path = dotfiles/_oh_my_zsh
+	url = http://github.com/ohmyzsh/ohmyzsh.git
