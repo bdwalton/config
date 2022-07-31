@@ -16,6 +16,7 @@
     ~/.i3: _i3
     ~/.i3status.conf: _i3status.conf
     ~/.oh_my_zsh: _oh_my_zsh
+    ~/.oh_my_zsh_custom: _oh_my_zsh_custom
     ~/.rtorrent.rc: _rtorrent.rc
     ~/.tmux.conf: _tmux.conf
     ~/.xinitrc: _xinitrc

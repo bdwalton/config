@@ -70,7 +70,7 @@ ENABLE_CORRECTION="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/.oh_my_zsh_custom
 
 # For the tmux plugin.
 ZSH_TMUX_DEFAULT_SESSION_NAME=main
