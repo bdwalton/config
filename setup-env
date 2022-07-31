@@ -16,7 +16,12 @@ fi
 
 source "${BDWCONFIG}"
 
-for setup_script in ./scripts/*; do
+SETUP_DIR="${SETUP_DIR:-$(dirname $0)}"
+SCRIPT_DIR="${SETUP_DIR}/scripts"
+
+echo Running Scripts from "'"${SCRIPT_DIR}"'"
+
+for setup_script in ${SCRPIT_DIR}/*; do
     echo "-------- $(basename ${setup_script}) --------"
     $setup_script
     echo
