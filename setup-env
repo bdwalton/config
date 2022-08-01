@@ -9,8 +9,7 @@ fi
 
 export BDW_CONFIG_TYPE="${BDW_CONFIG_TYPE:-home}"
 
-SETUP_DIR="${SETUP_DIR:-$(dirname $0)}"
-SCRIPT_DIR="${SETUP_DIR}/scripts"
+SCRIPT_DIR="$(dirname $0)/scripts"
 
 echo Running Scripts from "'"${SCRIPT_DIR}"'"
 
