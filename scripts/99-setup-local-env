@@ -16,7 +16,7 @@ case "${BDW_CONFIG_TYPE}" in
 
 	cd "${ENV_DIR}"
 	git pull -q origin main
-	${BASE_DIR}/setup-env
+	./setup-env
 	;;
     *)
 	echo "Nothing special to do for BDW_CONFIG_TYPE='${BDW_CONFIG_TYPE}'."
