@@ -1,0 +1,13 @@
+#!/bin/bash
+
+BDW_CONFIG_TYPE="${BDW_CONFIG_TYPE:-home}"
+BDW_CONFIG_FILE=~/.bdwconfig
+
+if [[ ! -f "$BDW_CONFIG_FILE" ]]; then
+    echo "Setting BDW_CONFIG_TYPE to '${BDW_CONFIG_TYPE}'"
+    echo "export BDW_CONFIG_TYPE='${BDW_CONFIG_TYPE}'" > "${BDW_CONFIG_FILE}"
+    echo >> "${BDW_CONFIG_FILE}"
+else
+    echo "${BDW_CONFIG_FILE} is already in place."
+fi
+

@@ -2,26 +2,19 @@
 
 set -e
 
-BDWCONFIG=~/.bdwconfig
-
-if [[ -n "$1" ]]; then
-    echo "export BDW_CONFIG_TYPE=$1" > "${BDWCONFIG}"
-    echo >> "${BDWCONFIG}"
+BDW_CONFIG_FILE="~/.bdwconfig"
+if [[ -f "${BDW_CONFIG_FILE}" ]]; then
+    source "${BDW_CONFIG_FILE}"
 fi
 
-if [[ ! -f "${BDWCONFIG}" ]]; then
-	echo "Please create ${BDWCONFIG}"
-	exit 1
-fi
-
-source "${BDWCONFIG}"
+export BDW_CONFIG_TYPE="${BDW_CONFIG_TYPE:-home}"
 
 SETUP_DIR="${SETUP_DIR:-$(dirname $0)}"
 SCRIPT_DIR="${SETUP_DIR}/scripts"
 
 echo Running Scripts from "'"${SCRIPT_DIR}"'"
 
-for setup_script in ${SCRPIT_DIR}/*; do
+for setup_script in ${SCRIPT_DIR}/*; do
     echo "-------- $(basename ${setup_script}) --------"
     $setup_script
     echo
