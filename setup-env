@@ -2,6 +2,9 @@
 
 set -e
 
+COLOR_CYAN="\e[36m"
+COLOR_NONE="\e[0m"
+
 BDW_CONFIG_FILE="~/.bdwconfig"
 if [[ -f "${BDW_CONFIG_FILE}" ]]; then
     source "${BDW_CONFIG_FILE}"
@@ -14,7 +17,7 @@ SCRIPT_DIR="$(dirname $0)/scripts"
 echo Running Scripts from "'"${SCRIPT_DIR}"'"
 
 for setup_script in ${SCRIPT_DIR}/*; do
-    echo "-------- $(basename ${setup_script}) --------"
+    echo -e "-------- ${COLOR_CYAN}$(basename ${setup_script}) ${COLOR_NONE}--------\n"
     $setup_script
     echo
     echo
