@@ -113,8 +113,7 @@
  '(custom-enabled-themes '(zenburn))
  '(custom-safe-themes
    '("a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" "9040edb21d65cef8a4a4763944304c1a6655e85aabb6e164db6d5ba4fc494a04" "9e3ea605c15dc6eb88c5ff33a82aed6a4d4e2b1126b251197ba55d6b86c610a1" "19352d62ea0395879be564fc36bc0b4780d9768a964d26dfae8aad218062858d" default))
- '(package-selected-packages '(go-mode zenburn-theme swiper rust-mode))
- '(safe-local-variable-values '((sgml-indent-step . 1) (sgml-indent-data . 1))))
+ '(package-selected-packages '(go-mode zenburn-theme swiper rust-mode)))
 
 ;; now pull in the optional site-local config
 (setq site-local-lib (concat user-init-dir "emacs-" (getenv "BDW_CONFIG_TYPE") ".el"))
