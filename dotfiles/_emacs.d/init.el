@@ -97,8 +97,6 @@
   :config
   (add-hook 'before-save-hook 'gofmt-before-save))
 
-;; finally, always start with ~/ as the current directory
-(cd (getenv "HOME"))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -110,7 +108,6 @@
  '(package-selected-packages '(go-mode zenburn-theme swiper rust-mode)))
 
 ;; now pull in the optional site-local config
-
 (setq site-local-lib
       (concat
        (file-name-directory #$)
@@ -118,9 +115,5 @@
 (when (file-readable-p site-local-lib)
   (load-library site-local-lib))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; finally, always start with ~/ as the current directory
+(cd (getenv "HOME"))
