@@ -1,3 +1,4 @@
 *-work
 _gitconfig-home
 dotfiles/_emacs.d/transient
+dotfiles/_emacs.d/abbrev_defs
