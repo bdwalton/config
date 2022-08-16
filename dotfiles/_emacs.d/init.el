@@ -97,12 +97,6 @@
   :config
   (add-hook 'before-save-hook 'gofmt-before-save))
 
-(defconst user-init-dir
-  (expand-file-name
-   (concat "~" (getenv "LOGNAME") "/.emacs.d/")
-   )
-  "User init dir")
-
 ;; finally, always start with ~/ as the current directory
 (cd (getenv "HOME"))
 (custom-set-variables
@@ -116,8 +110,14 @@
  '(package-selected-packages '(go-mode zenburn-theme swiper rust-mode)))
 
 ;; now pull in the optional site-local config
-(setq site-local-lib (concat user-init-dir "emacs-" (getenv "BDW_CONFIG_TYPE") ".el"))
-(load-library site-local-lib)
+
+(setq site-local-lib
+      (concat
+       (file-name-directory #$)
+       (concat "emacs-" (getenv "BDW_CONFIG_TYPE") ".el")))
+(when (file-readable-p site-local-lib)
+  (load-library site-local-lib))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
