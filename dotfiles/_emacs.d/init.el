@@ -1,15 +1,14 @@
 ;; So that we know to look up included files in our local directory too.
 
-;; Activate melpa package manipulation.
-;; Do this early so that anything depending on packages will be able to
-;; find the package paths, etc.
-(when (>= emacs-major-version 24)
-	(require 'package)
-	(add-to-list
-	 'package-archives
-	 '("melpa" . "http://melpa.org/packages/")
-	 t)
-	(package-initialize))
+;; Activate melpa package manipulation.  Do this early so that
+;; anything depending on packages will be able to find the package
+;; paths, etc.
+
+(require 'package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")))
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
 
 (defconst user-init-dir
   (expand-file-name
