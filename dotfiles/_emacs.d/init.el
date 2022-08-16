@@ -14,6 +14,14 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package ivy
+  :diminish ;; hide this minor mode in the modeline
+  :bind (("C-s" . swiper)
+	 ("C-r" . swiper)
+	 ("C-c C-r" . ivy-resume))
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t))
 
 (defconst user-init-dir
   (expand-file-name
