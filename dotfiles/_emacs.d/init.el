@@ -49,6 +49,12 @@
 (set-face-background 'hl-line "#3e4446")
 (set-face-background 'highlight "#3e4446")
 
+;; enable midnight mode buffer purging
+(require 'midnight)
+(midnight-delay-set 'midnight-delay "4:30am")
+
+(column-number-mode t)                   ;; show column numbers
+
 ;; General keybindings here
 
 (global-set-key "\M-g" 'goto-line)
@@ -96,19 +102,6 @@
    (concat "~" (getenv "LOGNAME") "/.emacs.d/")
    )
   "User init dir")
-
-
-;; make adding other paths easier
-(defun extra-user-path (p)
-  "Add p to load-path (relative to ~/.emacs.d/)"
-  (add-to-list 'load-path (concat user-init-dir p)))
-
-;; Our library directory
-(extra-user-path "lisp")
-
-
-;; some generic settings that should work everywhere.
-(load-library "general")
 
 ;; finally, always start with ~/ as the current directory
 (cd (getenv "HOME"))
