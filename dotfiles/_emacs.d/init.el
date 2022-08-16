@@ -14,6 +14,35 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+
+;; Our basic config overrides and default settings
+(setq inhibit-startup-message t)
+(menu-bar-mode -1)
+(fset 'yes-or-no-p 'y-or-n-p)
+(global-font-lock-mode t) ;; always have font colouring
+;; enable a few deprecated features that we like
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(setq default-tab-width 2)
+(setq make-backup-files nil) ;; stop the little ~ turd files
+;; auto-insert the matching bracket/brace when the opening one is
+;; typed
+(electric-pair-mode t)
+;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
+;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
+(when (fboundp 'show-paren-mode)
+  (show-paren-mode t)
+  (setq show-paren-style 'parenthesis))
+
+(when (fboundp 'global-hl-line-mode)
+  (global-hl-line-mode t)) ;; turn it on for all modes by default
+;; This works nicely with the zenburn theme. The first is for hl-mode,
+;; the second is so that when swiper highlights a line, we use the
+;; same colour.
+(set-face-background 'hl-line "#3e4446")
+(set-face-background 'highlight "#3e4446")
+
+
 ;; Now configure the packages we want
 (use-package counsel)
 
