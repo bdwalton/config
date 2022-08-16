@@ -41,11 +41,6 @@
 
 (when (fboundp 'global-hl-line-mode)
   (global-hl-line-mode t)) ;; turn it on for all modes by default
-;; This works nicely with the zenburn theme. The first is for hl-mode,
-;; the second is so that when swiper highlights a line, we use the
-;; same colour.
-(set-face-background 'hl-line "#3e4446")
-(set-face-background 'highlight "#3e4446")
 
 ;; enable midnight mode buffer purging
 (require 'midnight)
@@ -98,6 +93,8 @@
 (use-package magit)
 
 (use-package rust-mode)
+
+(use-package zenburn-theme)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
