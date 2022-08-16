@@ -23,6 +23,11 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t))
 
+(use-package editorconfig
+  :diminish
+  :config
+  (editorconfig-mode 1))
+
 (defconst user-init-dir
   (expand-file-name
    (concat "~" (getenv "LOGNAME") "/.emacs.d/")
