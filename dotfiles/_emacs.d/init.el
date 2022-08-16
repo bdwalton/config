@@ -1,5 +1,3 @@
-;; So that we know to look up included files in our local directory too.
-
 ;; Activate melpa package manipulation.  Do this early so that
 ;; anything depending on packages will be able to find the package
 ;; paths, etc.
