@@ -14,11 +14,16 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;; Now configure the packages we want
+(use-package counsel)
+
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
   :bind (("C-s" . swiper)
 	 ("C-r" . swiper)
-	 ("C-c C-r" . ivy-resume))
+	 ("C-x b" . ivy-switch-buffer)
+	 ("C-c C-r" . ivy-resume)
+	 ("C-x C-f" . counsel-find-file))
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t))
