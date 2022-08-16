@@ -95,6 +95,10 @@
   :config
   (add-hook 'before-save-hook 'gofmt-before-save))
 
+(use-package magit)
+
+(use-package rust-mode)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
