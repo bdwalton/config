@@ -78,6 +78,10 @@
   :config
   (which-key-mode))
 
+(use-package go-mode
+  :config
+  (add-hook 'before-save-hook 'gofmt-before-save))
+
 (defconst user-init-dir
   (expand-file-name
    (concat "~" (getenv "LOGNAME") "/.emacs.d/")
@@ -99,10 +103,6 @@
 
 ;; keybindings that we want everywhere.
 (load-library "keybindings")
-
-;; automatically load all of the .el files in our modes/ directory
-(mapc 'load-library
-      (directory-files (concat user-init-dir "modes") t "\\.el\\'"))
 
 ;; finally, always start with ~/ as the current directory
 (cd (getenv "HOME"))
