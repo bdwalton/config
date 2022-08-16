@@ -74,6 +74,10 @@
   :config
   (editorconfig-mode 1))
 
+(use-package which-key
+  :config
+  (which-key-mode))
+
 (defconst user-init-dir
   (expand-file-name
    (concat "~" (getenv "LOGNAME") "/.emacs.d/")
