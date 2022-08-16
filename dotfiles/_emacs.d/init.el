@@ -14,6 +14,13 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;; Our custom functions
+(defun my-indent-all ()
+  "Mark the whole buffer and then indent it according to the mode rules."
+  (interactive)
+  (progn
+    (indent-region (point-min) (point-max))))
+
 
 ;; Our basic config overrides and default settings
 (setq inhibit-startup-message t)
@@ -52,6 +59,8 @@
 (global-set-key [f4]  'start-kbd-macro)
 (global-set-key [f5]  'end-kbd-macro)
 (global-set-key [f6]  'call-last-kbd-macro)
+;; we do this fairly often, bind it to something easy.
+(global-set-key [f9] 'my-indent-all)
 ;; Mostly for coding modes, but make it global.
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 
@@ -100,9 +109,6 @@
 
 ;; some generic settings that should work everywhere.
 (load-library "general")
-
-;; keybindings that we want everywhere.
-(load-library "keybindings")
 
 ;; finally, always start with ~/ as the current directory
 (cd (getenv "HOME"))
