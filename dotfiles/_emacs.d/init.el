@@ -85,6 +85,7 @@
   (editorconfig-mode 1))
 
 (use-package which-key
+  :diminish
   :config
   (which-key-mode))
 
