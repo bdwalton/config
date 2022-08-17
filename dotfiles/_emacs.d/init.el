@@ -51,9 +51,6 @@
 ;; General keybindings here
 
 (global-set-key "\M-g" 'goto-line)
-;; make easier alt-x (when ctrl is bound to caps lock)
-(global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-c\C-m" 'execute-extended-command)
 ;; macros with 1 key
 (global-set-key [f4]  'start-kbd-macro)
 (global-set-key [f5]  'end-kbd-macro)
@@ -66,15 +63,24 @@
 ;; Now configure the packages we want
 (use-package diminish)
 
-(use-package counsel)
+(use-package counsel
+  :init
+  ;; make easier alt-x (when ctrl is bound to caps lock)
+  (global-set-key "\C-x\C-m" 'counsel-M-x)
+  (global-set-key "\C-c\C-m" 'counsel-M-x)
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x b" . counsel-ibuffer)
+	 ("C-x C-f" . counsel-find-file)
+	 :map minibuffer-local-map
+	 ("C-r" . 'counsel-minibuffer-history))
+  )
+
 
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
   :bind (("C-s" . swiper)
 	 ("C-r" . swiper)
-	 ("C-x b" . ivy-switch-buffer)
-	 ("C-c C-r" . ivy-resume)
-	 ("C-x C-f" . counsel-find-file))
+	 ("C-c C-r" . ivy-resume))
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t))
