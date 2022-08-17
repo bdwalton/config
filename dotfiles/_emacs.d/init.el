@@ -64,6 +64,8 @@
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 
 ;; Now configure the packages we want
+(use-package diminish)
+
 (use-package counsel)
 
 (use-package ivy
@@ -105,7 +107,7 @@
  '(custom-safe-themes
    '("a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" default))
  '(package-selected-packages
-   '(counsel editorconfig go-mode magit swiper rust-mode use-package which-key zenburn-theme)))
+   '(diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key zenburn-theme)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
