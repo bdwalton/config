@@ -98,6 +98,9 @@
 
 (use-package zenburn-theme)
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -107,7 +110,7 @@
  '(custom-safe-themes
    '("a3e99dbdaa138996bb0c9c806bc3c3c6b4fd61d6973b946d750b555af8b7555b" default))
  '(package-selected-packages
-   '(diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key zenburn-theme)))
+   '(rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key zenburn-theme)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
