@@ -30,9 +30,7 @@
 (put 'upcase-region 'disabled nil)
 (setq default-tab-width 2)
 (setq make-backup-files nil) ;; stop the little ~ turd files
-;; auto-insert the matching bracket/brace when the opening one is
-;; typed
-(electric-pair-mode t)
+
 ;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
 ;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
 (when (fboundp 'show-paren-mode)
@@ -79,6 +77,12 @@
 	 ("C-r" . 'counsel-minibuffer-history))
   )
 
+(use-package smartparens
+  :diminish
+  :hook
+  (prog-mode . smartparens-mode)
+  :config
+  (smartparens-strict-mode t))
 
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
@@ -123,7 +127,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(doom-themes ivy-rich rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key)))
+   '(smartparens doom-themes ivy-rich rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
