@@ -65,6 +65,7 @@
 (use-package diminish)
 
 (use-package ivy-rich
+  :after ivy
   :init
   (ivy-rich-mode 1))
 
