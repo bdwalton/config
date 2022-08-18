@@ -64,6 +64,22 @@
 ;; Now configure the packages we want
 (use-package diminish)
 
+(use-package smartparens
+  :diminish
+  :hook
+  (prog-mode . smartparens-mode)
+  :config
+  (smartparens-strict-mode t))
+
+(use-package ivy
+  :diminish ;; hide this minor mode in the modeline
+  :bind (("C-s" . swiper)
+	 ("C-r" . swiper)
+	 ("C-c C-r" . ivy-resume))
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t))
+
 (use-package ivy-rich
   :after ivy
   :init
@@ -81,21 +97,15 @@
 	 ("C-r" . 'counsel-minibuffer-history))
   )
 
-(use-package smartparens
-  :diminish
-  :hook
-  (prog-mode . smartparens-mode)
+(use-package ivy-prescient
+  :after counsel
+  :custom
+  (ivy-prescient-enable-filtering nil)
   :config
-  (smartparens-strict-mode t))
+  ;; Uncomment the following line to have sorting remembered across sessions!
+  ;; (prescient-persist-mode 1)
+  (ivy-prescient-mode 1))
 
-(use-package ivy
-  :diminish ;; hide this minor mode in the modeline
-  :bind (("C-s" . swiper)
-	 ("C-r" . swiper)
-	 ("C-c C-r" . ivy-resume))
-  :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t))
 
 (use-package editorconfig
   :diminish
@@ -131,7 +141,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(smartparens doom-themes ivy-rich rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key)))
+   '(ivy-prescient smartparens doom-themes ivy-rich rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
