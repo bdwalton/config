@@ -13,7 +13,7 @@
 
 set $mod Mod4
 
-set $i3font pango:Liberation Mono Regular 25
+set $i3font pango:Liberation Mono Regular 12
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
