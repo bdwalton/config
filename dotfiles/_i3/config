@@ -186,7 +186,8 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $HOME/.bdwscripts/polybar-launch.sh
 
 # zenburn colour scheme
-client.focused              #7F9F7F #7F9F7F #303030 #ffcfaf
-client.focused_inactive     #3f3f3f #3F3F3F #7f9f7f #3f3f3f
-client.unfocused            #3f3f3f #3F3F3F #DCDCCC #3f3f3f
-client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
+# <colorclass>              <border> <background> <text>  <indicator> <child_border>
+client.focused              #3f3f3f  #282A2E      #F0C674 #ffcfaf
+client.focused_inactive     #3f3f3f  #282A2E      #C5C8C6 #3f3f3f
+client.unfocused            #3f3f3f  #282A2E      #C5C8C6 #3f3f3f
+client.urgent               #dca3a3  #dca3a3      #DCDCCC #3f3f3f
