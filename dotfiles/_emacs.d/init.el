@@ -58,8 +58,6 @@
 (global-set-key [f6]  'call-last-kbd-macro)
 ;; we do this fairly often, bind it to something easy.
 (global-set-key [f9] 'my-indent-all)
-;; Mostly for coding modes, but make it global.
-(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 
 ;; Now configure the packages we want
 (use-package diminish)
