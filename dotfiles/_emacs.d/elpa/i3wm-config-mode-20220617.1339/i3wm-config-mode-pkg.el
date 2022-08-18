@@ -1,0 +1,2 @@
+;;; Generated package description from i3wm-config-mode-20220617.1339/i3wm-config-mode.el  -*- no-byte-compile: t -*-
+(define-package "i3wm-config-mode" "20220617.1339" "Better syntax highlighting for i3wm's config file" '((emacs "24.1")) :commit "3574d88241118ed6cc5a3022b6dde58d6f5af9dd" :authors '(("Alexander Miller" . "alexanderm@web.de")) :maintainer '("Alexander Miller" . "alexanderm@web.de") :keywords '("faces" "languages" "i3wm" "font-lock") :url "https://github.com/Alexander-Miller/i3wm-Config-Mode")

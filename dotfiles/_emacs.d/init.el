@@ -146,13 +146,15 @@
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
 
+(use-package i3wm-config-mode)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(helpful ivy-prescient smartparens doom-themes ivy-rich rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key)))
+   '(i3wm-config-mode i3-config-mode helpful ivy-prescient smartparens doom-themes ivy-rich rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
