@@ -8,13 +8,13 @@
 - link:
     ~/.bdwscripts: _bdwscripts
     ~/.config/dunst/dunstrc: _dunstrc
+    ~/.config/polybar/config.ini: _polybar_config.ini
     ~/.config/rofi/config.rasi: _rofi.config.rasi
     ~/.emacs.d: _emacs.d
     ~/.gitconfig: _gitconfig
     ~/.gtkrc-2.0: _gtkrc-2.0
     ~/.hgrc: _hgrc
     ~/.i3: _i3
-    ~/.i3status.conf: _i3status.conf
     ~/.oh_my_zsh: _oh_my_zsh
     ~/.oh_my_zsh_custom: _oh_my_zsh_custom
     ~/.rtorrent.rc: _rtorrent.rc
