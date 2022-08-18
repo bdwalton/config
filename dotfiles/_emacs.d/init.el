@@ -119,7 +119,9 @@
   :config
   (add-hook 'before-save-hook 'gofmt-before-save))
 
-(use-package magit)
+(use-package magit
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
 (use-package rust-mode)
 
