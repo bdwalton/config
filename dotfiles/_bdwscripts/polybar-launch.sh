@@ -8,7 +8,7 @@ polybar-msg cmd quit
 BARNAME="i3main"
 LOGFILE="/tmp/polybar-${BARNAME}.log"
 
-echo "---" | tee -a "${LOGFILE}"
+echo "--- $(date +%c) ($@) ---" | tee -a "${LOGFILE}"
 
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
