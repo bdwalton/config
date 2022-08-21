@@ -22,7 +22,7 @@
     ~/.tmux.conf: _tmux.conf
     ~/.xinitrc: _xinitrc
     ~/.Xresources: _Xresources
-    ~/.xsession: _xsession
+    ~/.xsessionrc: _xsessionrc
     ~/.zlogin: _zlogin
     ~/.zshenv: _zshenv
     ~/.zshrc: _zshrc
