@@ -1,3 +1,5 @@
+# -*- shell-script -*-
+
 source ~/.bdwconfig
 
 # Disable audible bell
