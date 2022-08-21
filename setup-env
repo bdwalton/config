@@ -16,9 +16,4 @@ SCRIPT_DIR="$(dirname $0)/scripts"
 
 echo Running Scripts from "'"${SCRIPT_DIR}"'"
 
-for setup_script in ${SCRIPT_DIR}/*; do
-    echo -e "-------- ${COLOR_CYAN}$(basename ${setup_script}) ${COLOR_NONE}--------\n"
-    $setup_script
-    echo
-    echo
-done
+run-parts -v "${SCRIPT_DIR}"
