@@ -26,6 +26,7 @@
 ;; Our basic config overrides and default settings
 (setq inhibit-startup-message t)
 (menu-bar-mode -1)
+(tool-bar-mode -1)
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-font-lock-mode t) ;; always have font colouring
 ;; enable a few deprecated features that we like
