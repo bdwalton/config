@@ -61,6 +61,12 @@
 (global-set-key [f9] 'my-indent-all)
 
 ;; Now configure the packages we want
+
+;; for things that we want that don't live in melpa, etc
+(use-package el-init
+  :config
+  (el-init-load "~/.emacs.d/external-inits"))
+
 (use-package diminish)
 
 (use-package smartparens
@@ -155,7 +161,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(i3wm-config-mode i3-config-mode helpful ivy-prescient smartparens doom-themes ivy-rich rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key)))
+   '(el-init xterm-title i3wm-config-mode i3-config-mode helpful ivy-prescient smartparens doom-themes ivy-rich rainbow-delimiters diminish counsel editorconfig go-mode magit swiper rust-mode use-package which-key)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
