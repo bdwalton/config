@@ -65,7 +65,8 @@
 ;; for things that we want that don't live in melpa, etc
 (use-package el-init
   :config
-  (el-init-load "~/.emacs.d/external-inits"))
+  (el-init-load "~/.emacs.d/external-inits")
+  (term-title-mode))
 
 (use-package diminish)
 
