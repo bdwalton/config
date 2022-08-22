@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Force kick polybar on monitor switches The script is not just
+launch, but will handle restarts.
+~/.bdwscripts/polybar-launch.sh autorandr
+
+
