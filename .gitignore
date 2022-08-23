@@ -2,4 +2,4 @@
 _gitconfig-home
 dotfiles/_emacs.d/transient
 dotfiles/_emacs.d/abbrev_defs
-dotfiles/_emacs.d/*/*/*elc
+dotfiles/_emacs.d/**/*elc
