@@ -1,19 +1,19 @@
-;; Activate melpa package manipulation.  Do this early so that
-;; anything depending on packages will be able to find the package
-;; paths, etc.
+;; Wire up straight.el; We use that instead of package. Note that
+;; early-init.el should be force disabling package as well.
+(defvar bootstrap-version)
+(let ((bootstrap-file
+      (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+        "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+        'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+(setq package-enable-at-startup nil)
 
-(require 'package)
-(setq package-archives '(
-			 ("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-(require 'use-package)
-(setq use-package-always-ensure t)
 
 ;; Our custom functions
 (defun my-indent-all ()
@@ -61,6 +61,16 @@
 (global-set-key [f9] 'my-indent-all)
 
 ;; Now configure the packages we want
+
+;; Everything else we want to do via use-package, but to ensure that
+;; boostraps, use straight directly for it.
+(straight-use-package 'use-package)
+
+;; Now, teach straight to integrate itself cleanly into use-package by
+;; default.
+(use-package straight
+  :config
+  (setq straight-use-package-by-default t))
 
 ;; for things that we want that don't live in melpa, etc
 (use-package el-init
