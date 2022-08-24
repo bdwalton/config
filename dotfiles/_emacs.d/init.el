@@ -35,9 +35,6 @@
 (setq default-tab-width 2)
 (setq make-backup-files nil) ;; stop the little ~ turd files
 
-(when (fboundp 'global-hl-line-mode)
-  (global-hl-line-mode t)) ;; turn it on for all modes by default
-
 (column-number-mode t)                   ;; show column numbers
 
 ;; General keybindings here
@@ -61,6 +58,10 @@
 (use-package straight
   :config
   (setq straight-use-package-by-default t))
+
+(use-package hl-line
+  :config
+  (global-hl-line-mode t)) ;; turn it on for all modes by default
 
 ;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
 ;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
