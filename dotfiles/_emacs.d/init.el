@@ -69,9 +69,10 @@
   (setq straight-use-package-by-default t))
 
 ;; for things that we want that don't live in melpa, etc
-(use-package el-init
+(use-package term-title
+  :straight
+  (term-title type: git :host github :repo "CyberShadow/term-title" )
   :config
-  (el-init-load "~/.emacs.d/external-inits")
   (term-title-mode))
 
 (use-package diminish)
