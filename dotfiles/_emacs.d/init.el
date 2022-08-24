@@ -44,10 +44,6 @@
 (when (fboundp 'global-hl-line-mode)
   (global-hl-line-mode t)) ;; turn it on for all modes by default
 
-;; enable midnight mode buffer purging
-(require 'midnight)
-(midnight-delay-set 'midnight-delay "4:30am")
-
 (column-number-mode t)                   ;; show column numbers
 
 ;; General keybindings here
@@ -79,6 +75,11 @@
   (term-title-mode))
 
 (use-package diminish)
+
+;; enable midnight mode buffer purging
+(use-package midnight
+  :config
+  (midnight-delay-set 'midnight-delay "4:30am"))
 
 (use-package smartparens
   :diminish
