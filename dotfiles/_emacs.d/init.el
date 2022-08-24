@@ -35,12 +35,6 @@
 (setq default-tab-width 2)
 (setq make-backup-files nil) ;; stop the little ~ turd files
 
-;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
-;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
-(when (fboundp 'show-paren-mode)
-  (show-paren-mode t)
-  (setq show-paren-style 'parenthesis))
-
 (when (fboundp 'global-hl-line-mode)
   (global-hl-line-mode t)) ;; turn it on for all modes by default
 
@@ -67,6 +61,15 @@
 (use-package straight
   :config
   (setq straight-use-package-by-default t))
+
+;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
+;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
+;; This is not strictly necessary because paren is a builtin. But
+;; let's make it look like our other package config.
+(use-package paren
+  :config
+  (show-paren-mode t)
+  (setq show-paren-style 'parenthesis))
 
 ;; for things that we want that don't live in melpa, etc
 (use-package term-title
@@ -123,7 +126,6 @@
   ;; Uncomment the following line to have sorting remembered across sessions!
   ;; (prescient-persist-mode 1)
   (ivy-prescient-mode 1))
-
 
 (use-package editorconfig
   :diminish
