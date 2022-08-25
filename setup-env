@@ -2,9 +2,6 @@
 
 set -e
 
-COLOR_CYAN="\e[36m"
-COLOR_NONE="\e[0m"
-
 BDW_CONFIG_FILE="~/.bdwconfig"
 if [[ -f "${BDW_CONFIG_FILE}" ]]; then
     source "${BDW_CONFIG_FILE}"
