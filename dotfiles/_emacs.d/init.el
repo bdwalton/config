@@ -39,7 +39,6 @@
 
 ;; General keybindings here
 
-(global-set-key "\M-g" 'goto-line)
 ;; macros with 1 key
 (global-set-key [f4]  'start-kbd-macro)
 (global-set-key [f5]  'end-kbd-macro)
@@ -58,6 +57,10 @@
 (use-package straight
   :config
   (setq straight-use-package-by-default t))
+
+(use-package goto-line-faster
+  :straight
+  (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
 
 (use-package hl-line
   :config
