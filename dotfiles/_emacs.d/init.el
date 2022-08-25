@@ -63,15 +63,6 @@
   :config
   (global-hl-line-mode t)) ;; turn it on for all modes by default
 
-;; show-paren-mode: subtle blinking of matching paren (defaults are ugly)
-;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
-;; This is not strictly necessary because paren is a builtin. But
-;; let's make it look like our other package config.
-(use-package paren
-  :config
-  (show-paren-mode t)
-  (setq show-paren-style 'parenthesis))
-
 ;; for things that we want that don't live in melpa, etc
 (use-package term-title
   :straight
@@ -88,10 +79,13 @@
 
 (use-package smartparens
   :diminish
+  :init
+  (require 'smartparens-config)
   :hook
   (prog-mode . smartparens-mode)
   :config
-  (smartparens-strict-mode t))
+  (smartparens-strict-mode t)
+  (show-smartparens-global-mode t))
 
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
