@@ -148,10 +148,6 @@
   :config
   (apheleia-global-mode +1))
 
-(use-package focus
-  :hook
-  (prog-mode . focus-mode))
-
 (use-package smartparens
   :diminish
   :init
