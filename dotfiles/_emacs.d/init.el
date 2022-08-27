@@ -15,14 +15,6 @@
 (setq package-enable-at-startup nil)
 
 
-;; Our custom functions
-(defun my-indent-all ()
-  "Mark the whole buffer and then indent it according to the mode rules."
-  (interactive)
-  (progn
-    (indent-region (point-min) (point-max))))
-
-
 ;; Our basic config overrides and default settings
 (setq inhibit-startup-message t)
 (menu-bar-mode -1)
@@ -43,8 +35,7 @@
 (global-set-key [f4]  'start-kbd-macro)
 (global-set-key [f5]  'end-kbd-macro)
 (global-set-key [f6]  'call-last-kbd-macro)
-;; we do this fairly often, bind it to something easy.
-(global-set-key [f9] 'my-indent-all)
+
 
 ;; Now configure the packages we want
 
@@ -93,6 +84,10 @@
   :config
   (smartparens-strict-mode t)
   (show-smartparens-global-mode t))
+
+(use-package aggressive-indent
+  :hook
+  (prog-mode . aggressive-indent-mode))
 
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
