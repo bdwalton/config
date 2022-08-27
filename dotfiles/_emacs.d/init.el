@@ -76,8 +76,8 @@
   (midnight-delay-set 'midnight-delay "4:30am"))
 
 (use-package focus
-  :config
-  (focus-mode))
+  :hook
+  (prog-mode . focus-mode))
 
 (use-package smartparens
   :diminish
