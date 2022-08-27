@@ -133,8 +133,6 @@ WORDCHARS=${WORDCHARS//[\/.-]}
 bindkey -e
 
 # zle settings
-# fake-enter = save to history without executing.
-zle -N fake-enter; bindkey "^X^H" fake-enter
 zle -N self-insert url-quote-magic
 
 # Define aliases.
