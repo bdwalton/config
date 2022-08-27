@@ -49,31 +49,104 @@
   :config
   (setq straight-use-package-by-default t))
 
-(use-package apheleia
-  :config
-  (apheleia-global-mode +1))
+;; Various modes that we find useful
+(use-package go-mode)
 
-(use-package goto-line-faster
-  :straight
-  (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
+(use-package rust-mode)
 
+(use-package i3wm-config-mode)
+
+;; General UI and creature-comfort improvements
 (use-package hl-line
   :config
   (global-hl-line-mode t)) ;; turn it on for all modes by default
 
-;; for things that we want that don't live in melpa, etc
+(use-package doom-themes
+  :config
+  (setq doom-themes-enable-bold t    ;; if nil, bold is universally disabled
+	doom-themes-enable-italic t) ;; if nil, italics is universally disabled
+  (load-theme 'doom-zenburn t)
+  (doom-themes-visual-bell-config))  ;; Enable flashing mode-line on errors
+
+(use-package helpful
+  :commands (helpful-callable helpful-variable helpful-command helpful-key)
+  :custom
+  (counsel-describe-function-function #'helpful-callable)
+  (counsel-describe-variable-function #'helpful-variable)
+  :bind
+  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . counsel-describe-variable)
+  ([remap describe-key] . helpful-key))
+
+(use-package which-key
+  :diminish
+  :config
+  (which-key-mode))
+
 (use-package term-title
   :straight
   (term-title type: git :host github :repo "CyberShadow/term-title" )
   :config
   (term-title-mode))
 
+(use-package goto-line-faster
+  :straight
+  (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
+
+(use-package ivy
+  :diminish ;; hide this minor mode in the modeline
+  :bind (("C-s" . swiper)
+	 ("C-r" . swiper)
+	 ("C-c C-r" . ivy-resume))
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t))
+
+(use-package ivy-rich
+  :after ivy
+  :init
+  (ivy-rich-mode 1))
+
+(use-package ivy-prescient
+  :after counsel
+  :custom
+  (ivy-prescient-enable-filtering nil)
+  :config
+  ;; Uncomment the following line to have sorting remembered across sessions!
+  ;; (prescient-persist-mode 1)
+  (ivy-prescient-mode 1))
+
+(use-package counsel
+  :init
+  ;; make easier alt-x (when ctrl is bound to caps lock)
+  (global-set-key "\C-x\C-m" 'counsel-M-x)
+  (global-set-key "\C-c\C-m" 'counsel-M-x)
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x b" . counsel-ibuffer)
+	 ("C-x C-f" . counsel-find-file)
+	 :map minibuffer-local-map
+	 ("C-r" . 'counsel-minibuffer-history)))
+
 (use-package diminish)
 
-;; enable midnight mode buffer purging
-(use-package midnight
+(use-package midnight ; enable midnight mode buffer purging
   :config
   (midnight-delay-set 'midnight-delay "4:30am"))
+
+(use-package editorconfig
+  :diminish
+  :config
+  (editorconfig-mode 1))
+
+;; Programming related packages and config
+(use-package magit
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+(use-package apheleia
+  :config
+  (apheleia-global-mode +1))
 
 (use-package focus
   :hook
@@ -93,81 +166,9 @@
   :hook
   (prog-mode . aggressive-indent-mode))
 
-(use-package ivy
-  :diminish ;; hide this minor mode in the modeline
-  :bind (("C-s" . swiper)
-	 ("C-r" . swiper)
-	 ("C-c C-r" . ivy-resume))
-  :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t))
-
-(use-package ivy-rich
-  :after ivy
-  :init
-  (ivy-rich-mode 1))
-
-(use-package counsel
-  :init
-  ;; make easier alt-x (when ctrl is bound to caps lock)
-  (global-set-key "\C-x\C-m" 'counsel-M-x)
-  (global-set-key "\C-c\C-m" 'counsel-M-x)
-  :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
-	 ("C-x C-f" . counsel-find-file)
-	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history))
-  )
-
-(use-package ivy-prescient
-  :after counsel
-  :custom
-  (ivy-prescient-enable-filtering nil)
-  :config
-  ;; Uncomment the following line to have sorting remembered across sessions!
-  ;; (prescient-persist-mode 1)
-  (ivy-prescient-mode 1))
-
-(use-package editorconfig
-  :diminish
-  :config
-  (editorconfig-mode 1))
-
-(use-package which-key
-  :diminish
-  :config
-  (which-key-mode))
-
-(use-package go-mode)
-
-(use-package magit
-  :custom
-  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
-
-(use-package rust-mode)
-
-(use-package doom-themes
-  :config
-  (setq doom-themes-enable-bold t    ;; if nil, bold is universally disabled
-	doom-themes-enable-italic t) ;; if nil, italics is universally disabled
-  (load-theme 'doom-zenburn t)
-  (doom-themes-visual-bell-config))  ;; Enable flashing mode-line on errors
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package helpful
-  :commands (helpful-callable helpful-variable helpful-command helpful-key)
-  :custom
-  (counsel-describe-function-function #'helpful-callable)
-  (counsel-describe-variable-function #'helpful-variable)
-  :bind
-  ([remap describe-function] . counsel-describe-function)
-  ([remap describe-command] . helpful-command)
-  ([remap describe-variable] . counsel-describe-variable)
-  ([remap describe-key] . helpful-key))
-
-(use-package i3wm-config-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
