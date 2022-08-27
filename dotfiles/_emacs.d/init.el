@@ -80,6 +80,10 @@
   :config
   (midnight-delay-set 'midnight-delay "4:30am"))
 
+(use-package focus
+  :config
+  (focus-mode))
+
 (use-package smartparens
   :diminish
   :init
