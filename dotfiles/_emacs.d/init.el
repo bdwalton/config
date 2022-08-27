@@ -49,6 +49,10 @@
   :config
   (setq straight-use-package-by-default t))
 
+(use-package apheleia
+  :config
+  (apheleia-global-mode +1))
+
 (use-package goto-line-faster
   :straight
   (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
@@ -134,9 +138,7 @@
   :config
   (which-key-mode))
 
-(use-package go-mode
-  :config
-  (add-hook 'before-save-hook 'gofmt-before-save))
+(use-package go-mode)
 
 (use-package magit
   :custom
