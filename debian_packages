@@ -14,6 +14,7 @@ pulseaudio-utils
 python3-pip
 python3-pygments
 rofi
+shfmt
 thunar
 tmux
 xautolock
