@@ -20,7 +20,6 @@ export HOSTNAME="$(hostname)"
 export GOPATH=~/working_code/go
 export MYGOPATH=~/working_code/go/src/github.com/bdwalton
 export TERM=xterm-256color
-export COLORTERM=truecolor
 
 # less settings
 export LESS="-eFXRM"
