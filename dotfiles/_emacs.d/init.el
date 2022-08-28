@@ -18,7 +18,9 @@
 ;; Our basic config overrides and default settings
 (setq inhibit-startup-message t)
 (menu-bar-mode -1)
-(tool-bar-mode -1)
+(if (display-graphic-p)
+    (progn
+      (tool-bar-mode -1)))
 (column-number-mode t)         ;; show column numbers
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-font-lock-mode t)      ;; always have font colouring
