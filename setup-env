@@ -13,4 +13,4 @@ SCRIPT_DIR="$(realpath $(dirname $0)/scripts)"
 
 echo Running Scripts from "'"${SCRIPT_DIR}"'"
 
-run-parts -v "${SCRIPT_DIR}"
+run-parts -v --exit-on-error "${SCRIPT_DIR}"
