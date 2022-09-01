@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+# We have a local .config/systemd/ service file for emacs so we can
+# easily bounce our daemon.
+systemctl restart --user emacs
