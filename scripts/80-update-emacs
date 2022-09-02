@@ -4,6 +4,6 @@ set -e
 
 # We have a local .config/systemd/ service file for emacs so we can
 # easily bounce our daemon.
-systemctl disable --user emacs
+systemctl daemon-reload --user
 systemctl enable --user emacs
 systemctl restart --user emacs

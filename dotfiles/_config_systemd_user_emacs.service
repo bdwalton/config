@@ -4,6 +4,8 @@ Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
 Type=forking
+EnvironmentFile=%h/.config/systemd/emacs.service.conf
+PassEnvironment=SSH_AUTH_SOCK
 ExecStart=/usr/bin/emacs --daemon
 ExecStop=/usr/bin/killall -u bdwalton emacs
 Restart=on-failure

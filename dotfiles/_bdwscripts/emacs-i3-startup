@@ -1,4 +1,14 @@
 #!/bin/bash
 
+# Write out the current value for SSH_AUTH_SOCK to a file that gets
+# sourced by the systemd unit.
+ENVD="${HOME}/.config/environment.d"
+
+[ -d "${ENVD}" ] || mkdir -p "${ENVD}"
+
+cat <<EOF >${ENVD}/emacs.service.conf
+SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
+EOF
+
 systemctl reset-failed --user
 systemctl start --user emacs
