@@ -5,7 +5,7 @@ Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 [Service]
 Type=forking
 ExecStart=/usr/bin/emacs --daemon
-ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+ExecStop=/usr/bin/killall -u bdwalton emacs
 Restart=on-failure
 
 [Install]
