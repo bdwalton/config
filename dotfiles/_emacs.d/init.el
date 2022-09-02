@@ -58,6 +58,10 @@
 
 (use-package i3wm-config-mode)
 
+(use-package systemd
+  :config
+  (systemd-mode))
+
 ;; General UI and creature-comfort improvements
 (use-package hl-line
   :config
