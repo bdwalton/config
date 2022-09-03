@@ -63,6 +63,8 @@
   (systemd-mode))
 
 ;; General UI and creature-comfort improvements
+(use-package diminish)
+
 (use-package hl-line
   :config
   (global-hl-line-mode t)) ;; turn it on for all modes by default
@@ -133,8 +135,6 @@
 	 ("C-x C-f" . counsel-find-file)
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history)))
-
-(use-package diminish)
 
 (use-package midnight ; enable midnight mode buffer purging
   :config
