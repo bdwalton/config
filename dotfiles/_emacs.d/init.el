@@ -15,12 +15,25 @@
 (setq package-enable-at-startup nil)
 
 
+;; Any functions we need to use during init.
+(defun bdw-frame-creation-hook (&optional frame)
+  "Do frame-type-conditional setup."
+  (with-selected-frame frame
+    (if (display-graphic-p)
+	(progn
+	  (custom-set-faces
+	   ;; custom-set-faces was added by Custom.
+	   ;; If you edit it by hand, you could mess it up, so be careful.
+	   ;; Your init file should contain only one such instance.
+	   ;; If there is more than one, they won't work right.
+	   '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 218 :width normal)))))
+	  (tool-bar-mode -1)))))
+
+
 ;; Our basic config overrides and default settings
+(add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
 (setq inhibit-startup-message t)
 (menu-bar-mode -1)
-(if (display-graphic-p)
-    (progn
-      (tool-bar-mode -1)))
 (column-number-mode t)         ;; show column numbers
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-font-lock-mode t)      ;; always have font colouring
