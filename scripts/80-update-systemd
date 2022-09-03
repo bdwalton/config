@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+SERVICES=$(
+    cd ~/.config/systemd/user
+    ls *service
+	)
+
+# We have a local .config/systemd/ service file for emacs so we can
+# easily bounce our daemon.
+systemctl daemon-reload --user
+
+for service in ${SERVICES}; do
+    systemctl enable --user ${service}
+    systemctl restart --user ${service}
+done
