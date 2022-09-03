@@ -86,9 +86,9 @@
   ([remap describe-key] . helpful-key))
 
 (use-package which-key
-  :diminish
   :config
-  (which-key-mode))
+  (which-key-mode)
+  (diminish 'which-key-mode ""))
 
 (use-package term-title
   :straight
