@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# If we have a real ~/.ssh, move it out of the way so we can link our
+# own via dotfile setup.
+SSHD="${HOME}/.ssh"
+
+if [ ! -L "${SSHD}" -a -d "${SSHD}" ]; then
+    echo "Moving ${SSHD}"
+    mv "${SSHD}" "${SSHD}.$(date +%F-%R)"
+fi
