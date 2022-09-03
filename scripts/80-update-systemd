@@ -1,17 +1,22 @@
 #!/bin/bash
 
-set -e
+BASE_PATH="$(realpath $(dirname $0)/../)"
+SYSTEMD_BASE="${BASE_PATH}/systemd-user"
+SYSTEMD_DIR="${HOME}/.config/systemd/user"
 
 SERVICES=$(
-    cd ~/.config/systemd/user
+    cd "${SYSTEMD_BASE}"
     ls *service
-	)
+)
+
+[ -d "${SYSTEMD_DIR}" ] || mkdir -p "${SYSTEMD_DIR}"
+
+for service in ${SERVICES}; do
+    ln -f "${SYSTEMD_BASE}/${service}" "${SYSTEMD_DIR}/${service}"
+    systemctl enable --user ${service}
+    systemctl restart --user ${service}
+done
 
 # We have a local .config/systemd/ service file for emacs so we can
 # easily bounce our daemon.
 systemctl daemon-reload --user
-
-for service in ${SERVICES}; do
-    systemctl enable --user ${service}
-    systemctl restart --user ${service}
-done
