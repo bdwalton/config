@@ -5,15 +5,13 @@
 
 [Unit]
 Description=SSH key agent
-DefaultDependencies=no
-After=network.target
 
 [Service]
 Type=simple
 Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
 
 # start in foreground mode (-D), systemd takes care of running in background
-ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
+ExecStart=-/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
 
 # stop using $MAINPID, provided by systemd
 ExecStop=/bin/sh -c "SSH_AGENT_PID=$MAINPID /usr/bin/ssh-agent -k"
