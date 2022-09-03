@@ -4,7 +4,6 @@ Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
 Type=forking
-Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
 PassEnvironment=SSH_AUTH_SOCK
 ExecStart=-/usr/bin/emacs --daemon
 ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"

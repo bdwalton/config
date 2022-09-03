@@ -8,9 +8,9 @@ Description=SSH key agent
 
 [Service]
 Type=simple
-Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
 
 # start in foreground mode (-D), systemd takes care of running in background
+# SSH_AUTH_SOCK should be set in ~/.config/environment.d
 ExecStart=-/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
 
 # stop using $MAINPID, provided by systemd
