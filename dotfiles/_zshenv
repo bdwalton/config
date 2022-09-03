@@ -2,6 +2,7 @@
 
 # This should set BDW_CONFIG_TYPE at minimum.
 source ~/.bdwconfig
+export BDW_CONFIG_TYPE="${BDW_CONFIG_TYPE:-home}"
 
 # Special arrangement for certain variables.
 typeset -U path manpath
@@ -34,5 +35,5 @@ export XCURSOR_SIZE=48
 path=(~/bin ~/.cargo/bin $GOPATH/bin /usr/local/bin ${path} /sbin /usr/sbin)
 
 if [[ -f ~/.zshenv-${BDW_CONFIG_TYPE} ]]; then
-  source ~/.zshenv-${BDW_CONFIG_TYPE}
+    source ~/.zshenv-${BDW_CONFIG_TYPE}
 fi
