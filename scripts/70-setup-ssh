@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+SSH_DIR="$(realpath ~/.ssh)"
+
+chmod 700 "${SSH_DIR}"
+chmod 600 "${SSH_DIR}/config"
+
+case "${BDW_CONFIG_TYPE}" in
+    "home")
+	echo "Setting up ~/.ssh..."
+	cd ~/.ssh
+	make
+	;;
+    *)
+	echo "Nothing to do for ssh in BDW_CONFIG_TYPE=${BDW_CONFIG_TYPE}."
+	;;
+esac
