@@ -20,6 +20,7 @@
     ~/.oh_my_zsh: _oh_my_zsh
     ~/.oh_my_zsh_custom: _oh_my_zsh_custom
     ~/.rtorrent.rc: _rtorrent.rc
+    ~/.ssh/config: _ssh_config
     ~/.tmux.conf: _tmux.conf
     ~/.xinitrc: _xinitrc
     ~/.Xresources: _Xresources

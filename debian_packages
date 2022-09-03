@@ -8,7 +8,6 @@ gconf2
 gnome-screensaver
 i3
 inputplug
-keychain
 polybar
 pulseaudio-utils
 python3-pip
