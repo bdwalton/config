@@ -79,6 +79,10 @@
 ;; General UI and creature-comfort improvements
 (use-package diminish)
 
+(use-package autorevert
+  :config
+  (diminish 'auto-revert-mode ""))
+
 (use-package hl-line
   :config
   (global-hl-line-mode t)) ;; turn it on for all modes by default
