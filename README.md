@@ -56,6 +56,12 @@ directory of this repository. To track a new dotfile, create it in the
 `dotfiles` directory and reference it from
 `dotfiles/install.conf.yaml`.
 
+## Systemd Service Units
+
+We manage a few things via systemd user service units. Place valid
+.service files in systemd-user and they will be delivered and
+installed.
+
 ## Expected Packages
 
 To track new Debian packages that are expected, simply add the package
