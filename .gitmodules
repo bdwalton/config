@@ -4,3 +4,6 @@
 [submodule "dotfiles/_oh_my_zsh"]
 	path = dotfiles/_oh_my_zsh
 	url = http://github.com/ohmyzsh/ohmyzsh.git
+[submodule "dotfiles/_ssh"]
+	path = dotfiles/_ssh
+	url = http://github.com/bdwalton/ssh_config.git
