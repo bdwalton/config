@@ -21,6 +21,15 @@ will create a `~/.bdwconfig` file with an appropriately exported
 environment variable named `BDW_CONFIG_TYPE` which is leveraged by
 many of the other configurations in this repository.
 
+Subsequently, you can run:
+
+```
+./update-config && ./setup-env
+```
+
+This will download the latest configs and then refresh the
+environment.
+
 
 ## BDW_CONFIG_TYPE
 
