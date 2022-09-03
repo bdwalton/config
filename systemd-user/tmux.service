@@ -1,0 +1,12 @@
+[Unit]
+Description=Start tmux in detached session
+
+[Service]
+Type=forking
+PassEnvironment=SSH_AUTH_SOCK
+ExecStart=/usr/bin/tmux new-session -s %u -d
+ExecStop=/usr/bin/tmux kill-session -t %u
+Restart=always
+
+[Install]
+WantedBy=default.target
