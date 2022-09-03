@@ -151,6 +151,7 @@
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
 (use-package apheleia
+  :diminish
   :config
   (apheleia-global-mode +1))
 
