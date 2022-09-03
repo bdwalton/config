@@ -10,3 +10,7 @@ if [[ ! -f "$BDW_CONFIG_FILE" ]]; then
 else
     echo "${BDW_CONFIG_FILE} is already in place."
 fi
+
+# Update this file, in case it still carries the export statement. To use it as
+# a systemd EnvironmentFile, it needs to be use VAR=VAL.
+perl -pi -e 's/export //' "${BDW_CONFIG_FILE}"

@@ -3,7 +3,8 @@ Description=Start tmux in detached session
 
 [Service]
 Type=forking
-PassEnvironment=SSH_AUTH_SOCK
+EnvironmentFile=%h/.bdwconfig
+PassEnvironment=SSH_AUTH_SOCK BDW_CONFIG_TYPE
 ExecStart=/usr/bin/tmux new-session -s %u -d
 ExecStop=/usr/bin/tmux kill-session -t %u
 Restart=always

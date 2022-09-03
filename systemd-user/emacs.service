@@ -4,7 +4,8 @@ Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
 Type=forking
-PassEnvironment=SSH_AUTH_SOCK
+EnvironmentFile=%h/.bdwconfig
+PassEnvironment=SSH_AUTH_SOCK BDW_CONFIG_TYPE
 ExecStart=-/usr/bin/emacs --daemon
 ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
 Restart=on-failure
