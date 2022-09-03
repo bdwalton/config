@@ -160,8 +160,6 @@ exec dex -ae i3
 exec --no-startup-id /usr/libexec/gsd-xsettings
 exec --no-startup-id gnome-screensaver
 exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command --lock" -corners 0+0- -cornerdelay 1 -cornerredelay 5
-exec_always --no-startup-id ~/.bdwscripts/emacs-i3-startup
-exec_always --no-startup-id ~/.bdwscripts/i3-shutdown
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
