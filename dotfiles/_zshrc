@@ -140,12 +140,8 @@ bindkey -e
 zle -N self-insert url-quote-magic
 
 # Define aliases.
-alias cd..='cd ..'
-alias cd...='cd ../..'
 alias cp='nocorrect cp -i'
 alias d='dirs -v'
-alias dlbf='rm -f (.*~|*~)'
-alias dlb='rm  -i (.*~|*~)'
 alias emacs='~/.bdwscripts/emacs-term'
 alias grep='egrep --color=auto'
 alias h=history
@@ -155,13 +151,8 @@ alias ll='ls -lh'
 alias mkdir='nocorrect mkdir'
 alias mmv='noglob zmv -W'
 alias mv='nocorrect mv -i'
-alias po=popd
-alias pu=pushd
-alias rdlbf='find . -iname \*~ | xargs rm -f'
 alias rm='rm -i'
 alias sudosh='nocorrect sudo $SHELL'
-alias zc='emacs ~/.zshrc'
-alias zmv='noglob zmv'
 
 alias -g G='egrep --color=auto'
 alias -g H=' | head'
