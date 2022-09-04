@@ -80,8 +80,7 @@
 (use-package diminish)
 
 (use-package autorevert
-  :config
-  (diminish 'auto-revert-mode ""))
+  :diminish auto-revert-mode)
 
 (use-package hl-line
   :config
@@ -106,9 +105,9 @@
   ([remap describe-key] . helpful-key))
 
 (use-package which-key
+  :diminish which-key-mode
   :config
-  (which-key-mode)
-  (diminish 'which-key-mode ""))
+  (which-key-mode))
 
 (use-package term-title
   :straight
