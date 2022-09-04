@@ -7,7 +7,7 @@ configuration {
 /*	fixed-num-lines: true;*/
 /*	show-icons: false;*/
 /*	terminal: "rofi-sensible-terminal";*/
-/*	ssh-client: "ssh";*/
+	ssh-client: "bdw-ssh-wrapper";
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*	run-command: "{cmd}";*/
 /*	run-list-command: "";*/

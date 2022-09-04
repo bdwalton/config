@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+# A wrapper for ssh so we can inject a $BDW_CONFIG_TYPE handler for
+# things like special key management.
+
+HELPER="${HOME}/.bdwscripts-${BDW_CONFIG_TYPE}/ssh-helper"
+
+echo "Looking for helper: ${HELPER}"
+if [ -x "${HELPER}" ]; then
+    echo "Running helper."
+    ${HELPER}
+fi
+
+exec ssh $@
