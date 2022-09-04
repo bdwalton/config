@@ -13,4 +13,11 @@ if [ -x "${HELPER}" ]; then
     ${HELPER}
 fi
 
-exec ssh $@
+case "$@" in
+    *hendrix*)
+	exec mosh $@
+	;;
+    *)
+	exec ssh $@
+	;;
+esac
