@@ -79,6 +79,9 @@
 ;; General UI and creature-comfort improvements
 (use-package diminish)
 
+(use-package eldoc
+  :diminish eldoc-mode)
+
 (use-package autorevert
   :diminish auto-revert-mode)
 
