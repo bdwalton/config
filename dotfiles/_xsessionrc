@@ -1,6 +1,7 @@
 # -*- shell-script -*-
 
 source ~/.bdwconfig
+export BDW_CONFIG_TYPE="${BDW_CONFIG_TYPE:-home}"
 
 # Disable audible bell
 xset -b
