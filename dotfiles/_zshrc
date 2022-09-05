@@ -73,7 +73,7 @@ HIST_STAMPS="yyyy-mm-dd"
 ZSH_CUSTOM=~/.oh_my_zsh_custom
 
 # For the tmux plugin.
-ZSH_TMUX_DEFAULT_SESSION_NAME=main
+ZSH_TMUX_DEFAULT_SESSION_NAME=$USER
 
 # For the colorize plugin
 ZSH_COLORIZE_TOOL=pygmentize
