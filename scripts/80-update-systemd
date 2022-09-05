@@ -28,3 +28,5 @@ done
 # We have a local .config/systemd/ service file for emacs so we can
 # easily bounce our daemon.
 systemctl daemon-reload --user
+
+sudo loginctl enable-linger $USER
