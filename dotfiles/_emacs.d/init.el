@@ -79,6 +79,11 @@
 ;; General UI and creature-comfort improvements
 (use-package diminish)
 
+(use-package projectile
+  :config
+  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+  (projectile-mode +1))
+
 (use-package eldoc
   :diminish eldoc-mode)
 
