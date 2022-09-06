@@ -122,6 +122,17 @@
   :straight
   (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
 
+(use-package counsel
+  :init
+  ;; make easier alt-x (when ctrl is bound to caps lock)
+  (global-set-key "\C-x\C-m" 'counsel-M-x)
+  (global-set-key "\C-c\C-m" 'counsel-M-x)
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x b" . counsel-ibuffer)
+	 ("C-x C-f" . counsel-find-file)
+	 :map minibuffer-local-map
+	 ("C-r" . 'counsel-minibuffer-history)))
+
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
   :bind (("C-s" . swiper)
@@ -144,17 +155,6 @@
   ;; Uncomment the following line to have sorting remembered across sessions!
   ;; (prescient-persist-mode 1)
   (ivy-prescient-mode 1))
-
-(use-package counsel
-  :init
-  ;; make easier alt-x (when ctrl is bound to caps lock)
-  (global-set-key "\C-x\C-m" 'counsel-M-x)
-  (global-set-key "\C-c\C-m" 'counsel-M-x)
-  :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
-	 ("C-x C-f" . counsel-find-file)
-	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history)))
 
 (use-package midnight ; enable midnight mode buffer purging
   :config
