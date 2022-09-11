@@ -1,4 +1,5 @@
 autorandr
+autossh
 clang-format
 colordiff
 dex
@@ -9,11 +10,13 @@ gnome-screensaver
 i3
 inputplug
 mosh
+openssh-client
 polybar
 pulseaudio-utils
 python3-pip
 python3-pygments
 rofi
+ssh-askpass
 thunar
 tmux
 xautolock
