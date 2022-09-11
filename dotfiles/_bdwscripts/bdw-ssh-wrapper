@@ -14,10 +14,12 @@ if [ -x "${HELPER}" ]; then
 fi
 
 case "$@" in
-    *hendrix*)
-	exec mosh $@
-	;;
-    *)
-	exec ssh $@
-	;;
+*hendrix*)
+    # Until we sort out ssh agent forwarding with mosh, use ssh
+    # exec mosh $@
+    exec ssh $@
+    ;;
+*)
+    exec ssh $@
+    ;;
 esac
