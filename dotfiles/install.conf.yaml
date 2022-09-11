@@ -6,6 +6,7 @@
 - clean: ['~']
 
 - link:
+    ~/.bdwbin: _bdwbin
     ~/.bdwscripts: _bdwscripts
     ~/.config/autorandr: _config_autorandr
     ~/.config/dunst/dunstrc: _dunstrc
