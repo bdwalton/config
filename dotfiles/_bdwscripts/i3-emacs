@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Ensure that if we hit the i3 hotkey to launch emacsclient, we don't
+# run multiple.
+
+(
+    if ! flock -n -x 0; then
+        # We're already running, so emacs should be visible,
+        # so make i3 focus the scratchpad and exit.
+        i3-msg scratchpad show
+        exit 0
+    fi
+
+    /usr/bin/emacsclient -c
+) <$0
