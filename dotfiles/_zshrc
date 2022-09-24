@@ -92,8 +92,10 @@ if [[ ! -f ~/.notmux && ! -f ~/.notmux-$(hostname) ]]; then
     export ZSH_TMUX_AUTOSTART=true
 fi
 
-if [ -z "${SSH_AUTH_SOCK}" ]; then
-  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+if [ -z "${SSH_CLIENT}" ]; then
+    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+else
+    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent-remote.socket"
 fi
 
 source $ZSH/oh-my-zsh.sh
