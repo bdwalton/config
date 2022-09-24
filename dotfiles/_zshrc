@@ -93,9 +93,13 @@ if [[ ! -f ~/.notmux && ! -f ~/.notmux-$(hostname) ]]; then
 fi
 
 if [ -z "${SSH_CONNECTION}" ]; then
-    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 else
+  if [ -n "${TMUX}" ]; then
+    export SSH_AUTH_SOCK="$(tmux show-environment SSH_AUTH_SOCK | awk -F= '{print $2}')"
+  else
     export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent-remote.socket"
+  fi
 fi
 
 source $ZSH/oh-my-zsh.sh
