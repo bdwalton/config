@@ -8,21 +8,16 @@ cd "${BASE_PATH}"
 
 [ -d "${SYSTEMD_DIR}" ] || mkdir -p "${SYSTEMD_DIR}"
 
-SERVICES="$(cd ${SYSTEMD_BASE}; ls)"
+SERVICES="$(
+    cd ${SYSTEMD_BASE}
+    ls
+)"
 
 for service in ${SERVICES}; do
     serv=$(basename ${service})
     ln -f "${SYSTEMD_BASE}/${serv}" "${SYSTEMD_DIR}/${serv}"
     systemctl enable --user ${serv}
 
-done
-
-# Find the systemd services we think have changed since the last pull. This
-# won't handle removed services, but that isn't a usecase we have for the time
-# being.
-CHANGED_SERVICES="$(git log HEAD@{1}..HEAD --oneline --name-only -- systemd-user/ | grep systemd-user/ | sort -u)"
-for service in ${CHANGED_SERVICES}; do
-    systemctl restart --user ${serv}
 done
 
 # We have a local .config/systemd/ service file for emacs so we can
