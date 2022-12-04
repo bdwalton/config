@@ -1,20 +1,19 @@
 #!/bin/bash
 
-# Terminate already running bar instances
-# If all your bars have ipc enabled, you can use
-polybar-msg cmd quit
-
 BARNAME="i3main"
 LOGFILE="/tmp/polybar-${BARNAME}.log"
 
-echo "--- $(date +%c) ($@) ---" | tee -a "${LOGFILE}"
+exec >>${LOGFILE} 2>&1
 
-if type "xrandr"; then
-    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload --config=~/.config/polybar/config.ini "${BARNAME}" 2>&1 | tee -a "${LOGFILE}" &
-        disown
-    done
-else
-    polybar --reload --config=~/.config/polybar/config.ini "${BARNAME}" 2>&1 | tee -a "${LOGFILE}" &
+echo "--- $(date +%c) ($@) ---"
+echo "Stopping any running polybar instances."
+polybar-msg cmd quit
+
+sleep 1
+
+echo "Starting appropriate new instances, per monitor."
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    echo "Starting for ${m}"
+    MONITOR="$m" polybar --reload --config=~/.config/polybar/config.ini "${BARNAME}" &
     disown
-fi
+done
