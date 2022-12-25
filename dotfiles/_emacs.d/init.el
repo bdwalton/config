@@ -47,6 +47,7 @@
 
 ;; General keybindings here
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
 ;; macros with 1 key
 (global-set-key [f4]  'start-kbd-macro)
 (global-set-key [f5]  'end-kbd-macro)
