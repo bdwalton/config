@@ -1,4 +1,3 @@
 #!/bin/bash
 
-polybar-msg cmd quit
 i3-msg restart

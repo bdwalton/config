@@ -1,11 +1,14 @@
 #!/bin/bash
 
 BARNAME="i3main"
-LOGFILE="/tmp/polybar-${BARNAME}.log"
+LOGFILE="${TMPDIR}/polybar-${BARNAME}.log"
 
 exec >>${LOGFILE} 2>&1
 
 echo "--- $(date +%c) ($@) ---"
+
+polybar-msg cmd quit
+sleep 1
 
 echo "Starting appropriate new instances, per monitor."
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
