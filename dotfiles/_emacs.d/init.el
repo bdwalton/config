@@ -67,6 +67,11 @@
   (setq straight-use-package-by-default t))
 
 ;; Various modes that we find useful
+(use-package tree-sitter)
+(use-package tree-sitter-langs)
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
 (use-package go-mode)
 
 (use-package rust-mode)
