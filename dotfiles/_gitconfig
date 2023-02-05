@@ -1,22 +1,25 @@
+;; -*- mode: ini -*-
+
 [user]
-  name = Ben Walton
+name = Ben Walton
 
 [color]
-	ui = auto
-	pager = true
+ui = auto
+pager = true
 
 [alias]
-	ci = commit -s
-	st = status
-	co = checkout
-	br = branch
+ci = commit -s
+st = status
+co = checkout
+br = branch
 
 [push]
-	default = matching
+default = matching
 
 [include]
-	path = ~/.gitconfig-work
-	path = ~/.gitconfig-home
-	path = ~/.gitconfig-csw
+path = ~/.gitconfig-work
+path = ~/.gitconfig-home
+path = ~/.gitconfig-csw
+
 [pull]
-	rebase = true
+rebase = true
