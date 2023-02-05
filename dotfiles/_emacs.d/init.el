@@ -73,6 +73,12 @@
 
 (use-package i3wm-config-mode)
 
+(use-package ini-mode
+  :straight
+  (ini-mode type: git :host github :repo "Lindydancer/ini-mode" )
+  :config
+  (ini-mode))
+
 (use-package systemd
   :config
   (systemd-mode))
