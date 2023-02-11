@@ -216,6 +216,7 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package org)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

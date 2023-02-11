@@ -22,6 +22,7 @@
  ("magit" . "712be4632b0ddc7899ca90db8f9be20d90b4326f")
  ("melpa" . "1fb027a2f96f47ca0f06d78e37049042fe56b413")
  ("nongnu-elpa" . "baad781689346353a219a786fc68ff476c6e013e")
+ ("org" . "1f332d6c5c6f67aa5f744ac91ec251ef0f1a5b7c")
  ("prescient.el" . "07d61b7779c4cca3009390383e7f98a55de7e17e")
  ("projectile" . "20aa2adccc1ecb19f54f2fbc428b4904071fcab8")
  ("rainbow-delimiters" . "a32b39bdfe6c61c322c37226d66e1b6d4f107ed0")
