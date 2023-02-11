@@ -80,7 +80,7 @@
 
 (use-package ini-mode
   :straight
-  (ini-mode type: git :host github :repo "Lindydancer/ini-mode" )
+  (ini-mode type: git :host github :repo "bdwalton/ini-mode" )
   :config
   (ini-mode))
 
