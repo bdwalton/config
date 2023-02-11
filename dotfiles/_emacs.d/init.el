@@ -131,7 +131,7 @@
 
 (use-package term-title
   :straight
-  (term-title type: git :host github :repo "CyberShadow/term-title" )
+  (term-title :type git :host github :repo "CyberShadow/term-title" )
   :config
   (term-title-mode))
 
