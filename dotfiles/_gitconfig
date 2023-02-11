@@ -19,7 +19,6 @@ default = matching
 [include]
 path = ~/.gitconfig-work
 path = ~/.gitconfig-home
-path = ~/.gitconfig-csw
 
 [pull]
 rebase = true
