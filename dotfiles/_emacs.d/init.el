@@ -89,6 +89,13 @@
   (systemd-mode))
 
 ;; General UI and creature-comfort improvements
+(use-package dashboard
+  :straight
+  (dashboard :type git :host github :repo "emacs-dashboard/emacs-dashboard" )
+  :config
+  (dashboard-setup-startup-hook)
+  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))))
+
 (use-package diminish)
 
 (use-package projectile
