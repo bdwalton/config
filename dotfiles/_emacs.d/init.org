@@ -4,22 +4,20 @@
 #+auto_tangle: t
 
 * Preamble
-We duplicate the preamble identically here, but one has a separate
-:tangle attribute to divert it to early-init.el instead.
 
-** init.el Preamble
+The standard preamble below is used for init.el and early-init.el.
+
+#+name: shared_preamble
 #+begin_src emacs-lisp
   ;; This is bdwalton's emacs config. It is auto-generated from init.org.
   ;; Local changes will be overwritten.
-  ;;
-  ;;
 #+end_src
 
-** early-init.el Preamble
-#+begin_src emacs-lisp :tangle ./early-init.el
-  ;; This is bdwalton's emacs config. It is auto-generated from init.org.
-  ;; Local changes will be overwritten.
+This overrides the tangle output to go to early-init.el but references
+the block above so they're always the same.
 
+#+begin_src emacs-lisp :noweb yes :tangle ./early-init.el
+  <<shared_preamble>>
 #+end_src
 * Early Init
 This config gets spit out to early-init.el. It should be minimal.
