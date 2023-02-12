@@ -209,6 +209,13 @@
   :custom
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
+(use-package org-auto-tangle
+  :after org
+  :straight
+  (org-auto-tangle type: git :host github :repo "yilkalargaw/org-auto-tangle" )
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode))
+
 ;; Programming related packages and config
 (use-package magit
   :custom
