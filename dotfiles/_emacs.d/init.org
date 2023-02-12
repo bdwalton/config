@@ -22,11 +22,18 @@ We duplicate the preamble identically here, but one has a separate
 
 #+end_src
 * Early Init
+This config gets spit out to early-init.el. It should be minimal.
+
 #+begin_src emacs-lisp :tangle ./early-init.el
   ;; Ensure that package isn't initialized before we get to straight.el
   (setq package-enable-at-startup nil)
 #+end_src
 * Straight Package Management Initialization
+We use straight.el for our package management as it facilitates both
+standard package repo usage and github package usage with features
+above and beyond the standard use-package. Below in the packages
+block, we set it up such that it's cleanly integrated with
+use-package.
 
 #+begin_src emacs-lisp
 ;; Wire up straight.el; We use that instead of package. Note that
@@ -48,6 +55,8 @@ We duplicate the preamble identically here, but one has a separate
 
 * Personal Functions Required During Initialization
 
+Here we have a few functions that are referenced later in the config.
+
 #+begin_src emacs-lisp
   ;; Any functions we need to use during init.
   (defun bdw-frame-creation-hook (&optional frame)
@@ -66,6 +75,12 @@ We duplicate the preamble identically here, but one has a separate
 #+end_src
 
 * Basic Configuration and UI Config
+
+These settings tweak the UI in ways we find more useful. Things like
+toolbars and scrollbars aren't useful for us as we like keyboard
+driven operation and often run in a terminal anyway. We also turn on a
+few deprecated features.
+
 #+begin_src emacs-lisp
 ;; Our basic config overrides and default settings
 (add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
@@ -82,6 +97,9 @@ We duplicate the preamble identically here, but one has a separate
 #+end_src
 
 * General Keybindings
+
+Here, we capture keybindings that aren't specific to any modes.
+
 #+begin_src emacs-lisp
 ;; General keybindings here
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
@@ -94,7 +112,15 @@ We duplicate the preamble identically here, but one has a separate
 
 * Package Installation and Configuration
 
+We install, configure and use several packages that make emacs more
+useful for my needs. We start by finalizing straight.el.
+
 ** Straight Package Manager Setup
+
+The straight.el package needs a bit of additional setup to work
+nicely. We bring in use-package and then have straight use use-package
+to override use-package with a more featureful version.
+
 #+begin_src emacs-lisp
   ;; Everything else we want to do via use-package, but to ensure that
   ;; boostraps, use straight directly for it.
@@ -109,6 +135,10 @@ We duplicate the preamble identically here, but one has a separate
 #+end_src
 
 ** General UI and Creature Comfort Packages
+
+These packages provide enhancements to the default UI in ways that
+make it more useful.
+
 #+begin_src emacs-lisp
   ;; General UI and creature-comfort improvements
   (use-package dashboard
@@ -213,6 +243,10 @@ We duplicate the preamble identically here, but one has a separate
 #+end_src
 
 ** Useful Modes For Coding and Editing Configs
+
+Make sure we have programming and config modes for commonly used
+languages and files.
+
 #+begin_src emacs-lisp
   ;; Various modes that we find useful
   (use-package tree-sitter)
@@ -241,6 +275,11 @@ We duplicate the preamble identically here, but one has a separate
 #+end_src
 
 ** Programming Related Packages And Config
+
+The packages below make programming nicer by enhancing the experience
+with things like bracket matching and colouring, git integration, auto
+indentation etc.
+
 #+begin_src emacs-lisp
   ;; Programming related packages and config
   (use-package magit
@@ -272,6 +311,10 @@ We duplicate the preamble identically here, but one has a separate
 #+end_src
 
 ** Org Mode Config
+
+We use org mode with several enhancements. All of the org-related
+config is below.
+
 #+begin_src emacs-lisp
   ;; All of our org-mode related config
   (use-package org
