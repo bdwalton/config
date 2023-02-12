@@ -69,7 +69,10 @@
   (dashboard :type git :host github :repo "emacs-dashboard/emacs-dashboard" )
   :config
   (dashboard-setup-startup-hook)
-  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))))
+  :custom
+  (initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+  (dashboard-items '((recents . 5)
+                     (projects . 5))))
 
 (use-package diminish)
 
