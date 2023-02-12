@@ -2,7 +2,7 @@
 
 #+property: header-args:emacs-lisp :tangle ./init.el
 #+auto_tangle: t
-#+startup: show2levels
+#+startup: show3levels
 
 * Preamble
 
@@ -138,6 +138,7 @@ to override use-package with a more featureful version.
 These packages provide enhancements to the default UI in ways that
 make it more useful.
 
+*** Dashboard
 #+begin_src emacs-lisp
   ;; General UI and creature-comfort improvements
   (use-package dashboard
@@ -147,30 +148,70 @@ make it more useful.
     (dashboard-setup-startup-hook)
     (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))))
 
-  (use-package diminish)
+#+end_src
 
+*** Diminish
+#+begin_src emacs-lisp
+  (use-package diminish)
+#+end_src
+
+*** Projectile
+
+This mode provides many nice things for working on repositories as
+units of files.
+
+#+begin_src emacs-lisp
   (use-package projectile
     :config
     (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
     (projectile-mode +1))
+#+end_src
 
+*** ElDoc
+
+#+begin_src emacs-lisp
   (use-package eldoc
     :diminish eldoc-mode)
+#+end_src
 
+*** Autorevert
+
+Always revert buffers when the underlying file has changed.
+
+#+begin_src emacs-lisp
   (use-package autorevert
     :diminish auto-revert-mode)
+#+end_src
 
+*** Highlight Line
+
+#+begin_src emacs-lisp
   (use-package hl-line
     :config
     (global-hl-line-mode t)) ;; turn it on for all modes by default
+#+end_src
 
+*** Doom Themes
+
+We don't need all of Doom Emacs, but do like the nice set of themes.
+
+#+begin_src emacs-lisp
   (use-package doom-themes
     :config
     (setq doom-themes-enable-bold t    ;; if nil, bold is universally disabled
           doom-themes-enable-italic t) ;; if nil, italics is universally disabled
     (load-theme 'doom-zenburn t)
     (doom-themes-visual-bell-config))  ;; Enable flashing mode-line on errors
+#+end_src
 
+*** Helpful
+
+  This package provides, as it says on the tin, helpful functions
+  for doing things like prompting with available next-key when
+  you're part way through a sequence, etc.
+
+#+begin_src emacs-lisp
+  
   (use-package helpful
     :commands (helpful-callable helpful-variable helpful-command helpful-key)
     :custom
@@ -181,22 +222,41 @@ make it more useful.
     ([remap describe-command] . helpful-command)
     ([remap describe-variable] . counsel-describe-variable)
     ([remap describe-key] . helpful-key))
+#+end_src
 
+*** Which Key
+
+#+begin_src emacs-lisp
   (use-package which-key
     :diminish which-key-mode
     :config
     (which-key-mode))
+#+end_src
 
+*** Term Title
+
+I often use emacs from a terminal, so this ensures the terminal
+displays a proper title.
+
+#+begin_src emacs-lisp
   (use-package term-title
     :straight
     (term-title :type git :host github :repo "CyberShadow/term-title" )
     :config
     (term-title-mode))
+#+end_src
 
+*** Goto Line Faster
+
+#+begin_src emacs-lisp
   (use-package goto-line-faster
     :straight
     (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
+#+end_src
 
+*** Counsel
+
+#+begin_src emacs-lisp
   (use-package counsel
     :init
     ;; make easier alt-x (when ctrl is bound to caps lock)
@@ -207,7 +267,11 @@ make it more useful.
            ("C-x C-f" . counsel-find-file)
            :map minibuffer-local-map
            ("C-r" . 'counsel-minibuffer-history)))
+#+end_src
 
+*** Ivy
+
+#+begin_src emacs-lisp
   (use-package ivy
     :diminish ;; hide this minor mode in the modeline
     :bind (("C-s" . swiper)
@@ -216,12 +280,20 @@ make it more useful.
     :config
     (ivy-mode 1)
     (setq ivy-use-virtual-buffers t))
+#+end_src
 
+*** Ivy Rich
+
+#+begin_src emacs-lisp
   (use-package ivy-rich
     :after ivy
     :init
     (ivy-rich-mode 1))
+#+end_src
 
+*** Ivy Prescient
+
+#+begin_src emacs-lisp
   (use-package ivy-prescient
     :after counsel
     :custom
@@ -230,11 +302,25 @@ make it more useful.
     ;; Uncomment the following line to have sorting remembered across sessions!
     ;; (prescient-persist-mode 1)
     (ivy-prescient-mode 1))
+#+end_src
 
+*** Midnight
+
+Auto-clean old buffers overnight.
+
+#+begin_src emacs-lisp
   (use-package midnight ; enable midnight mode buffer purging
     :config
     (midnight-delay-set 'midnight-delay "4:30am"))
+#+end_src
 
+*** Editorconfig
+
+This enables consuming certain standardized config files from project
+repositories, which makes things like enforcing some coding standards
+easier.
+
+#+begin_src emacs-lisp
   (use-package editorconfig
     :diminish
     :config
@@ -246,28 +332,59 @@ make it more useful.
 Make sure we have programming and config modes for commonly used
 languages and files.
 
+*** Tree Sitter
+
+#+begin_src emacs-lisp
+  (use-package tree-sitter)
+#+end_src
+
+*** Tree Sitter Languages
+
 #+begin_src emacs-lisp
   ;; Various modes that we find useful
-  (use-package tree-sitter)
+
   (use-package tree-sitter-langs)
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+#+end_src
 
+*** Go Mode
+
+#+begin_src emacs-lisp
   (use-package go-mode)
+#+end_src
 
+*** Rust Mode
+
+#+begin_src emacs-lisp
   (use-package rust-mode)
+#+end_src
 
+*** i3 Config Mode
+
+#+begin_src emacs-lisp
   (use-package i3wm-config-mode)
+#+end_src
 
+*** Ini File Mode
+
+#+begin_src emacs-lisp
   (use-package ini-mode
     :straight
     (ini-mode type: git :host github :repo "Lindydancer/ini-mode" )
     :config
     (ini-mode))
-  
+#+end_src
+
+*** Markdown File Mode
+#+begin_src emacs-lisp
   (use-package markdown-mode
     :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
+#+end_src
+  
+*** Systemd Unit Config Mode
 
+#+begin_src emacs-lisp
   (use-package systemd
     :config
     (systemd-mode))
@@ -279,17 +396,27 @@ The packages below make programming nicer by enhancing the experience
 with things like bracket matching and colouring, git integration, auto
 indentation etc.
 
+*** Magit
+
 #+begin_src emacs-lisp
   ;; Programming related packages and config
   (use-package magit
     :custom
     (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+#+end_src
 
+*** Apheleia
+
+#+begin_src emacs-lisp
   (use-package apheleia
     :diminish
     :config
     (apheleia-global-mode +1))
+#+end_src
 
+*** Smartparens
+
+#+begin_src emacs-lisp
   (use-package smartparens
     :diminish
     :init
@@ -300,11 +427,19 @@ indentation etc.
     (show-smartparens-global-mode t)
     :custom
     (smartparens-strict-mode t))
+#+end_src
 
+*** Aggressive Indent
+
+#+begin_src emacs-lisp
   (use-package aggressive-indent
     :hook
     (prog-mode . aggressive-indent-mode))
+#+end_src
 
+*** Rainbow Delimiters
+
+#+begin_src emacs-lisp
   (use-package rainbow-delimiters
     :hook (prog-mode . rainbow-delimiters-mode))
 #+end_src
@@ -314,6 +449,7 @@ indentation etc.
 We use org mode with several enhancements. All of the org-related
 config is below.
 
+*** Org Mode
 #+begin_src emacs-lisp
   ;; All of our org-mode related config
   (use-package org
@@ -331,13 +467,21 @@ config is below.
     (org-log-done 'time)
     (org-agenda-start-with-log-mode t)
     (org-startup-indented t))
+#+end_src
 
+*** Org Bullets
+
+#+begin_src emacs-lisp
   (use-package org-bullets
     :after org
     :hook (org-mode . org-bullets-mode)
     :custom
     (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+#+end_src
 
+*** Org Auto Tangle
+
+#+begin_src emacs-lisp
   (use-package org-auto-tangle
     :diminish
     :after org

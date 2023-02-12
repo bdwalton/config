@@ -164,8 +164,10 @@
   :config
   (editorconfig-mode 1))
 
-;; Various modes that we find useful
 (use-package tree-sitter)
+
+;; Various modes that we find useful
+
 (use-package tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
