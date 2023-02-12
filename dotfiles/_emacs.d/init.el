@@ -60,31 +60,6 @@
   :config
   (setq straight-use-package-by-default t))
 
-;; Various modes that we find useful
-(use-package tree-sitter)
-(use-package tree-sitter-langs)
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-
-(use-package go-mode)
-
-(use-package rust-mode)
-
-(use-package i3wm-config-mode)
-
-(use-package ini-mode
-  :straight
-  (ini-mode type: git :host github :repo "Lindydancer/ini-mode" )
-  :config
-  (ini-mode))
-
-(use-package markdown-mode
-  :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
-
-(use-package systemd
-  :config
-  (systemd-mode))
-
 ;; General UI and creature-comfort improvements
 (use-package dashboard
   :straight
@@ -186,6 +161,59 @@
   :config
   (editorconfig-mode 1))
 
+;; Various modes that we find useful
+(use-package tree-sitter)
+(use-package tree-sitter-langs)
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+(use-package go-mode)
+
+(use-package rust-mode)
+
+(use-package i3wm-config-mode)
+
+(use-package ini-mode
+  :straight
+  (ini-mode type: git :host github :repo "Lindydancer/ini-mode" )
+  :config
+  (ini-mode))
+
+(use-package markdown-mode
+  :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
+
+(use-package systemd
+  :config
+  (systemd-mode))
+
+;; Programming related packages and config
+(use-package magit
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+(use-package apheleia
+  :diminish
+  :config
+  (apheleia-global-mode +1))
+
+(use-package smartparens
+  :diminish
+  :init
+  (require 'smartparens-config)
+  :hook
+  (prog-mode . smartparens-mode)
+  :config
+  (show-smartparens-global-mode t)
+  :custom
+  (smartparens-strict-mode t))
+
+(use-package aggressive-indent
+  :hook
+  (prog-mode . aggressive-indent-mode))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 ;; All of our org-mode related config
 (use-package org
   :config
@@ -216,34 +244,8 @@
   :defer t
   :hook (org-mode . org-auto-tangle-mode))
 
-;; Programming related packages and config
-(use-package magit
-  :custom
-  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
-
-(use-package apheleia
-  :diminish
-  :config
-  (apheleia-global-mode +1))
-
-(use-package smartparens
-  :diminish
-  :init
-  (require 'smartparens-config)
-  :hook
-  (prog-mode . smartparens-mode)
-  :config
-  (show-smartparens-global-mode t)
-  :custom
-  (smartparens-strict-mode t))
-
-(use-package aggressive-indent
-  :hook
-  (prog-mode . aggressive-indent-mode))
-
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
-
+;; Here lies stuff we include only to stop it being readded in some
+;; circumstances via commands we might run.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -258,7 +260,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; now pull in the optional site-local config
+;; Now pull in the optional site-local config
 (setq site-local-lib
       (concat
        (file-name-directory #$)
