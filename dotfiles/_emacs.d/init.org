@@ -2,6 +2,7 @@
 
 #+property: header-args:emacs-lisp :tangle ./init.el
 #+auto_tangle: t
+#+startup: show2levels
 
 * Preamble
 
