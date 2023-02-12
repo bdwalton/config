@@ -186,6 +186,29 @@
   :config
   (editorconfig-mode 1))
 
+;; All of our org-mode related config
+(use-package org
+  :config
+  (require 'org-tempo) ;; Needed after org 9.2
+  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+  (add-to-list 'org-structure-template-alist '("py" . "src python"))
+  (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)))
+  :custom
+  (org-ellipsis " ▾")
+  (org-hide-emphasis-markers t)
+  (org-log-done 'time)
+  (org-agenda-start-with-log-mode t)
+  (org-startup-indented t))
+
+(use-package org-bullets
+  :after org
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
+
 ;; Programming related packages and config
 (use-package magit
   :custom
@@ -213,28 +236,6 @@
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
-
-(use-package org
-  :config
-  (require 'org-tempo) ;; Needed after org 9.2
-  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-  (add-to-list 'org-structure-template-alist '("py" . "src python"))
-  (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((emacs-lisp . t)))
-  :custom
-  (org-ellipsis " ▾")
-  (org-hide-emphasis-markers t)
-  (org-log-done 'time)
-  (org-agenda-start-with-log-mode t)
-  (org-startup-indented t))
-
-(use-package org-bullets
-  :after org
-  :hook (org-mode . org-bullets-mode)
-  :custom
-  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
