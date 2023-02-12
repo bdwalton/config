@@ -221,9 +221,11 @@
 
 (use-package org
   :config
-  (setq org-ellipsis " ▾"
-	org-hide-emphasis-markers t
-	org-startup-indented t))
+  (setq org-ellipsis " ▾")
+  (setq org-hide-emphasis-markers t)
+  (setq org-log-done 'time)
+  (setq org-agenda-start-with-log-mode t)
+  (setq org-startup-indented t))
 
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
