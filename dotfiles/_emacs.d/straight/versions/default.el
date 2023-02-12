@@ -20,6 +20,7 @@
  ("ini-mode" . "5472abc94e564edc6b469c48d2324519a044a77c")
  ("ivy-rich" . "600b8183ed0be8668dcc548cc2c8cb94b001363b")
  ("magit" . "712be4632b0ddc7899ca90db8f9be20d90b4326f")
+ ("markdown-mode" . "c765b73b370f0fcaaa3cee28b2be69652e2d2c39")
  ("melpa" . "1fb027a2f96f47ca0f06d78e37049042fe56b413")
  ("nongnu-elpa" . "baad781689346353a219a786fc68ff476c6e013e")
  ("org" . "1f332d6c5c6f67aa5f744ac91ec251ef0f1a5b7c")

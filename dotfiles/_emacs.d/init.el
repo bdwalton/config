@@ -216,6 +216,9 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package markdown-mode
+  :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
+
 (use-package org
   :config
   (setq org-ellipsis " ▾"
