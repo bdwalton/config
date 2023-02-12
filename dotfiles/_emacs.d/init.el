@@ -14,7 +14,6 @@
   (load bootstrap-file nil 'nomessage))
 (setq package-enable-at-startup nil)
 
-
 ;; Any functions we need to use during init.
 (defun bdw-frame-creation-hook (&optional frame)
   "Do frame-type-conditional setup."
@@ -30,7 +29,6 @@
 	  (scroll-bar-mode -1)
 	  (tool-bar-mode -1)))))
 
-
 ;; Our basic config overrides and default settings
 (add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
 (setq inhibit-startup-message t)
@@ -44,7 +42,6 @@
 (setq default-tab-width 2)
 (setq make-backup-files nil)   ;; stop the little ~ turd files
 
-
 ;; General keybindings here
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
@@ -52,7 +49,6 @@
 (global-set-key [f4]  'start-kbd-macro)
 (global-set-key [f5]  'end-kbd-macro)
 (global-set-key [f6]  'call-last-kbd-macro)
-
 
 ;; Now configure the packages we want
 
@@ -116,7 +112,7 @@
 (use-package doom-themes
   :config
   (setq doom-themes-enable-bold t    ;; if nil, bold is universally disabled
-	doom-themes-enable-italic t) ;; if nil, italics is universally disabled
+        doom-themes-enable-italic t) ;; if nil, italics is universally disabled
   (load-theme 'doom-zenburn t)
   (doom-themes-visual-bell-config))  ;; Enable flashing mode-line on errors
 
@@ -152,16 +148,16 @@
   (global-set-key "\C-x\C-m" 'counsel-M-x)
   (global-set-key "\C-c\C-m" 'counsel-M-x)
   :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
-	 ("C-x C-f" . counsel-find-file)
-	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history)))
+         ("C-x b" . counsel-ibuffer)
+         ("C-x C-f" . counsel-find-file)
+         :map minibuffer-local-map
+         ("C-r" . 'counsel-minibuffer-history)))
 
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
   :bind (("C-s" . swiper)
-	 ("C-r" . swiper)
-	 ("C-c C-r" . ivy-resume))
+         ("C-r" . swiper)
+         ("C-c C-r" . ivy-resume))
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t))
