@@ -3,6 +3,13 @@
 #+PROPERTY: header-args:emacs-lisp :tangle ./init.el
 #+auto_tangle: t
 
+* Preamble
+#+begin_src emacs-lisp
+  ;; This is bdwalton's emacs config. It is auto-generated from init.org.
+  ;; Local changes will be overwritten.
+  ;;
+  ;;
+#+end_src
 * Straight Package Management Initialization
 
 #+begin_src emacs-lisp

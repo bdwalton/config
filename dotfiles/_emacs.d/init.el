@@ -1,3 +1,8 @@
+;; This is bdwalton's emacs config. It is auto-generated from init.org.
+;; Local changes will be overwritten.
+;;
+;;
+
 ;; Wire up straight.el; We use that instead of package. Note that
 ;; early-init.el should be force disabling package as well.
 (defvar bootstrap-version)
