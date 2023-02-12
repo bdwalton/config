@@ -221,6 +221,14 @@
   :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
 
 (use-package org
+  :config
+  (require 'org-tempo) ;; Needed after org 9.2
+  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+  (add-to-list 'org-structure-template-alist '("py" . "src python"))
+  (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)))
   :custom
   (org-ellipsis " ▾")
   (org-hide-emphasis-markers t)
