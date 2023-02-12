@@ -60,8 +60,8 @@
 ;; Now, teach straight to integrate itself cleanly into use-package by
 ;; default.
 (use-package straight
-  :config
-  (setq straight-use-package-by-default t))
+  :custom
+  (straight-use-package-by-default t))
 
 ;; General UI and creature-comfort improvements
 (use-package dashboard
@@ -92,9 +92,10 @@
   (global-hl-line-mode t)) ;; turn it on for all modes by default
 
 (use-package doom-themes
+  :custom
+  (doom-themes-enable-bold t)    ;; if nil, bold is universally disabled
+  (doom-themes-enable-italic t) ;; if nil, italics is universally disabled
   :config
-  (setq doom-themes-enable-bold t    ;; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ;; if nil, italics is universally disabled
   (load-theme 'doom-zenburn t)
   (doom-themes-visual-bell-config))  ;; Enable flashing mode-line on errors
 
@@ -142,7 +143,8 @@
          ("C-c C-r" . ivy-resume))
   :config
   (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t))
+  :custom
+  (ivy-use-virtual-buffers t))
 
 (use-package ivy-rich
   :after ivy
