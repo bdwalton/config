@@ -216,7 +216,16 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package org)
+(use-package org
+  :config
+  (setq org-ellipsis " ▾"
+	org-hide-emphasis-markers t
+	org-startup-indented t))
+
+(use-package org-bullets
+  :hook (org-mode . org-bullets-mode)
+  :custom
+  (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
