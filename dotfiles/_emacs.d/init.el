@@ -238,6 +238,7 @@
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
 (use-package org-auto-tangle
+  :diminish
   :after org
   :straight
   (org-auto-tangle type: git :host github :repo "yilkalargaw/org-auto-tangle" )
