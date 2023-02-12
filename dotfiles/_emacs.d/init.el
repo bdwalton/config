@@ -206,8 +206,9 @@
   :hook
   (prog-mode . smartparens-mode)
   :config
-  (smartparens-strict-mode t)
-  (show-smartparens-global-mode t))
+  (show-smartparens-global-mode t)
+  :custom
+  (smartparens-strict-mode t))
 
 (use-package aggressive-indent
   :hook
@@ -220,12 +221,12 @@
   :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
 
 (use-package org
-  :config
-  (setq org-ellipsis " ▾")
-  (setq org-hide-emphasis-markers t)
-  (setq org-log-done 'time)
-  (setq org-agenda-start-with-log-mode t)
-  (setq org-startup-indented t))
+  :custom
+  (org-ellipsis " ▾")
+  (org-hide-emphasis-markers t)
+  (org-log-done 'time)
+  (org-agenda-start-with-log-mode t)
+  (org-startup-indented t))
 
 (use-package org-bullets
   :hook (org-mode . org-bullets-mode)
