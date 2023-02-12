@@ -19,15 +19,15 @@
   "Do frame-type-conditional setup."
   (with-selected-frame frame
     (if (display-graphic-p)
-	(progn
-	  (custom-set-faces
-	   ;; custom-set-faces was added by Custom.
-	   ;; If you edit it by hand, you could mess it up, so be careful.
-	   ;; Your init file should contain only one such instance.
-	   ;; If there is more than one, they won't work right.
-	   '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 218 :width normal)))))
-	  (scroll-bar-mode -1)
-	  (tool-bar-mode -1)))))
+        (progn
+          (custom-set-faces
+           ;; custom-set-faces was added by Custom.
+           ;; If you edit it by hand, you could mess it up, so be careful.
+           ;; Your init file should contain only one such instance.
+           ;; If there is more than one, they won't work right.
+           '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 218 :width normal)))))
+          (scroll-bar-mode -1)
+          (tool-bar-mode -1)))))
 
 ;; Our basic config overrides and default settings
 (add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
@@ -49,8 +49,6 @@
 (global-set-key [f4]  'start-kbd-macro)
 (global-set-key [f5]  'end-kbd-macro)
 (global-set-key [f6]  'call-last-kbd-macro)
-
-;; Now configure the packages we want
 
 ;; Everything else we want to do via use-package, but to ensure that
 ;; boostraps, use straight directly for it.
