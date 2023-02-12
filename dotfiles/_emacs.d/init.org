@@ -1,7 +1,7 @@
 #+title: bdwalton's Emacs Config
 
-#+property: header-args:emacs-lisp :tangle ./init.el
 #+auto_tangle: t
+#+property: header-args:emacs-lisp :tangle ./init.el
 #+startup: show3levels
 
 * Preamble
