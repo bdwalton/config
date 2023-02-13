@@ -1,9 +1,5 @@
 #+title: bdwalton's Emacs Config
 
-#+auto_tangle: t
-#+property: header-args:emacs-lisp :tangle ./init.el
-#+startup: show3levels
-
 * Preamble
 
 The standard preamble below is used for init.el and early-init.el.
@@ -530,3 +526,12 @@ config is below.
   ;; finally, always start with ~/ as the current directory
   (cd (getenv "HOME"))
 #+end_src
+
+* Org Metadata
+
+This isn't output to the config, but captures metadata that is used by
+org mode to control various properties.
+
+#+auto_tangle: t
+#+property: header-args:emacs-lisp :tangle ./init.el
+#+startup: show3levels
