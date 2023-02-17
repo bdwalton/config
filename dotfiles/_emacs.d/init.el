@@ -89,7 +89,9 @@
   :diminish eldoc-mode)
 
 (use-package autorevert
-  :diminish auto-revert-mode)
+  :diminish auto-revert-mode
+  :config
+  (global-auto-revert-mode t))
 
 (use-package hl-line
   :config

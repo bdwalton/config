@@ -191,7 +191,9 @@ Always revert buffers when the underlying file has changed.
 
 #+begin_src emacs-lisp
   (use-package autorevert
-    :diminish auto-revert-mode)
+    :diminish auto-revert-mode
+    :config
+    (global-auto-revert-mode t))
 #+end_src
 
 *** Highlight Line
