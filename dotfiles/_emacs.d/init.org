@@ -16,6 +16,14 @@ the block above so they're always the same.
 #+begin_src emacs-lisp :noweb yes :tangle ./early-init.el
   <<shared_preamble>>
 #+end_src
+
+This overrides the tangle output to go to custom.el but references
+the block above so they're always the same.
+
+#+begin_src emacs-lisp :noweb yes :tangle ./custom.el
+  <<shared_preamble>>
+#+end_src
+
 * Early Init
 This config gets spit out to early-init.el. It should be minimal.
 
@@ -89,6 +97,12 @@ few deprecated features.
 (put 'upcase-region 'disabled nil)
 (setq default-tab-width 2)
 (setq make-backup-files nil)   ;; stop the little ~ turd files
+#+end_src
+
+#+begin_src emacs-lisp
+  ;; Dump anything managed via custom-set* in a separate file
+  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (load custom-file)
 #+end_src
 
 * General Keybindings
@@ -490,11 +504,14 @@ config is below.
     :hook (org-mode . org-auto-tangle-mode))
 #+end_src
 
-* Boilerplate We Don't Really Use
-#+begin_src emacs-lisp
+* Custom Set Variables and Faces
+We store this in a separate file. It will be version controlled for
+completeness, but because we don't curate this by hand, we keep it out
+of the main init.el.
+
+#+begin_src emacs-lisp :tangle ./custom.el
   
-  ;; Here lies stuff we include only to stop it being readded in some
-  ;; circumstances via commands we might run.
+  ;; These are both manipulated automatically. Don't hand curate them.
   (custom-set-variables
    ;; custom-set-variables was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

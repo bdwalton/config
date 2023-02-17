@@ -45,6 +45,10 @@
 (setq default-tab-width 2)
 (setq make-backup-files nil)   ;; stop the little ~ turd files
 
+;; Dump anything managed via custom-set* in a separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
 ;; General keybindings here
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
@@ -254,22 +258,6 @@
   (org-auto-tangle type: git :host github :repo "yilkalargaw/org-auto-tangle" )
   :defer t
   :hook (org-mode . org-auto-tangle-mode))
-
-;; Here lies stuff we include only to stop it being readded in some
-;; circumstances via commands we might run.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;; Now pull in the optional site-local config
 (setq site-local-lib
