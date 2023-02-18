@@ -319,7 +319,7 @@ displays a proper title.
     (ivy-prescient-mode 1))
 #+end_src
 
-*** Midnight
+*** Midnight Mode
 
 Auto-clean old buffers overnight.
 
