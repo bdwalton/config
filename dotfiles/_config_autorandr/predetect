@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# Give us time for monitor syncs after connect/disconnect
-sleep 1

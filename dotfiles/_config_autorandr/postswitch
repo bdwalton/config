@@ -1,3 +1,7 @@
 #!/bin/bash
 
-i3-msg restart
+notify-send -i display "Switching to display profile ${AUTORANDR_CURRENT_PROFILE}"
+
+# This has to be kicked via i3 because it needs to be executed in the
+# context of the X session.
+i3-msg "exec ~/.bdwscripts/polybar-launcher"

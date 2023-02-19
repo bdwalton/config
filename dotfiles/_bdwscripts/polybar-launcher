@@ -1,18 +1,26 @@
 #!/bin/bash
 
-BARNAME="i3main"
-LOGFILE="${TMPDIR}/polybar-${BARNAME}.log"
+PRIMARY_MONITOR="$(xrandr --listmonitors | grep '\*' | cut -d' ' -f6)"
 
-exec >>${LOGFILE} 2>&1
-
-echo "--- $(date +%c) ($@) ---"
-
+# Terminate any running bars so we always set up on current monitors
+# with current config.
 polybar-msg cmd quit
-sleep 1
 
-echo "Starting appropriate new instances, per monitor."
-for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    echo "Starting for ${m}"
-    MONITOR="$m" polybar --reload --config=~/.config/polybar/config.ini "${BARNAME}" &
-    disown
+for monitor in $(polybar --list-monitors | cut -d":" -f1); do
+    LOGFILE="/tmp/polybar-${monitor}.log"
+
+    exec >>${LOGFILE} 2>&1
+    echo "--- $(date +%c) ---"
+    echo "Starting for ${monitor}"
+
+    case "${monitor}" in
+    "${PRIMARY_MONITOR}")
+        MONITOR="${monitor}" polybar --reload "primary" &
+        disown
+        ;;
+    *)
+        MONITOR="${monitor}" polybar --reload "secondary" &
+        disown
+        ;;
+    esac
 done

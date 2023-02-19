@@ -194,7 +194,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Start polybar to display status and worksapce info.
-exec_always --no-startup-id $HOME/.bdwscripts/polybar-launcher i3
+exec --no-startup-id $HOME/.bdwscripts/polybar-launcher
 
 # zenburn colour scheme
 # <colorclass>              <border> <background> <text>  <indicator> <child_border>
