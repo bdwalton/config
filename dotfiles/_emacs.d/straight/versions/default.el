@@ -1,6 +1,7 @@
 (("aggressive-indent-mode" . "70b3f0add29faff41e480e82930a231d88ee9ca7")
  ("apheleia" . "04366a90dfc1063c4a22ea2e4ccaa48303a457e0")
  ("compat" . "cbb057e9b568fa2c8ae443088b17dce7c2d66cfc")
+ ("counsel-projectile" . "40d1e1d4bb70acb00fddd6f4df9778bf2c52734b")
  ("dash.el" . "0ac1ecf6b56eb67bb81a3cf70f8d4354b5782341")
  ("diminish.el" . "6b7e837b0cf0129e9d7d6abae48093cf599bb9e8")
  ("editorconfig-emacs" . "1f6f16c24fd0030322d59c2853067a6dccc9e736")

@@ -137,6 +137,11 @@
          :map minibuffer-local-map
          ("C-r" . 'counsel-minibuffer-history)))
 
+;; Enable a few more ivy integrations for projectile.
+(use-package counsel-projectile
+  :after projectile
+  :config (counsel-projectile-mode))
+
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
   :bind (("C-s" . swiper)

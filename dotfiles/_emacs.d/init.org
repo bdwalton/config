@@ -271,6 +271,17 @@ displays a proper title.
            ("C-r" . 'counsel-minibuffer-history)))
 #+end_src
 
+*** Counsel Projectile
+This provides some projectile-specific ui enhancements for minibuffer
+actions.
+
+#+begin_src emacs-lisp
+  ;; Enable a few more ivy integrations for projectile.
+  (use-package counsel-projectile
+    :after projectile
+    :config (counsel-projectile-mode))
+#+end_src
+
 *** Ivy
 
 #+begin_src emacs-lisp
