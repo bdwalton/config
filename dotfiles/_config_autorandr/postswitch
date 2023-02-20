@@ -2,6 +2,8 @@
 
 notify-send -i display "Switching to display profile ${AUTORANDR_CURRENT_PROFILE}"
 
-# This has to be kicked via i3 because it needs to be executed in the
-# context of the X session.
-i3-msg "exec ~/.bdwscripts/polybar-launcher"
+# This has to be kicked via i3 because it needs to be executed in the context of
+# the X session. We ensure that we always pull the I3SOCK value from the current
+# instance because that has drifted at times for reasons we haven't had a chance
+# to debug yet.
+I3SOCK="$(i3 --get-socket)" i3-msg "exec ~/.bdwscripts/polybar-launcher" >>/tmp/postswitch.log 2>&1
