@@ -174,7 +174,8 @@
   :custom
   (projectile-completion-system 'ivy)
   (projectile-project-search-path
-   '("~/working_code/" "~/working_code/go/src/github.com/bdwalton")))
+   '(("~/working_code/" . 1)
+     ("~/working_code/go/src/github.com/bdwalton") . 1)))
 
 (use-package midnight ; enable midnight mode buffer purging
   :config
