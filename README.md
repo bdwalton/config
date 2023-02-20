@@ -69,6 +69,14 @@ name to `debian_packages` and re-run `setup-env`. Similarly, for PIP
 (python) package, add the package name to `pip_packages` and re-run
 `setup-env`.
 
+## DConf Settings
+
+We use i3, but rely on bits and pieces of a gnome environment for some
+conveniences. As such, we configure various dconf knobs that gnome/gtk apps rely
+on. This is done by adding lines to `dconf_settings` where each line is a key
+(first item) and a value (everything else). These are setup by one of the
+scripts described below.
+
 ## Miscellaneous Scripts
 
 To do miscellaneous setup to configure the environment, you can add
