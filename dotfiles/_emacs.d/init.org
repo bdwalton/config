@@ -166,18 +166,6 @@ make it more useful.
   (use-package diminish)
 #+end_src
 
-*** Projectile
-
-This mode provides many nice things for working on repositories as
-units of files.
-
-#+begin_src emacs-lisp
-  (use-package projectile
-    :config
-    (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
-    (projectile-mode +1))
-#+end_src
-
 *** ElDoc
 
 #+begin_src emacs-lisp
@@ -317,6 +305,23 @@ displays a proper title.
     ;; Uncomment the following line to have sorting remembered across sessions!
     ;; (prescient-persist-mode 1)
     (ivy-prescient-mode 1))
+#+end_src
+
+*** Projectile
+
+This mode provides many nice things for working on repositories as
+units of files.
+
+#+begin_src emacs-lisp
+  (use-package projectile
+    :diminish projectile-mode
+    :config
+    (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+    (projectile-mode +1)
+    :custom
+    (projectile-completion-system 'ivy)
+    (projectile-project-search-path
+     '("~/working_code/" "~/working_code/go/src/github.com/bdwalton")))
 #+end_src
 
 *** Midnight Mode

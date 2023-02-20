@@ -80,11 +80,6 @@
 
 (use-package diminish)
 
-(use-package projectile
-  :config
-  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
-  (projectile-mode +1))
-
 (use-package eldoc
   :diminish eldoc-mode)
 
@@ -165,6 +160,16 @@
   ;; Uncomment the following line to have sorting remembered across sessions!
   ;; (prescient-persist-mode 1)
   (ivy-prescient-mode 1))
+
+(use-package projectile
+  :diminish projectile-mode
+  :config
+  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
+  (projectile-mode +1)
+  :custom
+  (projectile-completion-system 'ivy)
+  (projectile-project-search-path
+   '("~/working_code/" "~/working_code/go/src/github.com/bdwalton")))
 
 (use-package midnight ; enable midnight mode buffer purging
   :config
