@@ -2,7 +2,7 @@
 
 set -e
 
-TERMINFO_TMPFILE="/tmp/terminfo-24bit.src"
+TERMINFO_TMPFILE="$(mktemp /tmp/terminfo-24bit.XXXX.src)"
 
 cat <<EOF >"${TERMINFO_TMPFILE}"
 # Use colon separators.
@@ -17,7 +17,6 @@ xterm-24bits|xterm with 24-bit direct color mode,
   setf24=\E[38;2;%p1%{65536}%/%d;%p1%{256}%/%{255}%&%d;%p1%{255}%&%dm,
 
 EOF
-
 
 tic -x -o ~/.terminfo "${TERMINFO_TMPFILE}"
 
