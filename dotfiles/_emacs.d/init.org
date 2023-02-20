@@ -461,14 +461,6 @@ indentation etc.
     (smartparens-strict-mode t))
 #+end_src
 
-*** Aggressive Indent
-
-#+begin_src emacs-lisp
-  (use-package aggressive-indent
-    :hook
-    (prog-mode . aggressive-indent-mode))
-#+end_src
-
 *** Rainbow Delimiters
 
 #+begin_src emacs-lisp
