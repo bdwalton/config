@@ -155,7 +155,7 @@ mode "exit" {
         bindsym Escape mode "default"
 }
 bindsym $mod+Shift+e mode "exit"
-bindsym $mod+Shift+s exec systemctl suspend
+bindsym $mod+Shift+s exec "xautolock -locknow && sleep 1 && systemctl suspend"
 
 # New window decoration
 new_window normal 3
