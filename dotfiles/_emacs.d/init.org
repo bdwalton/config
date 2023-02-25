@@ -359,69 +359,6 @@ easier.
     (editorconfig-mode 1))
 #+end_src
 
-** Useful Modes For Coding and Editing Configs
-
-Make sure we have programming and config modes for commonly used
-languages and files.
-
-*** Tree Sitter
-
-#+begin_src emacs-lisp
-  (use-package tree-sitter)
-#+end_src
-
-*** Tree Sitter Languages
-
-#+begin_src emacs-lisp
-  ;; Various modes that we find useful
-
-  (use-package tree-sitter-langs)
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-#+end_src
-
-*** Go Mode
-
-#+begin_src emacs-lisp
-  (use-package go-mode)
-#+end_src
-
-*** Rust Mode
-
-#+begin_src emacs-lisp
-  (use-package rust-mode)
-#+end_src
-
-*** i3 Config Mode
-
-#+begin_src emacs-lisp
-  (use-package i3wm-config-mode)
-#+end_src
-
-*** Ini File Mode
-
-#+begin_src emacs-lisp
-  (use-package ini-mode
-    :straight
-    (ini-mode type: git :host github :repo "Lindydancer/ini-mode" )
-    :config
-    (ini-mode))
-#+end_src
-
-*** Markdown File Mode
-#+begin_src emacs-lisp
-  (use-package markdown-mode
-    :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
-#+end_src
-  
-*** Systemd Unit Config Mode
-
-#+begin_src emacs-lisp
-  (use-package systemd
-    :config
-    (systemd-mode))
-#+end_src
-
 ** Programming Related Packages And Config
 
 The packages below make programming nicer by enhancing the experience
@@ -463,9 +400,73 @@ indentation etc.
 
 *** Rainbow Delimiters
 
+
 #+begin_src emacs-lisp
   (use-package rainbow-delimiters
     :hook (prog-mode . rainbow-delimiters-mode))
+#+end_src
+
+*** Tree Sitter
+
+#+begin_src emacs-lisp
+  (use-package tree-sitter)
+#+end_src
+
+*** Tree Sitter Languages
+
+#+begin_src emacs-lisp
+  ;; Various modes that we find useful
+
+  (use-package tree-sitter-langs)
+  (global-tree-sitter-mode)
+  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+#+end_src
+
+** Useful Modes For Coding and Editing Configs
+
+Make sure we have programming and config modes for commonly used
+languages and files.
+
+*** Go Mode
+
+#+begin_src emacs-lisp
+  (use-package go-mode)
+#+end_src
+
+*** Rust Mode
+
+#+begin_src emacs-lisp
+  (use-package rust-mode)
+#+end_src
+
+*** i3 Config Mode
+
+#+begin_src emacs-lisp
+  (use-package i3wm-config-mode)
+#+end_src
+
+*** Ini File Mode
+
+#+begin_src emacs-lisp
+  (use-package ini-mode
+    :straight
+    (ini-mode type: git :host github :repo "Lindydancer/ini-mode" )
+    :config
+    (ini-mode))
+#+end_src
+
+*** Markdown File Mode
+#+begin_src emacs-lisp
+  (use-package markdown-mode
+    :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
+#+end_src
+  
+*** Systemd Unit Config Mode
+
+#+begin_src emacs-lisp
+  (use-package systemd
+    :config
+    (systemd-mode))
 #+end_src
 
 ** Org Mode Config

@@ -186,6 +186,30 @@
   :config
   (editorconfig-mode 1))
 
+;; Programming related packages and config
+(use-package magit
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
+
+(use-package apheleia
+  :diminish
+  :config
+  (apheleia-global-mode +1))
+
+(use-package smartparens
+  :diminish
+  :init
+  (require 'smartparens-config)
+  :hook
+  (prog-mode . smartparens-mode)
+  :config
+  (show-smartparens-global-mode t)
+  :custom
+  (smartparens-strict-mode t))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 (use-package tree-sitter)
 
 ;; Various modes that we find useful
@@ -212,30 +236,6 @@
 (use-package systemd
   :config
   (systemd-mode))
-
-;; Programming related packages and config
-(use-package magit
-  :custom
-  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
-
-(use-package apheleia
-  :diminish
-  :config
-  (apheleia-global-mode +1))
-
-(use-package smartparens
-  :diminish
-  :init
-  (require 'smartparens-config)
-  :hook
-  (prog-mode . smartparens-mode)
-  :config
-  (show-smartparens-global-mode t)
-  :custom
-  (smartparens-strict-mode t))
-
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; All of our org-mode related config
 (use-package org
