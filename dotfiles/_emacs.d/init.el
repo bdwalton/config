@@ -212,7 +212,8 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package tree-sitter)
+(use-package tree-sitter
+  :diminish)
 
 ;; Various modes that we find useful
 
@@ -222,6 +223,7 @@
 
 ;; Some text completion UIs that make programming experiences richer.
 (use-package company
+  :diminish
   :bind
   (:map company-active-map
         ("<tab>" . company-complete-selection))
@@ -232,6 +234,7 @@
   (add-hook 'go-mode-hook #'company-mode))
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :config
   (yas-global-mode 1))
 

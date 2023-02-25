@@ -418,7 +418,8 @@ indentation etc.
 *** Tree Sitter
 
 #+begin_src emacs-lisp
-  (use-package tree-sitter)
+  (use-package tree-sitter
+    :diminish)
 #+end_src
 
 *** Tree Sitter Languages
@@ -437,6 +438,7 @@ This enables some rich programming completion UIs
 #+begin_src emacs-lisp
   ;; Some text completion UIs that make programming experiences richer.
   (use-package company
+    :diminish
     :bind
     (:map company-active-map
           ("<tab>" . company-complete-selection))
@@ -454,6 +456,7 @@ eglot. Must be loaded before eglot.
 
 #+begin_src emacs-lisp
   (use-package yasnippet
+    :diminish yas-minor-mode
     :config
     (yas-global-mode 1))
 #+end_src
