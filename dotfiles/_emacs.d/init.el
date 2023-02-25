@@ -166,6 +166,8 @@
   ;; (prescient-persist-mode 1)
   (ivy-prescient-mode 1))
 
+(use-package project)
+
 (use-package projectile
   :diminish projectile-mode
   :config
@@ -217,6 +219,26 @@
 (use-package tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;; Some text completion UIs that make programming experiences richer.
+(use-package company
+  :bind
+  (:map company-active-map
+        ("<tab>" . company-complete-selection))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0)
+  :init
+  (add-hook 'go-mode-hook #'company-mode))
+
+(use-package yasnippet
+  :config
+  (yas-global-mode 1))
+
+(use-package eglot
+  :after yasnippet
+  :config
+  (add-hook 'go-mode-hook #'eglot-ensure))
 
 (use-package go-mode)
 

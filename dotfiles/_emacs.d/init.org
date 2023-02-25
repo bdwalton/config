@@ -318,6 +318,15 @@ actions.
     (ivy-prescient-mode 1))
 #+end_src
 
+*** Project
+Eglot requires some of the foundations from project but doesn't pull
+it in nicely via straight. Ensure it's available so eglot finds what
+it needs.
+
+#+begin_src emacs-lisp
+  (use-package project)
+#+end_src
+
 *** Projectile
 
 This mode provides many nice things for working on repositories as
@@ -420,6 +429,43 @@ indentation etc.
   (use-package tree-sitter-langs)
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+#+end_src
+
+*** Company Mode
+This enables some rich programming completion UIs
+
+#+begin_src emacs-lisp
+  ;; Some text completion UIs that make programming experiences richer.
+  (use-package company
+    :bind
+    (:map company-active-map
+          ("<tab>" . company-complete-selection))
+    :custom
+    (company-minimum-prefix-length 1)
+    (company-idle-delay 0.0)
+    :init
+    (add-hook 'go-mode-hook #'company-mode))
+#+end_src
+
+*** Yasnippet
+
+Use the yasnippet library to provide snippet completion for
+eglot. Must be loaded before eglot.
+
+#+begin_src emacs-lisp
+  (use-package yasnippet
+    :config
+    (yas-global-mode 1))
+#+end_src
+*** Eglot
+
+Setup eglot for nice LSP integration in various coding modes.
+
+#+begin_src emacs-lisp
+  (use-package eglot
+    :after yasnippet
+    :config
+    (add-hook 'go-mode-hook #'eglot-ensure))
 #+end_src
 
 ** Useful Modes For Coding and Editing Configs

@@ -6,6 +6,7 @@ fonts-font-awesome
 fonts-powerline
 gconf2
 gnome-screensaver
+gopls
 i3
 inputplug
 mosh
