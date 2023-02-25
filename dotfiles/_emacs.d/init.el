@@ -177,7 +177,7 @@
   (projectile-completion-system 'ivy)
   (projectile-project-search-path
    '(("~/working_code/" . 1)
-     ("~/working_code/go/src/github.com/bdwalton") . 1)))
+     ("~/working_code/go/src/github.com/bdwalton/") . 1)))
 
 (use-package midnight ; enable midnight mode buffer purging
   :config
@@ -261,6 +261,11 @@
 (use-package systemd
   :config
   (systemd-mode))
+
+(use-package yaml-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+  :bind (("C-m" . 'newline-and-indent)))
 
 ;; All of our org-mode related config
 (use-package org

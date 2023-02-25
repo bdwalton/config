@@ -48,5 +48,6 @@
  ("use-package" . "e2d173b1200865a9efd5c2066831a230497582c0")
  ("with-editor" . "1d5860cfd05d6805018bd071b8f9b56493ba11c6")
  ("xref" . "2c61a75c9d3a7b8eb5f22d50851665fcf22bfcd3")
+ ("yaml-mode" . "3fcb36d6039bef57e2a0f6e24c51f623c0bf5fb7")
  ("yasnippet" . "5cbdbf0d2015540c59ed8ee0fcf4788effdf75b6"))
 :gamma

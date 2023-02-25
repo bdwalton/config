@@ -518,6 +518,16 @@ languages and files.
     (systemd-mode))
 #+end_src
 
+*** Yaml Mode
+
+YAML files are common enough that it's nice to have a dedicated mode
+for them.
+#+begin_src emacs-lisp
+  (use-package yaml-mode
+    :init
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+    :bind (("C-m" . 'newline-and-indent)))
+#+end_src
 ** Org Mode Config
 
 We use org mode with several enhancements. All of the org-related
