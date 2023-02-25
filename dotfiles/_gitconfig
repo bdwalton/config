@@ -17,8 +17,9 @@ br = branch
 default = matching
 
 [include]
-path = ~/.gitconfig-work
+path = ~/.gitconfig-github
 path = ~/.gitconfig-home
+path = ~/.gitconfig-work
 
 [pull]
 rebase = true

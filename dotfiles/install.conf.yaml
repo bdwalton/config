@@ -14,6 +14,7 @@
     ~/.config/rofi/config.rasi: _rofi.config.rasi
     ~/.emacs.d: _emacs.d
     ~/.gitconfig: _gitconfig
+    ~/.gitconfig-home: _gitconfig-home
     ~/.gtkrc-2.0: _gtkrc-2.0
     ~/.hgrc: _hgrc
     ~/.i3: _i3

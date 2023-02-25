@@ -1,5 +1,5 @@
 *-work
-_gitconfig-home
+_gitconfig-github
 dotfiles/_emacs.d/**/*elc
 dotfiles/_emacs.d/abbrev_defs
 dotfiles/_emacs.d/elpa
