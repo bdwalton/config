@@ -11,7 +11,6 @@ i3
 inputplug
 mosh
 nodejs
-npm
 polybar
 pulseaudio-utils
 python3-pip
