@@ -213,13 +213,15 @@
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package tree-sitter
-  :diminish)
+  :diminish
+  :hook
+  ((tree-sitter-after-on . tree-sitter-hl-mode)
+   ((go-mode typescript-mode) . tree-sitter-hl-mode)))
 
 ;; Various modes that we find useful
 
-(use-package tree-sitter-langs)
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+(use-package tree-sitter-langs
+  :after tree-sitter)
 
 ;; Some text completion UIs that make programming experiences richer.
 (use-package company
