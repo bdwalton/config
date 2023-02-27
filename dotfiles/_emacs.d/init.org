@@ -527,6 +527,14 @@ Provide nice capabilities and highlighting for JSON files.
     (systemd-mode))
 #+end_src
 
+*** Typescript Mode
+
+We're working with nodejs stuff these days and writing some ts for
+frontend UIs.
+
+#+begin_src emacs-lisp
+  (use-package typescript-mode)
+#+end_src
 *** Yaml Mode
 
 YAML files are common enough that it's nice to have a dedicated mode
