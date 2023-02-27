@@ -504,6 +504,13 @@ languages and files.
     (ini-mode))
 #+end_src
 
+*** JSON Mode
+Provide nice capabilities and highlighting for JSON files.
+
+#+begin_src emacs-lisp
+(use-package json-mode)
+#+end_src
+
 *** Markdown File Mode
 #+begin_src emacs-lisp
   (use-package markdown-mode

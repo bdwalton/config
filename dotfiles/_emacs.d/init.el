@@ -255,6 +255,8 @@
   :config
   (ini-mode))
 
+(use-package json-mode)
+
 (use-package markdown-mode
   :mode ("README\\.md" . gfm-mode))   ;; gfm == GitHub Flavored Markdown
 
