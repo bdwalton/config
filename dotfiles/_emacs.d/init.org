@@ -75,6 +75,10 @@ Here we have a few functions that are referenced later in the config.
              '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 218 :width normal)))))
             (scroll-bar-mode -1)
             (tool-bar-mode -1)))))
+
+  ;; Help with colorizing compilation buffers.
+  (defun bdw/advice-compilation-filter (f proc string)
+    (funcall f proc (xterm-color-filter string)))
 #+end_src
 
 * Basic Configuration and UI Config
@@ -369,6 +373,19 @@ easier.
     (editorconfig-mode 1))
 #+end_src
 
+*** XTerm Color
+
+We pull this in because we can use it with the compilation mode buffer
+to get better handling of ansi escape sequences used to colorize
+strings.
+
+#+begin_src emacs-lisp
+  (use-package xterm-color
+    :custom
+    (compilation-environment '("TERM=xterm-256color"))
+    :config
+    (advice-add 'compilation-filter :around #'bdw/advice-compilation-filter))
+#+end_src
 ** Programming Related Packages And Config
 
 The packages below make programming nicer by enhancing the experience

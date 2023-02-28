@@ -32,6 +32,10 @@
           (scroll-bar-mode -1)
           (tool-bar-mode -1)))))
 
+;; Help with colorizing compilation buffers.
+(defun bdw/advice-compilation-filter (f proc string)
+  (funcall f proc (xterm-color-filter string)))
+
 ;; Our basic config overrides and default settings
 (add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
 (setq inhibit-startup-message t)
@@ -188,6 +192,12 @@
   :diminish
   :config
   (editorconfig-mode 1))
+
+(use-package xterm-color
+  :custom
+  (compilation-environment '("TERM=xterm-256color"))
+  :config
+  (advice-add 'compilation-filter :around #'bdw/advice-compilation-filter))
 
 ;; Programming related packages and config
 (use-package magit
