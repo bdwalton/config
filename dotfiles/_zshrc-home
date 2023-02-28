@@ -1,0 +1,4 @@
+# -*- shell-script -*-
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

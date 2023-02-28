@@ -29,6 +29,7 @@
     ~/.zlogin: _zlogin
     ~/.zshenv: _zshenv
     ~/.zshrc: _zshrc
+    ~/.zshrc-home: _zshrc-home
 
 - shell:
   - [git submodule --quiet update --init --recursive, Installing submodules]
