@@ -140,7 +140,7 @@
 ;; Enable a few more ivy integrations for projectile.
 (use-package counsel-projectile
   :after projectile
-  :config (counsel-projectile-mode))
+  :config (counsel-projectile-mode 1))
 
 (use-package ivy
   :diminish ;; hide this minor mode in the modeline
@@ -170,9 +170,10 @@
 
 (use-package projectile
   :diminish projectile-mode
+  :bind (:map projectile-mode-map
+              ("C-x p" . projectile-command-map))
   :config
-  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
-  (projectile-mode +1)
+  (projectile-mode)
   :custom
   (projectile-completion-system 'ivy)
   (projectile-project-search-path
