@@ -65,9 +65,11 @@ installed.
 ## Expected Packages
 
 To track new Debian packages that are expected, simply add the package
-name to `debian_packages` and re-run `setup-env`. Similarly, for PIP
-(python) package, add the package name to `pip_packages` and re-run
-`setup-env`.
+name to `debian_packages`. Similarly, for PIP (python) package, add
+the package name to `pip_packages`. Lastly, `npm_packages` is a list
+of npm javascript packages we like to have. After updating any of
+these files, you can re-run `setup-env` to have the packages added
+appropriately.
 
 ## DConf Settings
 

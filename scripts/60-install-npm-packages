@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+case "${BDW_CONFIG_TYPE}" in
+    home)
+    ;;
+    *)
+	echo "We only install node packages when BDW_CONFIG_TYPE=home."
+	exit 0;
+esac
+
+BASE_PATH="$(dirname $0)/../"
+PACKAGES_FILE="${BASE_PATH}/npm_packages"
+# A list of npm packages we expect in our environment.
+readarray -t PACKAGES < "${PACKAGES_FILE}"
+
+echo "Installing npm packages:"
+echo "${PACKAGES[@]}"
+# This installs the packages globally.
+sudo npm install -g ${PACKAGES[@]}
