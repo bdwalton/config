@@ -284,6 +284,8 @@
   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
   :bind (("C-m" . 'newline-and-indent)))
 
+(use-package protobuf-mode)
+
 ;; All of our org-mode related config
 (use-package org
   :config

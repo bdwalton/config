@@ -563,6 +563,14 @@ for them.
     (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
     :bind (("C-m" . 'newline-and-indent)))
 #+end_src
+
+*** Protobuf mode
+
+Support for editting protocol buffer definitions.
+
+#+begin_src emacs-lisp
+  (use-package protobuf-mode)
+#+end_src
 ** Org Mode Config
 
 We use org mode with several enhancements. All of the org-related
