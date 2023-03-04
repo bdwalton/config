@@ -12,6 +12,7 @@ inputplug
 mosh
 nodejs
 polybar
+protobuf-compiler
 pulseaudio-utils
 python3-pip
 python3-pygments
