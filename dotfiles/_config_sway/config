@@ -38,8 +38,17 @@ bindsym $mod+c exec google-chrome --enable-features=UseOzonePlatform --ozone-pla
 # start Thunar file manager
 bindsym $mod+t exec thunar
 
+# Screen locking
+set $lock swaylock -c 550000
+
+exec swayidle -w \
+     timeout 300 "$lock" \
+     timeout 360 'swaymsg "output * dpms off"' \
+     resume 'swaymsg "output * dpms on"' \
+     before-sleep "$lock"
+
 # lock the screen (ctrl+alt+l)
-bindsym Control+Mod1+l exec xautolock -locknow
+bindsym Control+Mod1+l exec bash ~/.bdwscripts/sway-lockman
 
 # volume up/down/mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 '+5%'
@@ -146,18 +155,14 @@ mode "exit" {
         bindsym Escape mode "default"
 }
 bindsym $mod+Shift+e mode "exit"
-bindsym $mod+Shift+s exec "xautolock -locknow && sleep 1 && systemctl suspend"
 
 # New window decoration
 default_border normal 3
 
 # This wraps our xkb settings and because we pass -0, it handles the
 # initial "force" run of our setting install too.
-exec --no-startup-id inputplug -0 -c ~/.bdwscripts/fix_keyboard
 exec dex -ae i3
 exec --no-startup-id /usr/libexec/gsd-xsettings
-exec --no-startup-id gnome-screensaver
-exec --no-startup-id xautolock -time 5 -locker "gnome-screensaver-command --lock" -corners 0+0- -cornerdelay 1 -cornerredelay 5
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
