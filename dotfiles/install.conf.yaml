@@ -13,6 +13,7 @@
     ~/.config/sway/config: _config_sway/config
     ~/.config/polybar/config.ini: _polybar_config.ini
     ~/.config/rofi/config.rasi: _rofi.config.rasi
+    ~/.config/waybar/config: _config_waybar/config
     ~/.emacs.d: _emacs.d
     ~/.gitconfig: _gitconfig
     ~/.gitconfig-home: _gitconfig-home
