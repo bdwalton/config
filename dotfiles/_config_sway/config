@@ -159,9 +159,7 @@ bindsym $mod+Shift+e mode "exit"
 # New window decoration
 default_border normal 3
 
-# This wraps our xkb settings and because we pass -0, it handles the
-# initial "force" run of our setting install too.
-exec dex -ae i3
+exec dex -ae sway
 exec --no-startup-id /usr/libexec/gsd-xsettings
 
 # resize window (you can also use the mouse for that)
