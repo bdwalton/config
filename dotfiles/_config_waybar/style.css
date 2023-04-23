@@ -208,9 +208,9 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#tray {
-    background-color: #2980b9;
-}
+/* #tray { */
+/*     background-color: #2980b9; */
+/* } */
 
 #tray > .passive {
     -gtk-icon-effect: dim;
