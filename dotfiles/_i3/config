@@ -158,7 +158,7 @@ bindsym $mod+Shift+e mode "exit"
 bindsym $mod+Shift+s exec "xautolock -locknow && sleep 1 && systemctl suspend"
 
 # New window decoration
-new_window normal 3
+default_border normal 3
 
 # This wraps our xkb settings and because we pass -0, it handles the
 # initial "force" run of our setting install too.
