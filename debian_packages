@@ -18,6 +18,9 @@ pulseaudio-utils
 python3-pip
 python3-pygments
 rofi
+sway
+swayidle
+swaylock
 thunar
 tmux
 waybar
