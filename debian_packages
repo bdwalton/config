@@ -20,4 +20,5 @@ python3-pygments
 rofi
 thunar
 tmux
+waybar
 xautolock
