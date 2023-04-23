@@ -196,3 +196,7 @@ client.urgent               #dca3a3  #dca3a3      #DCDCCC #3f3f3f
 input * {
       xkb_options caps:ctrl_modifier
 }
+
+bar {
+    swaybar_command waybar
+}
