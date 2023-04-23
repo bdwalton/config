@@ -15,7 +15,7 @@
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "<Primary><Alt>t"
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "gnome-terminal"
 /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "Launch Terminal"
-/org/gnome/settings-daemon/plugins/xsettings/overrides [{'Gdk/WindowScalingFactor', <2>}]
+#/org/gnome/settings-daemon/plugins/xsettings/overrides [{'Gdk/WindowScalingFactor', <2>}]
 /org/gnome/terminal/legacy/default-show-menubar false
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color "#3F3F3F3F3F3F"
 /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/bold-color "#E3E3CECEABAB"
