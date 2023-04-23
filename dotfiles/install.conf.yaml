@@ -10,6 +10,7 @@
     ~/.config/autorandr: _config_autorandr
     ~/.config/dunst/dunstrc: _dunstrc
     ~/.config/environment.d: _config_environment.d
+    ~/.config/sway/config: _config_sway/config
     ~/.config/polybar/config.ini: _polybar_config.ini
     ~/.config/rofi/config.rasi: _rofi.config.rasi
     ~/.emacs.d: _emacs.d
