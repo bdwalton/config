@@ -200,6 +200,9 @@ input * {
       xkb_options caps:ctrl_modifier
 }
 
+output DP-3 pos 0 0
+output eDP-1 pos 3840 0
+
 bar {
     swaybar_command waybar
 }
