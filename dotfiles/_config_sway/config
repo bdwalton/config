@@ -201,6 +201,7 @@ input * {
 }
 
 output DP-3 pos 0 0
+output HDMI-A-1 pos 0 0
 output eDP-1 pos 3840 0
 
 bar {
