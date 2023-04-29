@@ -7,12 +7,10 @@
 
 - link:
     ~/.bdwscripts: _bdwscripts
-    ~/.config/autorandr: _config_autorandr
     ~/.config/dunst/dunstrc: _dunstrc
     ~/.config/environment.d: _config_environment.d
     ~/.config/foot/foot.ini: _config_foot/foot.ini
     ~/.config/sway/config: _config_sway/config
-    ~/.config/polybar/config.ini: _polybar_config.ini
     ~/.config/rofi/config.rasi: _rofi.config.rasi
     ~/.config/waybar: _config_waybar
     ~/.emacs.d: _emacs.d
@@ -20,7 +18,6 @@
     ~/.gitconfig-home: _gitconfig-home
     ~/.gtkrc-2.0: _gtkrc-2.0
     ~/.hgrc: _hgrc
-    ~/.i3: _i3
     ~/.oh_my_zsh: _oh_my_zsh
     ~/.oh_my_zsh_custom: _oh_my_zsh_custom
     ~/.rtorrent.rc: _rtorrent.rc

@@ -1,4 +1,3 @@
-autorandr
 clang-format
 colordiff
 dex
@@ -6,14 +5,10 @@ fonts-font-awesome
 fonts-powerline
 foot
 gconf2
-gnome-screensaver
 gopls
-i3
-inputplug
 ispell
 mosh
 nodejs
-polybar
 protobuf-compiler
 pulseaudio-utils
 python3-pip
@@ -25,4 +20,3 @@ swaylock
 thunar
 tmux
 waybar
-xautolock
