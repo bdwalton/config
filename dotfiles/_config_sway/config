@@ -2,6 +2,13 @@
 
 # sway config
 
+# Ensure we have a few environment variables set such that other apps
+# depending on them will function correctly.
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+exec hash dbus-update-activation-environment 2>/dev/null && \
+        dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 set $mod Mod4
 
 set $font pango:Liberation Mono Regular 15
