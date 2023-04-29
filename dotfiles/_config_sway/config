@@ -200,8 +200,11 @@ input * {
       xkb_options caps:ctrl_modifier
 }
 
+# External @ home
 output DP-3 pos 0 0
+# External @ work
 output HDMI-A-1 pos 0 0
+# Internal
 output eDP-1 pos 3840 0
 
 bar {
