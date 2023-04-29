@@ -30,7 +30,7 @@ bindsym $mod+P exec --no-startup-id ~/.bdwscripts/i3-emacs
 bindsym $mod+minus scratchpad show
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec foot
 
 # start Chrome
 bindsym $mod+c exec google-chrome --user-data-dir=.config/google-chrome-$HOSTNAME
