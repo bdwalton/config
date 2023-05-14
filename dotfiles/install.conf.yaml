@@ -7,6 +7,7 @@
 
 - link:
     ~/.bdwscripts: _bdwscripts
+    ~/.config/autostart: _config_autostart
     ~/.config/dunst/dunstrc: _dunstrc
     ~/.config/environment.d: _config_environment.d
     ~/.config/foot/foot.ini: _config_foot/foot.ini
