@@ -79,6 +79,10 @@ on. This is done by adding lines to `dconf_settings` where each line is a key
 (first item) and a value (everything else). These are setup by one of the
 scripts described below.
 
+## Fonts
+
+Font files in the `fonts` directory will be installed in ~/.fonts/.
+
 ## Miscellaneous Scripts
 
 To do miscellaneous setup to configure the environment, you can add

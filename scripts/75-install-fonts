@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+FONT_SRC="$(realpath $(dirname $0)/../fonts)"
+FONT_DIR="$(realpath ~/.fonts)"
+
+if [ ! -d "${FONT_DIR}" ]; then
+    mkdir "${FONT_DIR}"
+fi
+
+for font in ${FONT_SRC}/*; do
+    cp -f "${font}" "${FONT_DIR}"
+done
