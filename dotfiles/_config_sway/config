@@ -52,10 +52,11 @@ exec swayidle -w \
      timeout 300 "$lock" \
      timeout 360 'swaymsg "output * dpms off"' \
      resume 'swaymsg "output * dpms on"' \
-     before-sleep "$lock"
+     before-sleep "$lock" \
+     lock "$lock"
 
 # lock the screen (ctrl+alt+l)
-bindsym Control+Mod1+l exec bash ~/.bdwscripts/sway-lockman
+bindsym Control+Mod1+l exec loginctl lock-session
 
 # volume up/down/mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 '+5%'
