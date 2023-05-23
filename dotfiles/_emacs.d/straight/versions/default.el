@@ -1,6 +1,6 @@
 (("apheleia" . "04366a90dfc1063c4a22ea2e4ccaa48303a457e0")
  ("company-mode" . "2ca3e29abf87392714bc2b26e50e1c0f4b9f4e2c")
- ("compat" . "a518b1589d24245629a7aaaa00773f1b76156705")
+ ("compat" . "3deb28d867988edb727d72561da697312146c846")
  ("counsel-projectile" . "40d1e1d4bb70acb00fddd6f4df9778bf2c52734b")
  ("dash.el" . "c30c6bea49b79d966c92ce606fea53dea647b959")
  ("diminish.el" . "6b7e837b0cf0129e9d7d6abae48093cf599bb9e8")
