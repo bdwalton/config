@@ -2,6 +2,7 @@
 _gitconfig-github
 dotfiles/_emacs.d/**/*elc
 dotfiles/_emacs.d/abbrev_defs
+dotfiles/_emacs.d/eln-cache
 dotfiles/_emacs.d/elpa
 dotfiles/_emacs.d/projectile-bookmarks.eld
 dotfiles/_emacs.d/projectile.cache
