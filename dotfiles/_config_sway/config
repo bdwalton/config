@@ -46,12 +46,14 @@ bindsym $mod+c exec google-chrome --user-data-dir=.config/google-chrome-$HOSTNAM
 bindsym $mod+t exec thunar
 
 # Screen locking
-set $lock swaylock -c 550000
+set $lock swaylock -f -c 550000
 
 exec swayidle -w \
      timeout 300 "$lock" \
      timeout 360 'swaymsg "output * dpms off"' \
      resume 'swaymsg "output * dpms on"' \
+     timeout 60  'if pgrep swaylock; then swaymsg "output * dpms off"; fi' \
+     resume 'if pgrep swaylock; then swaymsg "output * dpms on"; fi' \
      before-sleep "$lock" \
      lock "$lock"
 
