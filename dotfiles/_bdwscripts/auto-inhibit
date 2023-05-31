@@ -4,7 +4,7 @@
 # idle for 60.
 
 while true; do
-  meet_windows=$(swaymsg -t get_tree | grep -E 'title.*Meet - .*-.*-.*')
+  meet_windows=$(swaymsg -t get_tree | grep -E 'title.*Meet - .* - Google Chrome')
   if [ -n "${meet_windows}" ]; then
     systemd-inhibit --what=idle --who=auto-inhibit --why='Video call active' --mode=block sleep 30 &
     echo -n "Found some: "
