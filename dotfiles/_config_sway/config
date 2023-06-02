@@ -39,7 +39,7 @@ bindsym $mod+P exec --no-startup-id ~/.bdwscripts/locked-emacs
 bindsym $mod+minus scratchpad show
 
 # start a terminal
-bindsym $mod+Return exec foot
+bindsym $mod+Return exec gnome-terminal
 
 # start Chrome
 bindsym $mod+c exec google-chrome --user-data-dir=.config/google-chrome-$HOSTNAME
