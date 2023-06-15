@@ -64,11 +64,11 @@ button:hover {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #cc9393;
 }
 
 #mode {
-    background-color: #eb4d4b;
+    background-color: #cc9393;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -118,7 +118,7 @@ button:hover {
 
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: #7F9F7F;
 }
 
 @keyframes blink {
@@ -129,7 +129,7 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: #cc9393;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -168,7 +168,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    background-color: #f0c674;
     color: #000000;
 }
 
