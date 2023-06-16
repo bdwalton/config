@@ -6,4 +6,5 @@ dotfiles/_emacs.d/eln-cache
 dotfiles/_emacs.d/elpa
 dotfiles/_emacs.d/projectile-bookmarks.eld
 dotfiles/_emacs.d/projectile.cache
+dotfiles/_emacs.d/projects
 dotfiles/_emacs.d/transient
