@@ -205,10 +205,10 @@ bindsym $mod+r mode "resize"
 
 # zenburn colour scheme
 # <colorclass>              <border> <background> <text>  <indicator> <child_border>
-client.focused              #3f3f3f  #282A2E      #F0C674 #ffcfaf
-client.focused_inactive     #3f3f3f  #282A2E      #C5C8C6 #3f3f3f
-client.unfocused            #3f3f3f  #282A2E      #C5C8C6 #3f3f3f
-client.urgent               #dca3a3  #dca3a3      #DCDCCC #3f3f3f
+client.focused              #3f3f3f  #282a2e      #f0dfaf #ffcfaf
+client.focused_inactive     #3f3f3f  #282a2e      #c5c8c6 #3f3f3f
+client.unfocused            #3f3f3f  #282a2e      #c5c8c6 #3f3f3f
+client.urgent               #dca3a3  #dca3a3      #dcdccc #3f3f3f
 
 input * {
       xkb_options caps:ctrl_modifier
