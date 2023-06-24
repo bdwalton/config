@@ -68,8 +68,10 @@ To track new Debian packages that are expected, simply add the package
 name to `debian_packages`. Similarly, for PIPx (python) packages, add
 the package name to `pipx_packages`. This file takes a package name
 and an optional comma separated list of dependencies to add to the
-saem venv on the package. Lastly, `npm_packages` is a list of npm
-javascript packages we like to have. After updating any of these
+saem venv on the package. `npm_packages` is a list of npm javascript
+packages we like to have. Lastly, `golang_packages` is a list of URLs
+suitable for use by `go install`. They will be installed using `good`
+so they're isolated from your main GOPATH. After updating any of these
 files, you can re-run `setup-env` to have the packages added
 appropriately.
 

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+BASE_PATH="$(dirname $0)/../"
+PACKAGES_FILE="${BASE_PATH}/golang_packages"
+
+GOPATH="${GOPATH:-${HOME}/working_code/go}"
+export GOPATH
+if [ ! -d "${GOPATH}" ]; then
+    echo "Creating GOAPTH=${GOPATH}"
+    mkdir -p "${GOPATH}"
+fi
+
+echo "Installing golang packages..."
+go install github.com/tigerinus/good@latest
+
+GOOD="${GOPATH}/bin/good"
+
+while read package; do
+    "${GOOD}" install "${package}"
+done < "${PACKAGES_FILE}"
