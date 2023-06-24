@@ -10,10 +10,12 @@ gopls
 ispell
 mosh
 nodejs
+pipx
 protobuf-compiler
 pulseaudio-utils
 python3-pip
 python3-pygments
+python3-venv
 rofi
 sway
 swayidle

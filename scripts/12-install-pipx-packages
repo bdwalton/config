@@ -1,0 +1,20 @@
+#!/bin/bash
+
+BASE_PATH="$(dirname $0)/../"
+PACKAGES_FILE="${BASE_PATH}/pipx_packages"
+
+echo "Installing PIPx packages and dependencies..."
+
+grep -v '^#' "${PACKAGES_FILE}" | while read inputline; do
+    echo $inputline
+    set -- ${inputline}
+
+    echo "Package ${1}"
+    pipx install "${1}"
+    if [ -n "${2}" ]; then
+	for dep in ${2/,/ }; do
+	    echo "Dependency ${dep}"
+	    pipx runpip "${1}" install "${dep}"
+	done
+    fi
+done
