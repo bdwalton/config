@@ -1,3 +1,6 @@
 #!/bin/bash
 
-exec ~/.local/share/good/github.com/bdwalton/inhibit-bridge@latest/bin/inhibit-bridge $@
+# Wait for waybar, which provides org.kde.StatusNotifierWatcher, required for the status tray
+sleep 5
+
+exec ~/.local/share/good/github.com/bdwalton/inhibit-bridge@v1.0.0/bin/inhibit-bridge $@
