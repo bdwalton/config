@@ -47,21 +47,6 @@ bindsym $mod+c exec google-chrome --user-data-dir=.config/google-chrome-$HOSTNAM
 # start Thunar file manager
 bindsym $mod+t exec thunar
 
-# Screen locking
-set $lock swaylock -f -e
-
-exec swayidle -w \
-     timeout 300 "$lock" \
-     timeout 360 'swaymsg "output * dpms off"' \
-     resume 'swaymsg "output * dpms on"' \
-     timeout 60  'if pgrep swaylock; then swaymsg "output * dpms off"; fi' \
-     resume 'if pgrep swaylock; then swaymsg "output * dpms on"; fi' \
-     before-sleep "$lock" \
-     lock "$lock"
-
-# idle inhibit tool
-exec ~/.bdwscripts/inhibit-bridge --logfile=/home/bdwalton/inhibit-bridge.log
-
 # lock the screen (ctrl+alt+l)
 bindsym Control+Mod1+l exec loginctl lock-session
 
@@ -173,9 +158,6 @@ bindsym $mod+Shift+e mode "exit"
 # New window decoration
 default_border normal 3
 
-exec dex -ae sway
-exec --no-startup-id /usr/libexec/gsd-xsettings
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -224,3 +206,22 @@ output eDP-1 pos 3840 0
 bar {
     swaybar_command waybar
 }
+
+
+exec dex -ae sway
+exec --no-startup-id /usr/libexec/gsd-xsettings
+
+# Screen locking
+set $lock swaylock -f -e
+
+exec swayidle -w \
+     timeout 300 "$lock" \
+     timeout 360 'swaymsg "output * dpms off"' \
+     resume 'swaymsg "output * dpms on"' \
+     timeout 60  'if pgrep swaylock; then swaymsg "output * dpms off"; fi' \
+     resume 'if pgrep swaylock; then swaymsg "output * dpms on"; fi' \
+     before-sleep "$lock" \
+     lock "$lock"
+
+# idle inhibit tool
+exec ~/.bdwscripts/inhibit-bridge --logfile=/home/bdwalton/inhibit-bridge.log
