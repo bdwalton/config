@@ -25,3 +25,9 @@ done
 systemctl daemon-reload --user
 
 sudo loginctl enable-linger $USER
+
+sudo bash -c 'cat <<EOF > /etc/systemd/logind.conf.d/kill-user-processes.conf
+# Set by bdwconfig
+[Login]
+KillUserProcesses=yes
+EOF'
