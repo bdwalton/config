@@ -62,10 +62,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec "rofi -modi 'drun,run' -show drun"
 # start rofi (an ssh wrapper)
 bindsym $mod+x exec "rofi -modi 'ssh' -show ssh"
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+Left focus left
@@ -145,9 +141,9 @@ bindsym $mod+semicolon exec dunstctl close-all
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# exit i3 (logs you out of your X session), with mod+shift+e x2
+# exit sway (logs you out of your session), with mod+shift+e x2
 mode "exit" {
-        bindsym $mod+Shift+e exec i3-msg exit
+        bindsym $mod+Shift+e exec swaymsg exit
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
