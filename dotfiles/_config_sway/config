@@ -221,3 +221,5 @@ exec swayidle -w \
 
 # idle inhibit tool; dies if already running, so exec_always is fine.
 exec_always ~/.bdwscripts/inhibit-bridge --logfile=/home/bdwalton/inhibit-bridge.log
+# inhibit-bridge will toggle manual inhibit state on receiving SIGUSR1
+bindsym $mod+shift+t exec bash -c 'kill -USR1 $(pidof inhibit-bridge)'
