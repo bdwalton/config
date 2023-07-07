@@ -219,5 +219,5 @@ exec swayidle -w \
      before-sleep "$lock" \
      lock "$lock"
 
-# idle inhibit tool
-exec ~/.bdwscripts/inhibit-bridge --logfile=/home/bdwalton/inhibit-bridge.log
+# idle inhibit tool; dies if already running, so exec_always is fine.
+exec_always ~/.bdwscripts/inhibit-bridge --logfile=/home/bdwalton/inhibit-bridge.log
