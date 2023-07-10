@@ -220,7 +220,6 @@ exec swayidle -w \
      lock "$lock"
 
 # idle inhibit tool; dies if already running, so exec_always is fine.
-# TODO(bdwalton): Revert this to the managed version
-exec_always ~/working_code/go/bin/inhibit-bridge
+exec_always ~/.local/bin/inhibit-bridge
 # inhibit-bridge will toggle manual inhibit state on receiving SIGUSR1
 bindsym $mod+shift+t exec bash -c 'killall -USR1 inhibit-bridge'
