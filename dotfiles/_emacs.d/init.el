@@ -71,6 +71,16 @@
   :custom
   (straight-use-package-by-default t))
 
+;; Enable vertico, which provides a minimalistic vertical completion UI.
+(use-package vertico
+  :init
+  (vertico-mode)
+  ;; Show more candidates
+  (setq vertico-count 15)
+  ;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
+  (setq vertico-cycle t)
+  )
+
 ;; General UI and creature-comfort improvements
 (use-package dashboard
   :straight
