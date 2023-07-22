@@ -217,6 +217,11 @@
   ;; (setq consult-project-function nil)
   )
 
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
 ;; General UI and creature-comfort improvements
 (use-package dashboard
   :straight

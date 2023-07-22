@@ -303,7 +303,13 @@ make it more useful.
     ;; (setq consult-project-function nil)
     )
 #+end_src
-
+*** Orderless
+#+begin_src emacs-lisp
+  (use-package orderless
+    :custom
+    (completion-styles '(orderless basic))
+    (completion-category-overrides '((file (styles basic partial-completion)))))
+#+end_src
 *** Dashboard
 #+begin_src emacs-lisp
   ;; General UI and creature-comfort improvements
