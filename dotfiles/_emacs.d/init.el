@@ -130,46 +130,6 @@
   :straight
   (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
 
-(use-package counsel
-  :init
-  ;; make easier alt-x (when ctrl is bound to caps lock)
-  (global-set-key "\C-x\C-m" 'counsel-M-x)
-  (global-set-key "\C-c\C-m" 'counsel-M-x)
-  :bind (("M-x" . counsel-M-x)
-         ("C-x b" . counsel-ibuffer)
-         ("C-x C-f" . counsel-find-file)
-         :map minibuffer-local-map
-         ("C-r" . 'counsel-minibuffer-history)))
-
-;; Enable a few more ivy integrations for projectile.
-(use-package counsel-projectile
-  :after projectile
-  :config (counsel-projectile-mode 1))
-
-(use-package ivy
-  :diminish ;; hide this minor mode in the modeline
-  :bind (("C-s" . swiper)
-         ("C-r" . swiper)
-         ("C-c C-r" . ivy-resume))
-  :config
-  (ivy-mode 1)
-  :custom
-  (ivy-use-virtual-buffers t))
-
-(use-package ivy-rich
-  :after ivy
-  :init
-  (ivy-rich-mode 1))
-
-(use-package ivy-prescient
-  :after counsel
-  :custom
-  (ivy-prescient-enable-filtering nil)
-  :config
-  ;; Uncomment the following line to have sorting remembered across sessions!
-  ;; (prescient-persist-mode 1)
-  (ivy-prescient-mode 1))
-
 (use-package project)
 
 (use-package projectile
@@ -179,7 +139,6 @@
   :config
   (projectile-mode)
   :custom
-  (projectile-completion-system 'ivy)
   (projectile-project-search-path
    '(("~/working_code/" . 1)
      ("~/working_code/go/src/github.com/bdwalton/" . 1))))
