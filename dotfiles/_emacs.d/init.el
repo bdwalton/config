@@ -36,32 +36,6 @@
 (defun bdw/advice-compilation-filter (f proc string)
   (funcall f proc (xterm-color-filter string)))
 
-;; Our basic config overrides and default settings
-(add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
-(setq inhibit-startup-message t)
-(menu-bar-mode -1)
-(column-number-mode t)         ;; show column numbers
-(fset 'yes-or-no-p 'y-or-n-p)
-(global-font-lock-mode t)      ;; always have font colouring
-;; enable a few deprecated features that we like
-(put 'narrow-to-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
-(setq default-tab-width 2)
-(setq make-backup-files nil)   ;; stop the little ~ turd files
-
-;; Dump anything managed via custom-set* in a separate file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
-
-;; General keybindings here
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
-(global-set-key (kbd "C-x m") 'execute-extended-command)
-(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
-;; macros with 1 key
-(global-set-key [f4]  'start-kbd-macro)
-(global-set-key [f5]  'end-kbd-macro)
-(global-set-key [f6]  'call-last-kbd-macro)
-
 ;; Everything else we want to do via use-package, but to ensure that
 ;; boostraps, use straight directly for it.
 (straight-use-package 'use-package)
@@ -71,6 +45,33 @@
 (use-package straight
   :custom
   (straight-use-package-by-default t))
+
+(use-package emacs
+  :bind
+  ;; General keybindings here
+  (("C-x k" . 'kill-this-buffer)
+   ("C-x m" . 'execute-extended-command)
+   ("C-c C-c" . 'comment-or-uncomment-region)
+   ;; macros with 1 key
+   ("<f4>" .  'start-kbd-macro)
+   ("<f5>" . 'end-kbd-macro)
+   ("<f6>" . 'call-last-kbd-macro))
+  :config
+  ;; Our basic config overrides and default settings
+  (add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
+  (setq inhibit-startup-message t)
+  (menu-bar-mode -1)
+  (column-number-mode t)         ;; show column numbers
+  (fset 'yes-or-no-p 'y-or-n-p)
+  (global-font-lock-mode t)      ;; always have font colouring
+  ;; enable a few deprecated features that we like
+  (put 'narrow-to-region 'disabled nil)
+  (put 'upcase-region 'disabled nil)
+  (setq default-tab-width 2)
+  (setq make-backup-files nil)   ;; stop the little ~ turd files
+  ;; Dump anything managed via custom-set* in a separate file
+  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (load custom-file))
 
 ;; Enable vertico, which provides a minimalistic vertical completion UI.
 (use-package vertico

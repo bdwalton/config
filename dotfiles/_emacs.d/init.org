@@ -31,6 +31,7 @@ This config gets spit out to early-init.el. It should be minimal.
   ;; Ensure that package isn't initialized before we get to straight.el
   (setq package-enable-at-startup nil)
 #+end_src
+
 * Straight Package Management Initialization
 We use straight.el for our package management as it facilitates both
 standard package repo usage and github package usage with features
@@ -81,49 +82,6 @@ Here we have a few functions that are referenced later in the config.
     (funcall f proc (xterm-color-filter string)))
 #+end_src
 
-* Basic Configuration and UI Config
-
-These settings tweak the UI in ways we find more useful. Things like
-toolbars and scrollbars aren't useful for us as we like keyboard
-driven operation and often run in a terminal anyway. We also turn on a
-few deprecated features.
-
-#+begin_src emacs-lisp
-;; Our basic config overrides and default settings
-(add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
-(setq inhibit-startup-message t)
-(menu-bar-mode -1)
-(column-number-mode t)         ;; show column numbers
-(fset 'yes-or-no-p 'y-or-n-p)
-(global-font-lock-mode t)      ;; always have font colouring
-;; enable a few deprecated features that we like
-(put 'narrow-to-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
-(setq default-tab-width 2)
-(setq make-backup-files nil)   ;; stop the little ~ turd files
-#+end_src
-
-#+begin_src emacs-lisp
-  ;; Dump anything managed via custom-set* in a separate file
-  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-  (load custom-file)
-#+end_src
-
-* General Keybindings
-
-Here, we capture keybindings that aren't specific to any modes.
-
-#+begin_src emacs-lisp
-  ;; General keybindings here
-  (global-set-key (kbd "C-x k") 'kill-this-buffer)
-  (global-set-key (kbd "C-x m") 'execute-extended-command)
-  (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
-  ;; macros with 1 key
-  (global-set-key [f4]  'start-kbd-macro)
-  (global-set-key [f5]  'end-kbd-macro)
-  (global-set-key [f6]  'call-last-kbd-macro)
-#+end_src
-
 * Package Installation and Configuration
 
 We install, configure and use several packages that make emacs more
@@ -147,6 +105,45 @@ to override use-package with a more featureful version.
     (straight-use-package-by-default t))
 #+end_src
 
+** Emacs Defaults and Basic Setup
+
+Here, we capture keybindings that aren't specific to any modes and
+tweak various defaults.
+
+These settings tweak the UI in ways we find more useful. Things like
+toolbars and scrollbars aren't useful for us as we like keyboard
+driven operation and often run in a terminal anyway. We also turn on a
+few deprecated features.
+
+#+begin_src emacs-lisp
+  (use-package emacs
+    :bind
+    ;; General keybindings here
+    (("C-x k" . 'kill-this-buffer)
+     ("C-x m" . 'execute-extended-command)
+     ("C-c C-c" . 'comment-or-uncomment-region)
+     ;; macros with 1 key
+     ("<f4>" .  'start-kbd-macro)
+     ("<f5>" . 'end-kbd-macro)
+     ("<f6>" . 'call-last-kbd-macro))
+    :config
+    ;; Our basic config overrides and default settings
+    (add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
+    (setq inhibit-startup-message t)
+    (menu-bar-mode -1)
+    (column-number-mode t)         ;; show column numbers
+    (fset 'yes-or-no-p 'y-or-n-p)
+    (global-font-lock-mode t)      ;; always have font colouring
+    ;; enable a few deprecated features that we like
+    (put 'narrow-to-region 'disabled nil)
+    (put 'upcase-region 'disabled nil)
+    (setq default-tab-width 2)
+    (setq make-backup-files nil)   ;; stop the little ~ turd files
+    ;; Dump anything managed via custom-set* in a separate file
+    (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+    (load custom-file))
+#+end_src
+
 ** General UI and Creature Comfort Packages
 
 These packages provide enhancements to the default UI in ways that
@@ -164,6 +161,7 @@ make it more useful.
     (setq vertico-cycle t)
     )
 #+end_src
+
 *** Marginalia
 #+begin_src emacs-lisp
   ;; Enable rich annotations using the Marginalia package
@@ -182,6 +180,7 @@ make it more useful.
     ;; package.
     (marginalia-mode))
 #+end_src
+
 *** Consult
 #+begin_src emacs-lisp
   ;; Consult provides completing read search and navigation support.
@@ -304,6 +303,7 @@ make it more useful.
     ;; (setq consult-project-function nil)
     )
 #+end_src
+
 *** Orderless
 #+begin_src emacs-lisp
   (use-package orderless
@@ -311,6 +311,7 @@ make it more useful.
     (completion-styles '(orderless basic))
     (completion-category-overrides '((file (styles basic partial-completion)))))
 #+end_src
+
 *** Dashboard
 #+begin_src emacs-lisp
   ;; General UI and creature-comfort improvements
@@ -486,6 +487,7 @@ strings.
     :config
     (advice-add 'compilation-filter :around #'bdw/advice-compilation-filter))
 #+end_src
+
 ** Programming Related Packages And Config
 
 The packages below make programming nicer by enhancing the experience
@@ -580,6 +582,7 @@ eglot. Must be loaded before eglot.
     :config
     (yas-global-mode 1))
 #+end_src
+
 *** Eglot
 
 Setup eglot for nice LSP integration in various coding modes.
@@ -609,6 +612,7 @@ languages and files.
 #+end_src
 
 *** i3 Config Mode
+This works for sway config too as they're almost identical.
 
 #+begin_src emacs-lisp
   (use-package i3wm-config-mode)
@@ -653,6 +657,7 @@ frontend UIs.
 #+begin_src emacs-lisp
   (use-package typescript-mode)
 #+end_src
+
 *** Yaml Mode
 
 YAML files are common enough that it's nice to have a dedicated mode
