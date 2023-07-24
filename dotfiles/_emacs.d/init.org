@@ -114,13 +114,14 @@ few deprecated features.
 Here, we capture keybindings that aren't specific to any modes.
 
 #+begin_src emacs-lisp
-;; General keybindings here
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
-(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
-;; macros with 1 key
-(global-set-key [f4]  'start-kbd-macro)
-(global-set-key [f5]  'end-kbd-macro)
-(global-set-key [f6]  'call-last-kbd-macro)
+  ;; General keybindings here
+  (global-set-key (kbd "C-x k") 'kill-this-buffer)
+  (global-set-key (kbd "C-x m") 'execute-extended-command)
+  (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region)
+  ;; macros with 1 key
+  (global-set-key [f4]  'start-kbd-macro)
+  (global-set-key [f5]  'end-kbd-macro)
+  (global-set-key [f6]  'call-last-kbd-macro)
 #+end_src
 
 * Package Installation and Configuration
