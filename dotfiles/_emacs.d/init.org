@@ -439,6 +439,7 @@ units of files.
     :bind (:map projectile-mode-map
                 ("C-x p" . projectile-command-map)
                 ("C-x p b" . consult-project-buffer)      ;; orig. project-switch-to-buffer
+                ("C-x p f" . consult-project-buffer)
                 )
     :config
     (projectile-mode)
