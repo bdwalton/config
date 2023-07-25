@@ -25,9 +25,6 @@
     ~/.rtorrent.rc: _rtorrent.rc
     ~/.ssh: _ssh
     ~/.tmux.conf: _tmux.conf
-    ~/.xinitrc: _xinitrc
-    ~/.Xresources: _Xresources
-    ~/.xsessionrc: _xsessionrc
     ~/.zlogin: _zlogin
     ~/.zshenv: _zshenv
     ~/.zshrc: _zshrc
