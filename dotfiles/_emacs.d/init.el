@@ -99,8 +99,12 @@
   ;; package.
   (marginalia-mode))
 
+(use-package consult-projectile
+  :straight (consult-projectile :type git :host gitlab :repo "OlMon/consult-projectile" :branch "master"))
+
 ;; Consult provides completing read search and navigation support.
 (use-package consult
+  :after consult-projectile
   ;; Replace bindings. Lazily loaded due to `use-package'.
   :bind (;; C-c bindings in `mode-specific-map'
          ("C-s" . consult-line)
@@ -179,7 +183,9 @@
   ;; Configure other variables and modes in the :config section,
   ;; after lazily loading the package.
   :config
-
+  (setq consult-project-buffer-sources '(consult--source-project-buffer
+                                         consult--source-project-recent-file
+                                         consult-projectile--source-projectile-file))
   ;; Optionally configure preview. The default value
   ;; is 'any, such that any key triggers the preview.
   ;; (setq consult-preview-key 'any)
