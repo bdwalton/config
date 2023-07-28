@@ -67,7 +67,7 @@ Here we have a few functions that are referenced later in the config.
     "Do frame-type-conditional setup."
     (with-selected-frame frame
       (if (display-graphic-p)
-          (progn
+          (progn           ;; true (graphical)
             (custom-set-faces
              ;; custom-set-faces was added by Custom.
              ;; If you edit it by hand, you could mess it up, so be careful.
@@ -75,7 +75,10 @@ Here we have a few functions that are referenced later in the config.
              ;; If there is more than one, they won't work right.
              '(default ((t (:family "Liberation Mono" :foundry "PfEd" :slant normal :weight normal :height 109 :width normal)))))
             (scroll-bar-mode -1)
-            (tool-bar-mode -1)))))
+            (tool-bar-mode -1))
+        (progn ;; false (terminal)
+          (corfu-terminal-mode +1))
+        )))
 
   ;; Help with colorizing compilation buffers.
   (defun bdw/advice-compilation-filter (f proc string)
@@ -646,6 +649,18 @@ than company mode.
     ;; See also `corfu-exclude-modes'.
     :init
     (global-corfu-mode))
+#+end_src
+
+*** Corfu Terminal
+
+Corfu doesn't support terminal mode because it uses gui elements to
+draw the selection dialog. Because we use both modes, bring in
+corfu-terminal and ensure we support both cleanly.
+
+#+begin_src emacs-lisp
+  (use-package corfu-terminal
+    :straight
+    (corfu-terminal :type git :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
 #+end_src
 
 *** Yasnippet

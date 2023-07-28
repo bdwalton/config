@@ -22,7 +22,7 @@
   "Do frame-type-conditional setup."
   (with-selected-frame frame
     (if (display-graphic-p)
-        (progn
+        (progn           ;; true (graphical)
           (custom-set-faces
            ;; custom-set-faces was added by Custom.
            ;; If you edit it by hand, you could mess it up, so be careful.
@@ -30,7 +30,10 @@
            ;; If there is more than one, they won't work right.
            '(default ((t (:family "Liberation Mono" :foundry "PfEd" :slant normal :weight normal :height 109 :width normal)))))
           (scroll-bar-mode -1)
-          (tool-bar-mode -1)))))
+          (tool-bar-mode -1))
+      (progn ;; false (terminal)
+        (corfu-terminal-mode +1))
+      )))
 
 ;; Help with colorizing compilation buffers.
 (defun bdw/advice-compilation-filter (f proc string)
@@ -421,6 +424,10 @@
   ;; See also `corfu-exclude-modes'.
   :init
   (global-corfu-mode))
+
+(use-package corfu-terminal
+  :straight
+  (corfu-terminal :type git :repo "https://codeberg.org/akib/emacs-corfu-terminal.git"))
 
 (use-package yasnippet
   :diminish yas-minor-mode
