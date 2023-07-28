@@ -21,7 +21,7 @@
  ("flymake" . "bb1408afd5c907b6c24e41457064cc32b0f985de")
  ("gnu-elpa-mirror" . "c89a389cecd15a4fafc83648ac8d655957788900")
  ("go-mode.el" . "166dfb1e090233c4609a50c2ec9f57f113c1da72")
- ("goto-line-faster.el" . "3bccdcb955e834e27b0d7b9e862c612ac036ba5c")
+ ("goto-line-faster.el" . "0a9f630c5549a9539b7a781298ef59803c86a978")
  ("helpful" . "32cb28b50b3366ad35e2cb936367268ddeec745f")
  ("i3wm-Config-Mode" . "188e3978807ec39eba3cb69d973c0062af324215")
  ("ini-mode" . "5472abc94e564edc6b469c48d2324519a044a77c")

@@ -469,9 +469,11 @@ displays a proper title.
 *** Goto Line Faster
 
 #+begin_src emacs-lisp
-  (use-package goto-line-faster
-    :straight
-    (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
+    (use-package goto-line-faster
+      :straight
+      (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" )
+      :custom
+      (goto-line-faster-goto-line-function #'consult-goto-line))
 #+end_src
 
 *** Project

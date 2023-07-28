@@ -320,7 +320,9 @@
 
 (use-package goto-line-faster
   :straight
-  (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" ))
+  (goto-line-faster :type git :host github :repo "davep/goto-line-faster.el" )
+  :custom
+  (goto-line-faster-goto-line-function #'consult-goto-line))
 
 (use-package project)
 
