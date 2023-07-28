@@ -57,6 +57,12 @@
    ("<f4>" .  'start-kbd-macro)
    ("<f5>" . 'end-kbd-macro)
    ("<f6>" . 'call-last-kbd-macro))
+  :init
+  ;; TAB cycle if there are only few candidates
+  (setq completion-cycle-threshold 3)
+  ;; Enable indentation+completion using the TAB key.
+  ;; `completion-at-point' is often bound to M-TAB.
+  (setq tab-always-indent 'complete)
   :config
   ;; Our basic config overrides and default settings
   (add-hook 'after-make-frame-functions 'bdw-frame-creation-hook)
@@ -392,17 +398,29 @@
 (use-package tree-sitter-langs
   :after tree-sitter)
 
-;; Some text completion UIs that make programming experiences richer.
-(use-package company
-  :diminish
-  :bind
-  (:map company-active-map
-        ("<tab>" . company-complete-selection))
+(use-package corfu
+  ;; Optional customizations
   :custom
-  (company-minimum-prefix-length 1)
-  (company-idle-delay 0.0)
+  ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+  (corfu-auto t)                 ;; Enable auto completion
+  ;; (corfu-separator ?\s)          ;; Orderless field separator
+  ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
+  (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
+  ;; (corfu-preview-current nil)    ;; Disable current candidate preview
+  ;; (corfu-preselect 'prompt)      ;; Preselect the prompt
+  ;; (corfu-on-exact-match nil)     ;; Configure handling of exact matches
+  ;; (corfu-scroll-margin 5)        ;; Use scroll margin
+
+  ;; Enable Corfu only for certain modes.
+  ;; :hook ((prog-mode . corfu-mode)
+  ;;        (shell-mode . corfu-mode)
+  ;;        (eshell-mode . corfu-mode))
+
+  ;; Recommended: Enable Corfu globally.
+  ;; This is recommended since Dabbrev can be used globally (M-/).
+  ;; See also `corfu-exclude-modes'.
   :init
-  (add-hook 'go-mode-hook #'company-mode))
+  (global-corfu-mode))
 
 (use-package yasnippet
   :diminish yas-minor-mode
