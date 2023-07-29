@@ -551,6 +551,17 @@ strings.
     (advice-add 'compilation-filter :around #'bdw/advice-compilation-filter))
 #+end_src
 
+*** VUndo
+Visual undo, shows the history as a tree and lets you navigate back to
+the previous states easily.
+
+#+begin_src emacs-lisp
+  ;; Visual Undo M-x vundo
+  (use-package vundo
+    :custom
+    (vundo-glyph-alist vundo-unicode-symbols)
+    )
+#+end_src
 ** Programming Related Packages And Config
 
 The packages below make programming nicer by enhancing the experience

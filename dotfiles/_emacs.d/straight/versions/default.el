@@ -55,6 +55,7 @@
  ("typescript.el" . "4fcb4594819caf472ae42ea068a1c7795cf07f46")
  ("use-package" . "a6e856418d2ebd053b34e0ab2fda328abeba731c")
  ("vertico" . "5aa1644aeee2c0d14b8cfd64d32d39abfac35c61")
+ ("vundo" . "5e917b35a942c7e18044ba8ebddbe98f8e85d818")
  ("with-editor" . "bce8d1bf3faf5237332aada3bb0920bbbc037fe7")
  ("xref" . "420511e20187d0c6c8680c0e63ae8810f84dee00")
  ("xterm-color" . "2ad407c651e90fff2ea85d17bf074cee2c022912")

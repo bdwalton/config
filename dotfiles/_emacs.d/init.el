@@ -363,6 +363,12 @@
   :config
   (advice-add 'compilation-filter :around #'bdw/advice-compilation-filter))
 
+;; Visual Undo M-x vundo
+(use-package vundo
+  :custom
+  (vundo-glyph-alist vundo-unicode-symbols)
+  )
+
 ;; Programming related packages and config
 (use-package magit
   :custom
