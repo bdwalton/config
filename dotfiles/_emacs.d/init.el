@@ -74,9 +74,6 @@
   (column-number-mode t)         ;; show column numbers
   (fset 'yes-or-no-p 'y-or-n-p)
   (global-font-lock-mode t)      ;; always have font colouring
-  ;; enable a few deprecated features that we like
-  (put 'narrow-to-region 'disabled nil)
-  (put 'upcase-region 'disabled nil)
   (setq default-tab-width 2)
   (setq make-backup-files nil)   ;; stop the little ~ turd files
   ;; Dump anything managed via custom-set* in a separate file
