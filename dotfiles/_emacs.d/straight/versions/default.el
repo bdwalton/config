@@ -29,7 +29,7 @@
  ("json-mode" . "eedb4560034f795a7950fa07016bd4347c368873")
  ("json-snatcher" . "b28d1c0670636da6db508d03872d96ffddbc10f2")
  ("jsonrpc" . "5244f21d42a6bf28b570f9e41083f794cc904518")
- ("magit" . "f46cc6dd91227793058ec4988598765d092a6c03")
+ ("magit" . "6e394b8928bab7922478566c4eb2f7cf0a6edd8e")
  ("marginalia" . "866e50aee4f066b0903752c69b33e9b7cab93f97")
  ("markdown-mode" . "b7da085037cd052ac61dbdf4b1ae097ec31ccaf0")
  ("melpa" . "c3ca27e5f3cf3822f7351bf500a29f23aeedf461")
