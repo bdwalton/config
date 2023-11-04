@@ -7,6 +7,7 @@ fonts-powerline
 foot
 gconf2
 gopls
+grim
 ispell
 mosh
 nodejs
@@ -16,9 +17,11 @@ pulseaudio-utils
 python3-pip
 python3-venv
 rofi
+slurp
 sway
 swayidle
 swaylock
 thunar
 tmux
 waybar
+wl-clipboard
