@@ -38,6 +38,8 @@ for_window [class="Emacs" floating] resize set 1536 1009, move position center
 bindsym $mod+P exec --no-startup-id ~/.bdwscripts/locked-emacs
 bindsym $mod+minus scratchpad show
 
+bindsym $mod+Print exec grim -g "$(slurp -d)"
+
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
 
