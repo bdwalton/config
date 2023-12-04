@@ -195,7 +195,7 @@ input * {
 }
 
 # External @ home
-output DP-3 pos 0 0
+output DP-2 pos 0 0
 # External @ work
 output HDMI-A-1 pos 0 0
 # Internal
