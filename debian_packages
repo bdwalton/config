@@ -9,6 +9,7 @@ gconf2
 gopls
 grim
 ispell
+mako-notifier
 mosh
 nodejs
 pipx
