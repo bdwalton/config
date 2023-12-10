@@ -1,7 +1,7 @@
 sort=-time
 layer=overlay
-width=300
-height=110
+width=500
+height=200
 border-size=2
 border-radius=15
 icons=1
