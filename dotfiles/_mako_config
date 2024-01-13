@@ -1,3 +1,4 @@
+# -*- mode: Ini -*-
 sort=-time
 layer=overlay
 width=500
