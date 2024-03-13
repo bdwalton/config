@@ -209,9 +209,12 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-/* #tray { */
-/*     background-color: #2980b9; */
-/* } */
+#tray {
+  border: 3px solid #64727D;
+  border-right: none;
+   border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
 
 #tray > .passive {
     -gtk-icon-effect: dim;
