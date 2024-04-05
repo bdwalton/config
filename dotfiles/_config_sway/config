@@ -194,14 +194,14 @@ input * {
       xkb_options caps:ctrl_modifier
 }
 
-# External @ home
-output DP-3 pos 0 0
-# External @ work
-output DP-6 pos 0 0
+# External display and other global defaults. We use * here because
+# the external display names don't seem to be stable.
+output * {
+       pos 0 0
+       bg ~/.backgrounds/deadwing.jpeg fill
+}
 # Internal
 output eDP-1 pos 3840 0
-
-output * bg ~/.backgrounds/deadwing.jpeg fill
 
 bar {
     swaybar_command waybar
