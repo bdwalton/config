@@ -80,6 +80,10 @@ button:hover {
   background-color: #cc9393;
 }
 
+#workspaces button.visible:not(.focused) {
+  background-color: #7f9f7f;
+}
+
 #window {
   font-family: Liberation;
   font-weight: bold;
