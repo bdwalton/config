@@ -212,16 +212,17 @@ exec dex -ae sway
 exec --no-startup-id /usr/libexec/gsd-xsettings
 
 # Screen locking
-set $lock swaylock -f -e
+set $lock ~/.bdwscripts/screen-lock
 
 exec swayidle -w \
-     timeout 300 "$lock" \
+     timeout 300 "$lock lock" \
      timeout 360 'swaymsg "output * dpms off"' \
      resume 'swaymsg "output * dpms on"' \
      timeout 60  'if pgrep swaylock; then swaymsg "output * dpms off"; fi' \
      resume 'if pgrep swaylock; then swaymsg "output * dpms on"; fi' \
-     before-sleep "$lock" \
-     lock "$lock"
+     before-sleep "$lock lock" \
+     lock "$lock lock" \
+     unlock "$lock unlock"
 
 # idle inhibit tool; dies if already running, so exec_always is fine.
 exec_always ~/.local/bin/inhibit-bridge
