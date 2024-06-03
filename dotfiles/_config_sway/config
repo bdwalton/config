@@ -144,14 +144,14 @@ bindsym $mod+semicolon exec makoctl dismiss -a
 bindsym $mod+Shift+c reload
 
 # exit sway (logs you out of your session), with mod+shift+e x2
-mode "exit" {
+mode "Exit" {
         bindsym $mod+Shift+e exec swaymsg exit
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+Shift+e mode "exit"
+bindsym $mod+Shift+e mode "Exit"
 
 # New window decoration
 default_border normal 3
