@@ -7,3 +7,4 @@
 [submodule "dotfiles/_ssh"]
 	path = dotfiles/_ssh
 	url = http://github.com/bdwalton/ssh_config.git
+	branch = main
