@@ -16,6 +16,7 @@
     ~/.config/swaylock/config: _config_swaylock/config
     ~/.config/rofi/config.rasi: _rofi.config.rasi
     ~/.config/waybar: _config_waybar
+    ~/.dircolors: _dircolors
     ~/.emacs.d: _emacs.d
     ~/.gitconfig: _gitconfig
     ~/.gitconfig-home: _gitconfig-home
