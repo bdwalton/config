@@ -16,6 +16,11 @@ function lca() {
     ls -h -l -A --color=yes $@ | less
 }
 
+func k() {
+  knock -d100 "${1}" 20000:udp 28118:udp 19005:udp && \
+    ssh "${1}"
+}
+
 # Launch a new titled tmux window that ssh's to the designated host We
 # force the use of our shell in what should avoid login mode (which
 # would trigger)
