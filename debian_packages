@@ -11,6 +11,7 @@ gopls
 grim
 ispell
 jekyll
+knockd
 mako-notifier
 mosh
 nodejs
