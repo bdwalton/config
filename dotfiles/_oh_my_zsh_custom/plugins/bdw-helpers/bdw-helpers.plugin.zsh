@@ -1,6 +1,6 @@
 # -*- shell-script -*-
 
-fake-enter() {
+function fake-enter() {
     print -s "$BUFFER"
     zle send-break
 }
@@ -16,7 +16,7 @@ function lca() {
     ls -h -l -A --color=yes $@ | less
 }
 
-func sshk() {
+function sshk() {
   knock -d100 "${1}" 20000:udp 28118:udp 19005:udp && \
     ssh "${1}"
 }
