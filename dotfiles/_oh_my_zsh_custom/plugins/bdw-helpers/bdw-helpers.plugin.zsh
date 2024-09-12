@@ -16,7 +16,7 @@ function lca() {
     ls -h -l -A --color=yes $@ | less
 }
 
-func k() {
+func sshk() {
   knock -d100 "${1}" 20000:udp 28118:udp 19005:udp && \
     ssh "${1}"
 }
