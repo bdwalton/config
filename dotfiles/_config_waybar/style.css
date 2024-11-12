@@ -1,6 +1,6 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "Font Awesome 5 Free", Liberation, sans-serif;
+  font-family:  "Liberation Sans", "Font Awesome 5 Free", sans-serif;
   font-size: 15px;
 }
 
@@ -22,7 +22,6 @@ button {
   /* Avoid rounded borders under each button name */
   border: none;
   border-radius: 15px;
-  font-family: Liberation;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -85,7 +84,6 @@ button:hover {
 }
 
 #window {
-  font-family: Liberation;
   font-weight: bold;
 }
 
