@@ -238,3 +238,6 @@ exec swayidle -w \
 exec_always ~/.local/bin/inhibit-bridge
 # inhibit-bridge will toggle manual inhibit state on receiving SIGUSR1
 bindsym $mod+shift+t exec bash -c 'killall -USR1 inhibit-bridge'
+
+# monitor power state and run a helper when we move from battery to ac power.
+exec_always ~/.local/bin/powermon --action='$HOME/.bdwscripts/powermon-handler'

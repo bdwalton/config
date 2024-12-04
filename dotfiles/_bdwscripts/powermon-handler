@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# This script is invoked by `powermon`, our little utility to react to
+# transitions between batter and ac power. That tool calls us with a
+# single argument which will be one of "UNKNOWN", "ON_BATTER" or
+# "AC_POWER". We will handle changing settings to match plugged in vs
+# not in order to extend battery life when not plugged in.
+
+case "${1}" in
+
+  "UNKNOWN")
+    echo "Not doing anything."
+    exit 1
+    ;;
+  "ON_BATTERY")
+    brightnessctl set 40%
+    powerprofilesctl set power-saver
+    ;;
+  "AC_POWER")
+    brightnessctl set 100%
+    powerprofilesctl set performance
+    ;;
+esac
