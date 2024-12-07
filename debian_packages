@@ -21,7 +21,6 @@ protobuf-compiler
 pulseaudio-utils
 python3-pip
 python3-venv
-rofi
 ruby3.1
 ruby3.1-dev
 slurp
@@ -30,6 +29,7 @@ swayidle
 swaylock
 thunar
 tmux
+tofi
 waybar
 wl-clipboard
 wlrctl
