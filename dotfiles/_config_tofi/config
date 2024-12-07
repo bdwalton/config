@@ -13,7 +13,7 @@
 	# characters not in the chosen font will fail to render.
 	#
 	# Otherwise, fonts are interpreted in Pango format.
-	font = "Sans"
+	font = monospace
 
 	# Point size of text.
 	font-size = 24
@@ -102,7 +102,7 @@
 	# alternate-result-background-corner-radius = 0
 
 	# Selection text
-	selection-color = #F92672
+	selection-color = #cc9393
 	selection-background = #00000000
 	selection-background-padding = 0
 	selection-background-corner-radius = 0
@@ -155,7 +155,7 @@
 	num-results = 0
 
 	# Spacing between results in pixels. Can be negative.
-	result-spacing = 0
+	result-spacing = 25
 
 	# List results horizontally.
 	horizontal = false
@@ -167,20 +167,20 @@
 ### Window theming
 #
 	# Width and height of the window. Can be pixels or a percentage.
-	width = 1280
-	height = 720
+	width = 100%
+	height = 100%
 
 	# Window background color
 	background-color = #1B1D1E
 
 	# Width of the border outlines in pixels.
-	outline-width = 4
+	outline-width = 0
 
 	# Border outline color
 	outline-color = #080800
 
 	# Width of the border in pixels.
-	border-width = 12
+	border-width = 0
 
 	# Border color
 	border-color = #F92672
@@ -189,9 +189,9 @@
 	corner-radius = 0
 
 	# Padding between borders and text. Can be pixels or a percentage.
-	padding-top = 8
+	padding-top = 5%
 	padding-bottom = 8
-	padding-left = 8
+	padding-left = 25%
 	padding-right = 8
 
 	# Whether to clip text drawing to be within the specified padding. This
@@ -239,7 +239,7 @@
 	hide-cursor = false
 
 	# Show a text cursor in the input field.
-	text-cursor = false
+	text-cursor = true
 
 	# Sort results by number of usages in run and drun modes.
 	history = true
@@ -250,12 +250,12 @@
 	# history-file = /path/to/histfile
 
 	# Use fuzzy matching for searches.
-	fuzzy-match = false
+	fuzzy-match = true
 
 	# If true, require a match to allow a selection to be made. If false,
 	# making a selection with no matches will print input to stdout.
 	# In drun mode, this is always true.
-	require-match = true
+	require-match = false
 
 	# If true, automatically accept a result if it is the only one
 	# remaining. If there's only one result on startup, window creation is
