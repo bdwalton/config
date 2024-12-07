@@ -149,15 +149,8 @@ bindsym $mod+semicolon exec makoctl dismiss -a
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
-# exit sway (logs you out of your session), with mod+shift+e x2
-mode "Exit" {
-        bindsym $mod+Shift+e exec swaymsg exit
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-bindsym $mod+Shift+e mode "Exit"
+# provide logout, reboot and shutdown options
+bindsym $mod+Shift+e exec "~/.bdwscripts/tofi-exit"
 
 # New window decoration
 default_border normal 3
