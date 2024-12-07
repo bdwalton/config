@@ -66,10 +66,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi (a program launcher)
-bindsym $mod+d exec "rofi -modi 'drun,run' -show drun"
-# start rofi (an ssh wrapper)
-bindsym $mod+x exec "rofi -modi 'ssh' -show ssh"
+# start tofi in desktop menu item launch mode
+bindsym $mod+d exec "tofi-drun --drun-launch=true"
+# start tofi (an ssh wrapper)
+bindsym $mod+x exec "~/.bdwscripts/tofi-ssh"
 
 # change focus
 bindsym $mod+Left focus left

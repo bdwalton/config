@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SSH_HOST=$(awk '{sub(/,.*/, "", $1); print $1}' ~/.ssh/known_hosts |
+  tofi --config=$HOME/.config/tofi/config --prompt-text="Host: ")
+
+# tofi will exit 0 even if no selection is made or we hit escape.
+if [ -n "${SSH_HOST}" ]; then
+   gnome-terminal -- ~/.bdwscripts/bdw-ssh-wrapper "${SSH_HOST}"
+fi
