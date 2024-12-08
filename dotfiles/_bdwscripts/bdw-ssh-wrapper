@@ -13,7 +13,7 @@ HELPER="${HOME}/.bdwscripts-${BDW_CONFIG_TYPE}/ssh-helper"
 echo "Looking for helper: ${HELPER}"
 if [ -x "${HELPER}" ]; then
     echo "Running helper."
-    ${HELPER}
+    "${HELPER}" $@
 fi
 
 case "$@" in
