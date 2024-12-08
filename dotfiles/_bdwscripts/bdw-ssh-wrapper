@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -u
 set -e
 
 source ~/.bdwconfig
@@ -17,12 +18,12 @@ if [ -x "${HELPER}" ]; then
 fi
 
 case "$@" in
-*hendrix*)
+  *benandwen.net)
     # Until we sort out ssh agent forwarding with mosh, use ssh
     # exec mosh $@
-    exec ssh $@
+    exec mosh --server="systemd-run --scope --user mosh-server" $@
     ;;
-*)
+  *)
     exec ssh $@
     ;;
 esac
