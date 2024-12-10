@@ -19,7 +19,7 @@ case "$@" in
   *benandwen.net)
     # Until we sort out ssh agent forwarding with mosh, use ssh
     # exec mosh $@
-    exec mosh --server="systemd-run --scope --user mosh-server" $@
+    exec mosh --family=inet --server="systemd-run --scope --user mosh-server" $@
     ;;
   *)
     exec ssh $@
