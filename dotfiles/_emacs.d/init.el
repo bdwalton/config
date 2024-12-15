@@ -446,6 +446,8 @@
 
 (use-package rust-mode)
 
+(use-package php-mode)
+
 (use-package i3wm-config-mode)
 
 (use-package ini-mode

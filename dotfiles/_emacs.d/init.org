@@ -710,6 +710,11 @@ languages and files.
 #+begin_src emacs-lisp
   (use-package rust-mode)
 #+end_src
+** PHP Mode
+
+#+begin_src emacs-lisp
+  (use-package php-mode)
+#+end_src
 
 *** i3 Config Mode
 This works for sway config too as they're almost identical.
