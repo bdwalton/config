@@ -489,7 +489,7 @@ it in nicely via straight. Ensure it's available so eglot finds what
 it needs.
 
 #+begin_src emacs-lisp
-  (use-package project)
+  (use-package project :straight (:type built-in))
 #+end_src
 
 *** Projectile
@@ -689,7 +689,7 @@ Setup eglot for nice LSP integration in various coding modes.
 
 #+begin_src emacs-lisp
   (use-package eglot
-    :after yasnippet
+    :after (yasnippet project)
     :config
     (add-hook 'go-mode-hook #'eglot-ensure))
 #+end_src

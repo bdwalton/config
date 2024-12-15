@@ -331,7 +331,7 @@
   :custom
   (goto-line-faster-goto-line-function #'consult-goto-line))
 
-(use-package project)
+(use-package project :straight (:type built-in))
 
 (use-package projectile
   :diminish projectile-mode
@@ -438,7 +438,7 @@
   (yas-global-mode 1))
 
 (use-package eglot
-  :after yasnippet
+  :after (yasnippet project)
   :config
   (add-hook 'go-mode-hook #'eglot-ensure))
 
