@@ -97,11 +97,12 @@ if [ -n "${TMUX}" ]; then
     as="$(tmux show-environment SSH_AUTH_SOCK | awk -F= '{print $2}')"
     if [ -S "${as}" ]; then
 	export SSH_AUTH_SOCK="${as}"
-    else
-	export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
     fi
 else
-    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent-remote.socket"
+    as="${XDG_RUNTIME_DIR}/ssh-agent-remote.socket"
+    if [ -S "${as}" ]; then
+      export SSH_AUTH_SOCK="${as}"
+    fi
 fi
 
 source $ZSH/oh-my-zsh.sh
