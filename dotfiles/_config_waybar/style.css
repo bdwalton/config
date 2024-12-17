@@ -89,6 +89,8 @@ button:hover {
   padding-right: 20px;
   border-radius: 15px;
   font-weight: bold;
+  color: #000000;
+  background: #f0dfaf;
 }
 
 #clock {
