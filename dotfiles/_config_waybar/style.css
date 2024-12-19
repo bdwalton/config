@@ -93,6 +93,11 @@ button:hover {
   background: #f0dfaf;
 }
 
+window#waybar.empty #window {
+  background: none;
+  border: none;
+}
+
 #clock {
   background-color: #64727D;
 }
