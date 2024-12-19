@@ -24,6 +24,10 @@
     //         "default": ""
     //     }
     // },
+    "sway/window": {
+        "all-outputs": true,
+	"icon": true,
+    },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
