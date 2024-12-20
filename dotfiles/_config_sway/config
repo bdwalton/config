@@ -193,6 +193,10 @@ input * {
       xkb_options caps:ctrl_modifier
 }
 
+input type:touchpad {
+      dwt enabled
+}
+
 # External display and other global defaults. We use * here because
 # the external display names don't seem to be stable.
 output * {
