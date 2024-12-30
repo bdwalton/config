@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Gnome terminal uses app_id=gnome-terminal-server which means that waybar can't
+# find an icon. To work around this, add symlinks from gnome-termainl-server to
+# utilities-terminal, which is what we find gnome-terminal itself doing. This
+# will allow the algorithm that waybar is using to find the icon and display it.
+
+set -e
+
+ICON_DIR="/usr/share/icons/gnome"
+LOCAL_ICON_DIR="${HOME}/.local/share/icons/hicolor"
+
+[ -d "${LOCAL_ICON_DIR}" ] || mkdir -p "${LOCAL_ICON_DIR}"
+
+for res in 16x16 32x32 48x48 128x128 256x256 512x512; do
+  lrdir="${LOCAL_ICON_DIR}/${res}/apps"
+  trdir="${ICON_DIR}/${res}/apps"
+  [ -d "${lrdir}" ] || mkdir "${lrdir}"
+  ln -s "${trdir}/utilities-terminal.png" "${lrdir}/gnome-terminal-server.png"
+done
