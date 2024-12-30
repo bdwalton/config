@@ -63,6 +63,7 @@ button:hover {
   padding: 0 5px;
   background-color: transparent;
   color: #ffffff;
+  font-weight: bold;
 }
 
 #workspaces button:hover {
@@ -100,10 +101,12 @@ window#waybar.empty #window {
 
 #clock {
   background-color: #64727D;
+  font-weight: bold;
 }
 
 #battery {
   background-color: #ffffff;
+  font-weight: bold;
   color: #000000;
 }
 
@@ -135,6 +138,7 @@ label:focus {
 
 #pulseaudio {
   background-color: #DFAF8F;
+  font-weight: bold;
   color: #000000;
 }
 
@@ -161,6 +165,7 @@ label:focus {
 
 #scratchpad {
   background: #7f9f7f;
+  font-weight: bold;
 }
 
 #scratchpad.empty {
