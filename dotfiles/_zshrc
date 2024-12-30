@@ -154,7 +154,7 @@ zle -N self-insert url-quote-magic
 alias cp='nocorrect cp -i'
 alias d='dirs -v'
 alias emacs='~/.bdwscripts/emacs-term'
-alias grep='egrep --color=auto'
+alias grep='egrep --color=always'
 alias h=history
 alias j=jobs
 alias lld='ls -ld *(-/DN)'
