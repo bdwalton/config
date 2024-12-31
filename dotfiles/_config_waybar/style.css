@@ -108,6 +108,7 @@ window#waybar.empty #window {
   background-color: #ffffff;
   font-weight: bold;
   color: #000000;
+  border: 3px solid #64727D;
 }
 
 #battery.charging, #battery.plugged {
@@ -140,6 +141,7 @@ label:focus {
   background-color: #DFAF8F;
   font-weight: bold;
   color: #000000;
+  border: 3px solid #64727D;
 }
 
 #pulseaudio.muted {
