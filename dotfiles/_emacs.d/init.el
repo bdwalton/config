@@ -440,6 +440,8 @@
 (use-package eglot
   :after (yasnippet project)
   :config
+  (add-hook 'c-mode-hook #'eglot-ensure)
+  (add-hook 'c++-mode-hook #'eglot-ensure)
   (add-hook 'go-mode-hook #'eglot-ensure))
 
 (use-package go-mode)
