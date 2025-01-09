@@ -61,6 +61,8 @@
    ("<f5>" . 'end-kbd-macro)
    ("<f6>" . 'call-last-kbd-macro))
   :init
+  ;; prevent resize window on startup
+  (setq frame-inhibit-implied-resize t)
   ;; TAB cycle if there are only few candidates
   (setq completion-cycle-threshold 3)
   ;; Enable indentation+completion using the TAB key.
@@ -114,7 +116,8 @@
   :after consult-projectile
   ;; Replace bindings. Lazily loaded due to `use-package'.
   :bind (;; C-c bindings in `mode-specific-map'
-         ("C-s" . consult-line)
+         ("C-r" . consult-line)
+         ("C-s" . consult-line)  	 
          ("C-c M-x" . consult-mode-command)
          ("C-c h" . consult-history)
          ("C-c k" . consult-kmacro)
