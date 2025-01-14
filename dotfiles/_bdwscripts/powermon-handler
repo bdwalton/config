@@ -12,7 +12,7 @@ case "${1}" in
     exit 1
     ;;
   "ON_BATTERY")
-    brightnessctl set 10%
+    brightnessctl set 40%
     powerprofilesctl set power-saver
     ;;
   "AC_POWER")
