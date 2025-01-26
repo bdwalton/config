@@ -715,7 +715,7 @@ languages and files.
 #+begin_src emacs-lisp
   (use-package rust-mode)
 #+end_src
-** PHP Mode
+*** PHP Mode
 
 #+begin_src emacs-lisp
   (use-package php-mode)
