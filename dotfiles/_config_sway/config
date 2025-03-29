@@ -210,7 +210,7 @@ output * {
 output eDP-1 pos 3840 0
 
 bar {
-    swaybar_command waybar
+    swaybar_command /home/bdwalton/.bdwscripts/waybar-wrap
 }
 
 # We always want WS1 on our external monitor when available. List

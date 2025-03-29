@@ -1,0 +1,9 @@
+#!/bin/bash
+
+LOGFILE="${HOME}/waybar.log.txt"
+touch -m 600 "${LOGFILE}"
+
+exec >"${LOGFILE}" 2>&1
+
+exec waybar -l debug
+
