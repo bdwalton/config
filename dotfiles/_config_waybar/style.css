@@ -68,7 +68,7 @@ button:hover {
 }
 
 #workspaces button:hover {
-  background: #7f9f7f;
+  background: #9fc59f;
 }
 
 #workspaces button.focused {
@@ -82,7 +82,7 @@ button:hover {
 }
 
 #workspaces button.visible:not(.focused) {
-  background-color: #7f9f7f;
+  background-color: #9fc59f;
 }
 
 #window {
