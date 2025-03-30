@@ -106,20 +106,21 @@ window#waybar.empty #window {
 }
 
 #custom-clock {
-  background-color: #64727D;
+  background-color: #2b303b;
   font-weight: bold;
+  border: 3px solid #64727D;
 }
 
 #battery {
-  background-color: #7f9f7f;
+  background-color: #9fc59f;
   font-weight: bold;
-  color: #ffffff;
+  color: #000000;
   border: 3px solid #64727D;
 }
 
 #battery.charging, #battery.plugged {
-  color: #ffffff;
-  background-color: #7f9f7f;
+  color: #000000;
+  background-color: #9fc59f;
 }
 
 @keyframes blink {
@@ -168,12 +169,14 @@ label:focus {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: #eb4d4b;
+  background-color: #cc9393;
 }
 
 #scratchpad {
-  background: #7f9f7f;
+  background: #9fc59f;
   font-weight: bold;
+  border: 3px solid #64727D;
+  color: #000000;
 }
 
 #scratchpad.empty {
