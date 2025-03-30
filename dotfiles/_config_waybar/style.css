@@ -69,6 +69,7 @@ button:hover {
 
 #workspaces button:hover {
   background: #9fc59f;
+  color: #000000;
 }
 
 #workspaces button.focused {
@@ -83,6 +84,7 @@ button:hover {
 
 #workspaces button.visible:not(.focused) {
   background-color: #9fc59f;
+  color: #000000;
 }
 
 #window {
@@ -145,7 +147,7 @@ label:focus {
 }
 
 #pulseaudio {
-  background-color: #f0dfaf;
+  background-color: #9fc59f;
   font-weight: bold;
   color: #000000;
   border: 3px solid #64727D;
