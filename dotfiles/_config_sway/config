@@ -43,7 +43,7 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Print exec grim -g "$(slurp -d)"
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec foot
 
 # start Chrome
 bindsym $mod+c exec google-chrome --user-data-dir=.config/google-chrome-$HOSTNAME
