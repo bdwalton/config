@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["sway/mode", "pulseaudio", "battery", "clock", "tray"],
+    "modules-right": ["sway/mode", "pulseaudio", "battery", "custom/clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -41,6 +41,11 @@
     "tray": {
         // "icon-size": 21,
         "spacing": 10
+    },
+    "custom/clock": {
+        "format": " {} ",
+        "interval": 1,
+        "exec": "date '+%H:%M'"
     },
     "clock": {
         // "timezone": "America/New_York",

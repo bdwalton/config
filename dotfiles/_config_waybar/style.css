@@ -36,6 +36,7 @@ button:hover {
 }
 
 #clock,
+#custom-clock,
 #battery,
 #pulseaudio,
 #tray,
@@ -100,6 +101,11 @@ window#waybar.empty #window {
 }
 
 #clock {
+  background-color: #64727D;
+  font-weight: bold;
+}
+
+#custom-clock {
   background-color: #64727D;
   font-weight: bold;
 }
