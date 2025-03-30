@@ -10,6 +10,7 @@
     ~/.backgrounds: _backgrounds
     ~/.config/autostart: _config_autostart
     ~/.config/environment.d: _config_environment.d
+    ~/.config/foot/foot.ini: _config_foot/foot.ini
     ~/.config/mako/config: _mako_config
     ~/.config/sway/config: _config_sway/config
     ~/.config/swaylock/config: _config_swaylock/config
