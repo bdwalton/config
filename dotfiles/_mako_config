@@ -17,9 +17,9 @@ text-color=#ffffff
 border-color=#64727d
 
 [urgency=normal]
-background-color=#7f9f7f
-text-color=#ffffff
-border-color=#7f9f7f
+background-color=#9fc59f
+text-color=#000000
+border-color=#64727D
 
 [urgency=high]
 background-color=#cc9393
@@ -29,7 +29,7 @@ default-timeout=0
 
 # Chrome sends everything as urgent with no timeout.
 [app-name="Google Chrome"]
-background-color=#7f9f7f
-text-color=#ffffff
-border-color=#7f9f7f
+background-color=#9fc59f
+text-color=#000000
+border-color=#64727D
 default-timeout=5000
