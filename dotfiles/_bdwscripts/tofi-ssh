@@ -26,5 +26,5 @@ if [ -n "${selected_host}" ]; then
   echo "${selected_host}" >> "${state_file}"
   tail -100 "${state_file}" > "${state_file}.last100" && mv "${state_file}.last100" "${state_file}"
 
-  gnome-terminal -- ~/.bdwscripts/bdw-ssh-wrapper "${selected_host}"
+  foot -- ~/.bdwscripts/bdw-ssh-wrapper "${selected_host}"
 fi
