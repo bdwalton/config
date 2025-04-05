@@ -188,7 +188,7 @@ bindsym $mod+r mode "resize"
 # zenburn colour scheme
 # <colorclass>              <border> <background> <text>  <indicator> <child_border>
 client.focused              #f0dfaf  #f0dfaf      #2b303b  #ffcfaf
-client.focused_inactive     #2b303b  #2b303b      #c5c8c6  #3f3f3f
+client.focused_inactive     #2b303b  #d0bf8f      #000000  #3f3f3f
 client.unfocused            #3f3f3f  #9fc59f      #000000  #3f3f3f
 client.urgent               #dca3a3  #dca3a3      #dcdccc  #3f3f3f
 
