@@ -114,15 +114,13 @@ window#waybar.empty #window {
 }
 
 #battery {
-  background-color: #9fc59f;
   font-weight: bold;
-  color: #000000;
   border: 3px solid #64727D;
 }
 
 #battery.charging, #battery.plugged {
   color: #000000;
-  background-color: #9fc59f;
+  background-color: #f0dfaf;
 }
 
 @keyframes blink {
@@ -147,9 +145,7 @@ label:focus {
 }
 
 #pulseaudio {
-  background-color: #9fc59f;
   font-weight: bold;
-  color: #000000;
   border: 3px solid #64727D;
 }
 
