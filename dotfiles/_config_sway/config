@@ -200,6 +200,10 @@ input type:touchpad {
       dwt enabled
 }
 
+seat * {
+     hide_cursor when-typing enable
+}
+
 # External display and other global defaults. We use * here because
 # the external display names don't seem to be stable.
 output * {
