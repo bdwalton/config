@@ -1,9 +1,0 @@
-#!/bin/bash
-
-LOGFILE="${HOME}/waybar.log.txt"
-install -m 600 /dev/null "${LOGFILE}"
-
-exec >"${LOGFILE}" 2>&1
-
-exec waybar -l debug
-
