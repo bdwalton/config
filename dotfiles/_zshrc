@@ -129,7 +129,7 @@ SAVEHIST=20000
 typeset -U cdpath
 
 # Setup ZSH variables.
-cdpath=($cdpath . ~ ~/working_code ${MYGOPATH})
+cdpath=($cdpath . ~ ~/working_code)
 fignore=(\~)
 watch=(all)
 DIRSTACKSIZE=20
