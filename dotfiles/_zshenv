@@ -25,6 +25,9 @@ export MYGOPATH=~/working_code/go/src/github.com/bdwalton
 export LESS="-eFXRM"
 export LESSCHARSET="utf-8"
 
+# ensure we're never without a TERM setting
+export TERM=${TERM:-xterm-256color}
+
 path=(~/bin ~/.local/bin ~/.cargo/bin $GOPATH/bin /usr/local/bin ${path} /sbin /usr/sbin)
 
 if [[ -f ~/.zshenv-${BDW_CONFIG_TYPE} ]]; then
