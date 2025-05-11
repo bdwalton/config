@@ -153,7 +153,7 @@ zle -N self-insert url-quote-magic
 # Define aliases.
 alias cp='nocorrect cp -i'
 alias d='dirs -v'
-alias emacs='~/.bdwscripts/emacs-term'
+alias emacs='emacsclient -nw'
 alias grep='egrep --color=always'
 alias h=history
 alias j=jobs

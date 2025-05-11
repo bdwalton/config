@@ -13,6 +13,7 @@ export LC_MESSAGES=C
 export TZ='Europe/Dublin'
 
 # misc
+export COLORTERM=truecolor
 export EDITOR="emacsclient -nw --alternate-editor="
 export EMAIL="bdwalton@gmail.com"
 export TMPDIR=/tmp
