@@ -92,17 +92,24 @@ if [[ ! -f ~/.notmux && ! -f ~/.notmux-$(hostname) ]]; then
     export ZSH_TMUX_AUTOSTART=true
 fi
 
-export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
-if [ -n "${TMUX}" ]; then
+# Default to GOSH agent, when set or local agent otherwise.  After that, we'll
+# determine if we're in tmux or should use the arranged "remote" ssh agent
+# socket.
+if [ -n "${GOSH_AUTH_SOCK}" ]; then
+  export SSH_AUTH_SOCK="${GOSH_AUTH_SOCK}"
+else
+  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+  if [ -n "${TMUX}" ]; then
     as="$(tmux show-environment SSH_AUTH_SOCK | awk -F= '{print $2}')"
     if [ -S "${as}" ]; then
-	export SSH_AUTH_SOCK="${as}"
+      export SSH_AUTH_SOCK="${as}"
     fi
-else
+  else
     as="${XDG_RUNTIME_DIR}/ssh-agent-remote.socket"
     if [ -S "${as}" ]; then
       export SSH_AUTH_SOCK="${as}"
     fi
+  fi
 fi
 
 source $ZSH/oh-my-zsh.sh
