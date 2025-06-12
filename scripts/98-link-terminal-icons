@@ -16,5 +16,5 @@ for res in 16x16 32x32 48x48 128x128 256x256 512x512; do
   lrdir="${LOCAL_ICON_DIR}/${res}/apps"
   trdir="${ICON_DIR}/${res}/apps"
   [ -d "${lrdir}" ] || mkdir -p "${lrdir}"
-  ln -s "${trdir}/utilities-terminal.png" "${lrdir}/gnome-terminal-server.png"
+  ln -fs "${trdir}/utilities-terminal.png" "${lrdir}/gnome-terminal-server.png"
 done
