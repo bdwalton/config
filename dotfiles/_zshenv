@@ -19,7 +19,6 @@ export EMAIL="bdwalton@gmail.com"
 export TMPDIR=/tmp
 export VISUAL="emacsclient -nw -alternate-editor="
 export HOSTNAME="$(hostname)"
-export GOPATH=~/working_code/go
 export PROCPS_FROMLEN=20
 
 # less settings
