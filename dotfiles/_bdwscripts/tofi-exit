@@ -7,7 +7,6 @@ selection=$(
   printf "Logout\nReboot\nShutdown\n" |
     tofi --prompt-text="" \
       --hide-input=true \
-      --text-cursor=false \
       --hide-cursor=true \
       --padding-left=45% \
       --padding-top=35% \
@@ -17,7 +16,6 @@ if [ -n "${selection}" ]; then
   confirmation=$(printf "Yes\nNo\n" |
     tofi --prompt-text="Really ${selection}?: " \
       --require-match=true \
-      --text-cursor=false \
       --hide-cursor=true \
       --padding-left=35% \
       --padding-top=45% \
