@@ -34,8 +34,8 @@ bindsym KP_8 workspace 8
 bindsym KP_9 workspace 9
 
 # Setup a scratchpad config that is amenable to firing up emacs client
-for_window [app_id="emacs"] move window to scratchpad, scratchpad show, resize set 1536 1009, move position center, border normal 5
-for_window [app_id="emacs" floating] resize set 1536 1009, move position center
+for_window [app_id="emacs"] move window to scratchpad, scratchpad show, resize set 1200 800, move position center, border normal 5
+for_window [app_id="emacs" floating] resize set 1200 800, move position center
 
 bindsym $mod+P exec --no-startup-id ~/.bdwscripts/locked-emacs
 bindsym $mod+minus scratchpad show
