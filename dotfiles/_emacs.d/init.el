@@ -348,8 +348,8 @@
   :custom
   (projectile-switch-project-action #'consult-project-buffer)
   (projectile-project-search-path
-   '(("~/working_code/" . 1)
-     ("~/working_code/go/src/github.com/bdwalton/" . 1))))
+   '(("~/code/" . 1)
+     ("~/code/go/src/github.com/bdwalton/" . 1))))
 
 (use-package midnight ; enable midnight mode buffer purging
   :config
