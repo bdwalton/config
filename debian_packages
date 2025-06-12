@@ -7,6 +7,7 @@ fonts-font-awesome
 fonts-powerline
 foot
 gconf2
+golang
 gopls
 grim
 ispell
@@ -32,4 +33,4 @@ tmux
 tofi
 waybar
 wl-clipboard
-wlrctl
+zsh
