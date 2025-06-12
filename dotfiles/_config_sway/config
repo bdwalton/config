@@ -217,10 +217,10 @@ bar {
     swaybar_command waybar
 }
 
-# We always want WS1 on our external monitor when available. List
+# We always want WS9 on our external monitor when available. List
 # eDP-1 (Calif...) last so it has lower preference and continues to be
 # visible even when the preferred displays aren't available.
-workspace 1 output "Lenovo Group Limited LEN T32p-20 VNA4WGMD" "Dell Inc. DELL P3223QE 1CCD7H3" "California Institute of Technology 0x1403 Unknown"
+workspace 9 output "Lenovo Group Limited LEN T32p-20 VNA4WGMD" "Dell Inc. DELL P3223QE 1CCD7H3" "MNE007ZA3-2 Unknown"
 
 exec dex -ae sway
 exec --no-startup-id /usr/libexec/gsd-xsettings
