@@ -238,6 +238,8 @@ exec swayidle -w \
      lock "$lock lock" \
      unlock "$lock unlock"
 
+bindswitch lid:on --reload --locked --no-warn systemctl suspend
+
 # idle inhibit tool; dies if already running, so exec_always is fine.
 exec_always ~/.local/bin/inhibit-bridge
 # inhibit-bridge will toggle manual inhibit state on receiving SIGUSR1
