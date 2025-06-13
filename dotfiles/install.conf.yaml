@@ -19,6 +19,7 @@
     ~/.config/waybar: _config_waybar
     ~/.dircolors: _dircolors
     ~/.emacs.d: _emacs.d
+    ~/.face: _bdwalton.face.jpg
     ~/.gitconfig: _gitconfig
     ~/.gitconfig-home: _gitconfig-home
     ~/.gtkrc-2.0: _gtkrc-2.0
