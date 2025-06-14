@@ -17,6 +17,7 @@ mako-notifier
 mosh
 nodejs
 npm
+pavucontrol
 pipx
 protobuf-compiler
 pulseaudio-utils
@@ -31,6 +32,7 @@ swaylock
 thunar
 tmux
 tofi
+vim
 waybar
 wl-clipboard
 zsh
