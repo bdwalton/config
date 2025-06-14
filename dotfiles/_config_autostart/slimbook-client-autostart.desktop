@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/slimbookindicator
+Hidden=false
+NoDisplay=false
+Name[es_ES]=Slimbook Service
+Name=Slimbook Service
+X-GNOME-Autostart-Delay=3
