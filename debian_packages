@@ -36,4 +36,5 @@ tofi
 vim
 waybar
 wl-clipboard
+wlrctl
 zsh
