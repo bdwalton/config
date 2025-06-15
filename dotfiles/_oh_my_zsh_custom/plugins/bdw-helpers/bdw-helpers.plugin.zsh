@@ -33,3 +33,17 @@ function mcd() {
     mkdir -p $1
     cd $1
 }
+
+func sudo() {
+    local _OTERM=$TERM
+    export TERM=xterm-256color
+    /usr/bin/sudo $@
+    export TERM=$_OTERM
+}
+
+func sudosh() {
+    local _OTERM=$TERM    
+    export TERM=xterm-256color
+    nocorrect /usr/bin/sudo $SHELL
+    export TERM=$_OTERM    
+}

@@ -167,8 +167,6 @@ alias mkdir='nocorrect mkdir'
 alias mmv='noglob zmv -W'
 alias mv='nocorrect mv -i'
 alias rm='rm -i'
-alias sudo='TERM=xterm-256color sudo'
-alias sudosh='TERM=xterm-256color nocorrect sudo $SHELL'
 
 alias -g G='egrep --color=auto'
 alias -g H=' | head'
