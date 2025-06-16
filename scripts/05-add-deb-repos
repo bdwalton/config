@@ -6,10 +6,14 @@ source ~/.bdwconfig
 
 case "${BDW_CONFIG_TYPE}" in
     home)
-	echo "Installing nodejs 18.x Debian repos."
+	if ! grep -q 22 /etc/apt/sources.list.d/nodesource.sources; then
+	   echo "Installing nodejs 22.x Debian repos."
 
-	# Use the cached copy of the installer script from below.
-	sed '0,/^__DATA__$/d' "${0}" | sudo bash -
+	   # Use the cached copy of the installer script from below.
+	   sed '0,/^__DATA__$/d' "${0}" | sudo bash -
+	   sudo apt modernize-sources
+	   sudo rm /etc/apt/sources.list.d/nodesource.list
+	fi
 	;;
     *)
 	echo "Non-home machine, so assuming nodejs is already newer..."
