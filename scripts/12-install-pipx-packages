@@ -10,7 +10,7 @@ grep -v '^#' "${PACKAGES_FILE}" | while read inputline; do
     set -- ${inputline}
 
     echo "Package ${1}"
-    pipx install "${1}"
+    pipx install --force "${1}"
     if [ -n "${2}" ]; then
 	for dep in ${2/,/ }; do
 	    echo "Dependency ${dep}"
