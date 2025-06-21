@@ -17,8 +17,7 @@ jekyll
 knockd
 mako-notifier
 mosh
-nodejs
-npm
+nodejs/nodistro
 pavucontrol
 pipx
 protobuf-compiler
