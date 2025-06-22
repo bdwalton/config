@@ -20,6 +20,9 @@ for service in ${SERVICES}; do
 
 done
 
+# Ensure this is enabled
+systemctl --user enable ssh-agent.socket
+
 # We have a local .config/systemd/ service file for emacs so we can
 # easily bounce our daemon.
 systemctl daemon-reload --user
