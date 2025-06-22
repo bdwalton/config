@@ -98,7 +98,7 @@ fi
 if [ -n "${GOSH_AUTH_SOCK}" ]; then
   export SSH_AUTH_SOCK="${GOSH_AUTH_SOCK}"
 else
-  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/openssh_agent"
   if [ -n "${TMUX}" ]; then
     as="$(tmux show-environment SSH_AUTH_SOCK | awk -F= '{print $2}')"
     if [ -S "${as}" ]; then
