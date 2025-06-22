@@ -52,7 +52,7 @@
 (use-package emacs
   :bind
   ;; General keybindings here
-  (("C-x k" . 'kill-this-buffer)
+  (("C-x k" . 'kill-current-buffer)
    ("C-x m" . 'execute-extended-command)
    ("C-x C-m" . 'execute-extended-command)
    ("C-c C-c" . 'comment-or-uncomment-region)
