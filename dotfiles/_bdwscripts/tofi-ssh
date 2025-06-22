@@ -6,14 +6,8 @@ if [ ! -f "${state_file}" ]; then
    touch "${state_file}"
 fi
 
-# A list of hosts we've used before, where we don't uniq them until merged with
-# known hosts so we can do a frequency sort.
-used_hosts="$(cat "${state_file}")"
-# A unique list of known hosts
-known_hosts="$(awk '{sub(/,.*/, "", $1); print $1}' ~/.ssh/known_hosts | sort | uniq)"
-
-# Now, we build a sorted list based on frequency of use.
-sorted_hosts="$((echo "${used_hosts}"; echo "${known_hosts}") | sort | uniq -c | sort -nr | awk '{print $2}')"
+# Sort the list of used hosts by frequency of usage
+sorted_hosts="$(cat "${state_file}" | sort | uniq -c | sort -nr | awk '{print $2}')"
 
 # Present the frequency sorted list for user selection
 selected_host="$(echo "${sorted_hosts}" | tofi --prompt-text="Host: ")"
