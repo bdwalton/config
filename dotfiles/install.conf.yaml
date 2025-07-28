@@ -17,6 +17,7 @@
     ~/.config/swaylock/config: _config_swaylock/config
     ~/.config/tofi/config: _config_tofi/config
     ~/.config/waybar: _config_waybar
+    ~/.config/wlogout: _config_wlogout
     ~/.dircolors: _dircolors
     ~/.emacs.d: _emacs.d
     ~/.face: _bdwalton.face.jpg
