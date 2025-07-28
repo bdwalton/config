@@ -150,7 +150,7 @@ bindsym $mod+semicolon exec makoctl dismiss -a
 bindsym $mod+Shift+c reload
 
 # provide logout, reboot and shutdown options
-bindsym $mod+Shift+e exec "wlogout -l ~/.config/wlogout/layout"
+bindsym $mod+Shift+e exec "wlogout -l ~/.config/wlogout/layout -C ~/.config/wlogout/style.css -b 2 -s"
 
 # New window decoration
 default_border normal 3
