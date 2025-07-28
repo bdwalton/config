@@ -194,6 +194,7 @@ client.urgent               #dca3a3  #dca3a3      #dcdccc  #3f3f3f
 
 input * {
       xkb_options caps:ctrl_modifier
+      natural_scroll enabled
 }
 
 input type:touchpad {
