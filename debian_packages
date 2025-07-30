@@ -11,6 +11,8 @@ gconf2
 golang
 gopls
 grim
+gtklock
+gtklock-userinfo-module
 irssi
 ispell
 jekyll
