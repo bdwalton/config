@@ -12,7 +12,9 @@ case "${BDW_CONFIG_TYPE}" in
 	   # Use the cached copy of the installer script from below.
 	   sed '0,/^__DATA__$/d' "${0}" | sudo bash -
 	   sudo apt modernize-sources
-	   sudo rm /etc/apt/sources.list.d/nodesource.list
+	   if [ -f /etc/apt/sources.list.d/nodesource.list ]; then
+	       sudo rm /etc/apt/sources.list.d/nodesource.list
+	   fi
 	fi
 	;;
     *)
