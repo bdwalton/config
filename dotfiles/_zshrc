@@ -79,6 +79,7 @@ ZSH_TMUX_DEFAULT_SESSION_NAME=$USER
 ZSH_COLORIZE_TOOL=pygmentize
 ZSH_COLORIZE_STYLE=zenburn
 
+FZF_TMUX=1
 FZF_DEFAULT_COMMAND=rg
 
 # Which plugins would you like to load?
