@@ -79,12 +79,14 @@ ZSH_TMUX_DEFAULT_SESSION_NAME=$USER
 ZSH_COLORIZE_TOOL=pygmentize
 ZSH_COLORIZE_STYLE=zenburn
 
+FZF_DEFAULT_COMMAND=rg
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bdwconfig colorize git bdw-helpers tmux)
+plugins=(bdwconfig colorize fzf git bdw-helpers tmux)
 
 # Plugin Vars
 if [[ ! -f ~/.notmux && ! -f ~/.notmux-$(hostname) ]]; then
