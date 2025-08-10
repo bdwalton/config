@@ -227,17 +227,16 @@ exec dex -ae sway
 exec --no-startup-id /usr/libexec/gsd-xsettings
 
 # Screen locking
-set $lock ~/.bdwscripts/screen-lock
-
+set $lock gtklock
 exec swayidle -w \
-     timeout 300 "$lock lock" \
+     timeout 300 "$lock" \
      timeout 360 'swaymsg "output * dpms off"' \
      resume 'swaymsg "output * dpms on"' \
-     timeout 60  'if pgrep swaylock; then swaymsg "output * dpms off"; fi' \
-     resume 'if pgrep swaylock; then swaymsg "output * dpms on"; fi' \
-     before-sleep "$lock lock" \
-     lock "$lock lock" \
-     unlock "$lock unlock"
+     timeout 600  'if pgrep gtklock; then swaymsg "output * dpms off"; fi' \
+     resume 'if pgrep gtklock; then swaymsg "output * dpms on"; fi' \
+     before-sleep "$lock" \
+     lock "$lock" \
+     unlock "killall gtklock"
 
 bindswitch lid:on --reload --locked --no-warn systemctl suspend
 
