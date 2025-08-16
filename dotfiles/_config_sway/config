@@ -53,6 +53,7 @@ bindsym $mod+t exec thunar
 
 # lock the screen (ctrl+alt+l)
 bindsym Control+Mod1+l exec loginctl lock-session
+bindsym Control+Mod5+q exec loginctl lock-session
 bindsym Control+Mod1+q exec loginctl lock-session
 
 # volume up/down/mute
